@@ -90,13 +90,24 @@ Reguli de bază:
 - Dacă sursa nu oferă dată, RomânăSimplă nu inventează dată.
 - Forma verbală este stabilă și independentă de persoană și număr.
 - Tipul canonic ales pentru verb este imperfectul de persoana a III-a singular,
-  folosit ca formă verbală neutră în tot sistemul.
+  folosit ca formă verbală canonică fixă în tot sistemul.
+- Această formă nu este semantic neutră în româna standard; ea păstrează un
+  reziduu istoric temporal, dar în nucleul RomânăSimplă este tratată ca o
+  convenție lexicală stabilă, nu ca purtător principal de timp.
+- Interpretarea temporală principală vine din markerul temporal sau din cadrul
+  narativ, nu din flexiunea istorică a formei canonice.
 - Aceeași formă se folosește pentru `eu`, `tu`, `el`, `ea`, `ei`, precum și
   pentru formele cu număr explicit, de tipul `eu5` sau `ei10`.
 - Pentru versiunea `0.2`, corpusul activ folosește un mini-lexic verbal controlat.
 - În versiunea actuală, forma canonică nu se deduce automat din infinitiv;
   fiecare verb activ intră explicit în mini-lexic.
-- Verbul copulativ nu este excepție: `a fi -> era`.
+- În nucleul de bază, predicația nominală, adjectivală și locativă preferă
+  copula invariabilă `e`.
+- Verbul copulativ formează o excepție controlată față de schema verbală
+  canonică principală: `a fi -> e`.
+- Motivația acestei excepții este explicită: `e` pare mai natural pentru un
+  vorbitor de română decât `era` și cere mai puțin efort de interpretare decât
+  copula zero.
 
 Mini-lexic verbal activ pentru nucleul `0.2`:
 
@@ -120,7 +131,7 @@ Mini-lexic verbal activ pentru nucleul `0.2`:
 - `a întreba -> întreba`
 - `a răspunde -> răspundea`
 - `a ploua -> ploua`
-- `a fi -> era`
+- `a fi -> e`
 - `a avea -> avea`
 - `a lua -> lua`
 - `a scrie -> scria`
@@ -151,7 +162,7 @@ Regulă de utilizare:
 - Dacă apare un verb nou, el intră mai întâi în mini-lexic și abia apoi în corpus.
 - Dacă există două forme candidate, una singură este admisă în nucleu.
 
-Exemple:
+Exemple de nucleu:
 
 - `eu 9 mergea la magazin.`
 - `tu 20:30 vedea @film?`
@@ -159,7 +170,10 @@ Exemple:
 - `eu -1D mergea la film.`
 - `ei 3H venea.`
 - `Ana 8 citea @carte.`
-- `Ana#@carte era aici.`
+- `Ana#@carte e aici.`
+
+Exemplu tehnic:
+
 - `eu 2026-03-08 9:00:00 mergea la magazin.`
 
 ### 2.4 Pronume și număr
@@ -215,6 +229,7 @@ Reguli de bază:
 
 - Adjectivele stau după substantiv.
 - Adjectivele rămân în forma lor de bază și nu se acordă.
+- În propozițiile simple cu predicat adjectival, nucleul preferă copula invariabilă `e`.
 - În nucleul compact, operatorii de grad activi sunt `>` și `<`.
 - `>>` și `<<` rămân în stratul extins, nu în corpusul de bază.
 - Adverbele de mod scurte stau imediat după verb.
@@ -226,7 +241,7 @@ Exemple:
 
 - `@casă mare`
 - `2casă mare`
-- `@casă >mare`
+- `@casă e >mare`
 - `eu 9 mergea repede la magazin.`
 - `tu vedea clar @film?`
 
@@ -241,6 +256,7 @@ Reguli de bază:
 - Operatorul `#` poate fi folosit și cu substantive deja marcate prin `@`, prefix numeric sau `*`.
 - Relațiile indirecte uzuale rămân exprimate printr-un set mic de prepoziții simple: `la`, `din`, `cu`, `pentru`, `pe`.
 - Nucleul `0.2` nu introduce operatori noi pentru dativ, locativ sau direcție.
+- În propozițiile simple cu predicat locativ sau nominal, nucleul preferă copula invariabilă `e`.
 
 Exemple:
 
@@ -272,10 +288,13 @@ Reguli de bază:
 - Lipsa semnului plus înseamnă valoare pozitivă implicită pentru operatorii relativi.
 - Principiul de bază este `operator minim necesar`: dacă sensul rămâne clar fără un operator, operatorul nu se adaugă.
 
-Exemple:
+Exemple de nucleu:
 
 - `Ana citea & tu scria.`
 - `tu bea apă | tu bea lapte.`
+
+Exemplu experimental:
+
 - `tu bea apă ^ tu bea lapte.`
 
 ### 2.9 Operatori de grad și de enunț
@@ -321,11 +340,167 @@ Reguli de bază:
 - Descompunerea este preferată în nucleul compact.
 - În corpusul de bază, nested trebuie să fie rar.
 
-Exemple:
+Exemplu de nucleu:
+
+- `ploua. eu rămânea acasă.`
+
+Exemple experimentale:
 
 - `el spunea {tu bea vin?}`
 - `ea credea {ei -1D ajungea la sală.}`
-- `ploua. eu rămânea acasă.`
+
+### 2.12 Sintaxă formală (EBNF Core)
+
+EBNF-ul de mai jos descrie strict nucleul obligatoriu. Formele tehnice și
+experimentale sunt separate mai jos, tocmai pentru a nu dilua statutul
+gramaticii de bază.
+
+```ebnf
+core-text             = core-sentence, { ws, core-sentence };
+
+core-sentence         = simple-sentence, end-mark
+                      | coordinated-sentence;
+
+simple-sentence       = [ subject, ws ], [ time-marker, ws ], predicate;
+
+predicate             = verbal-predicate
+                      | copular-predicate;
+
+verbal-predicate      = canonical-verb, { ws, continuation };
+
+copular-predicate     = copula, ws, nonverbal-predicate;
+
+nonverbal-predicate   = nominal-group
+                      | prepositional-group
+                      | adverb
+                      | adjective-tail
+                      | approximation-group;
+
+continuation          = nominal-group
+                      | prepositional-group
+                      | adverb
+                      | graded-adjective
+                      | approximation-group;
+
+coordinated-sentence  = simple-sentence, ws, ( "&" | "|" ), ws, simple-sentence, end-mark;
+
+subject               = pronoun
+                      | numbered-pronoun
+                      | proper-name
+                      | nominal-group;
+
+numbered-pronoun      = pronoun, integer;
+
+nominal-group         = [ possessor, "#" ], nominal-core, [ ws, adjective-tail ];
+possessor             = pronoun | proper-name | noun;
+nominal-core          = [ "@" ], [ integer | "*" ], noun;
+adjective-tail        = adjective | graded-adjective;
+graded-adjective      = grade-operator, adjective;
+approximation-group   = "~", integer, noun;
+
+prepositional-group   = preposition, ws, nominal-group;
+
+time-marker           = clock-time | relative-time;
+clock-time            = hour | hour, ":", minute;
+relative-time         = [ "+" | "-" ], integer, time-unit;
+
+grade-operator        = "<" | ">";
+end-mark              = "." | "?" | "!";
+
+preposition           = "la" | "din" | "cu" | "pentru" | "pe";
+time-unit             = "m" | "H" | "D";
+canonical-verb        = lexical-verb;
+copula                = "e";
+
+pronoun               = "eu" | "tu" | "el" | "ea" | "ei";
+
+ws                    = " ", { " " };
+integer               = digit, { digit };
+digit                 = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+hour                  = digit, [ digit ];
+minute                = digit, digit;
+second                = digit, digit;
+day                   = digit, digit;
+month                 = digit, digit;
+year                  = digit, digit, digit, digit;
+
+proper-name           = lexical-proper-name;
+noun                  = lexical-noun;
+adjective             = lexical-adjective;
+adverb                = lexical-adverb;
+lexical-verb          = lexical-canonical-verb;
+```
+
+Observații de lucru:
+
+- `core-sentence` descrie numai nucleul obligatoriu.
+- `coordinated-sentence` cu `&` și `|` rămâne permis, dar trebuie folosit economic.
+- Copula invariabilă `e` este forma preferată în nucleu pentru predicate nominale, adjectivale și locative.
+- Nucleul nu include aici `XOR`, `nested` și timpul tehnic complet.
+- Simbolurile `lexical-noun`, `lexical-adjective`, `lexical-adverb`, `lexical-proper-name` și `lexical-canonical-verb` trimit la lexicul controlat al proiectului, nu la o clasă deschisă nelimitată.
+
+### 2.13 Sintaxă formală (EBNF Extended)
+
+Stratul extins conține formele păstrate în proiect, dar scoase din nucleul
+obligatoriu.
+
+```ebnf
+extended-sentence       = xor-sentence
+                | reported-sentence
+                | technical-time-sentence;
+
+xor-sentence            = simple-sentence, ws, "^", ws, simple-sentence, end-mark;
+
+reported-sentence       = reporting-clause, ws, "{", embedded-sentence, "}";
+reporting-clause        = [ subject, ws ], [ time-marker, ws ], reporting-verb;
+embedded-sentence       = simple-sentence, end-mark;
+
+technical-time-sentence = [ subject, ws ], technical-time, ws, predicate, end-mark;
+technical-time          = year, "-", month, "-", day, ws, hour, ":", minute, ":", second;
+
+reporting-verb          = "spunea" | "întreba" | "credea";
+```
+
+Observații de lucru:
+
+- `xor-sentence` rămâne în stratul extins pentru că exclusivitatea nu este necesară în majoritatea propozițiilor de bază.
+- `reported-sentence` rămâne în stratul extins pentru că nested este rar și costisitor vizual.
+- `technical-time-sentence` rămâne în stratul tehnic pentru că formatul complet nu trebuie să domine uzul curent.
+
+### 2.14 Apendice lexical minim pentru formalizare
+
+Acest apendice nu înlocuiește corpusul, dar fixează un minim de clase lexicale
+controlate pentru testare și parsare.
+
+- `lexical-canonical-verb`: exact verbele din mini-lexicul verbal activ `0.2`.
+- `reporting-verb`: `spunea`, `întreba`, `credea`.
+- `lexical-adverb`: `clar`, `repede`, `aici`, `târziu`, `după`.
+- `lexical-adjective`: `mare`, `copt`.
+- `lexical-proper-name`: `Ana`, `Maria`, `Ion`.
+- `lexical-noun`: setul minimal atestat în corpusul curent, de tipul `film`, `carte`, `pasăre`, `casă`, `cal`, `sală`, `magazin`, `vin`, `apă`, `lapte`, `sat`, `ușă`, `pâine`, `fruct`, `frig`.
+
+Regulă de lucru:
+
+- Orice extindere a uneia dintre aceste clase trebuie publicată explicit înainte de a intra în nucleul obligatoriu.
+
+### 2.15 Derivări canonice minime
+
+Exemplele de mai jos arată cum se leagă propozițiile de regulile formale.
+
+1. `eu 9 mergea.`
+  `core-sentence -> simple-sentence end-mark -> subject time-marker predicate end-mark`
+
+2. `tu vedea @film.`
+  `core-sentence -> simple-sentence end-mark -> subject predicate end-mark`
+
+3. `Ana#@carte e aici.`
+  `core-sentence -> simple-sentence end-mark -> subject predicate end-mark`
+
+4. `tu bea apă | tu bea lapte.`
+  `core-sentence -> coordinated-sentence -> simple-sentence "|" simple-sentence end-mark`
+
+5. `el spunea {tu bea vin?}`
+  `extended-sentence -> reported-sentence -> reporting-clause "{" embedded-sentence "}"`
 
 ---
 
@@ -337,6 +512,7 @@ Caracteristici centrale:
 
 - timpul uzual este scurt, nu tehnic
 - verbul este stabil și controlat prin mini-lexic
+- predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu
 - numărul se exprimă doar când contează
 - `@` și `#` rămân operatorii nominali centrali
 - `&`, `|` și `^` rămân singurii conectori structurali noi din nucleul activ, cu valori fixe `și`, `sau`, `XOR`
@@ -359,17 +535,18 @@ Setul minim de reguli pentru `0.2.0`:
 3. Timpul se scrie înaintea verbului.
 4. Forma temporală implicită este parțială sau relativă; forma completă este tehnică.
 5. Verbul folosește o formă stabilă din mini-lexicul activ.
-6. Sufixul numeric la pronume apare doar când numărul este relevant.
-7. Substantivul folosește singularul ca bază; prefixul numeric marchează cardinalitatea.
-8. `*` marchează pluralul nenumărat.
-9. `@` marchează definitudinea numai când trebuie exprimată clar.
-10. `#` marchează posesia.
-11. Relațiile indirecte uzuale folosesc prepoziții scurte, nu operatori noi.
-12. Adjectivul stă după substantiv și nu se acordă.
-13. Adverbul scurt stă după verb; fraza grea se descompune.
-14. Operatorii de bază ai nucleului sunt `@`, `#`, `&`, `|`, `^`, `~`, `<`, `>`, `?`, `!`, `{}` și markerii temporali.
-15. Nested este rezervat pentru conținut raportat.
-16. Se aplică regula `operator minim necesar`.
+6. Predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu.
+7. Sufixul numeric la pronume apare doar când numărul este relevant.
+8. Substantivul folosește singularul ca bază; prefixul numeric marchează cardinalitatea.
+9. `*` marchează pluralul nenumărat.
+10. `@` marchează definitudinea numai când trebuie exprimată clar.
+11. `#` marchează posesia.
+12. Relațiile indirecte uzuale folosesc prepoziții scurte, nu operatori noi.
+13. Adjectivul stă după substantiv și nu se acordă.
+14. Adverbul scurt stă după verb; fraza grea se descompune.
+15. Operatorii de bază ai nucleului sunt `@`, `#`, `&`, `|`, `^`, `~`, `<`, `>`, `?`, `!`, `{}` și markerii temporali.
+16. Nested este rezervat pentru conținut raportat.
+17. Se aplică regula `operator minim necesar`.
 
 ---
 
@@ -384,6 +561,7 @@ Corpusul de bază trebuie să includă în primul rând propoziții scurte, cu u
 - cardinalitate nominală
 - definitudine marcată și nemarcată
 - posesie prin `#`
+- copula `e` în predicate simple
 - relații prepoziționale simple
 - coordonare prin `&`, alternativă prin `|` și exclusivitate logică prin `^`
 - adjectiv după substantiv
@@ -421,9 +599,9 @@ Pentru orice exemplu nou, revizia urmează aceeași secvență scurtă:
 
 1. Se fixează sursa și fenomenul dominant. Exemplul trebuie să testeze un singur lucru nou sau o singură combinație justificată.
 2. Se verifică fidelitatea. Nu se adaugă timp, număr, definitudine, posesie, coordonare, alternativă sau `XOR` care nu sunt susținute de sursă.
-3. Se verifică forma minimă. Verbul trebuie să apară în mini-lexicul activ, timpul trebuie să fie doar atât cât cere sensul, iar operatorii trebuie reduși la minimul necesar.
-4. Se verifică structura. `&`, `|`, `^` și `{}` rămân doar dacă păstrează o relație obligatorie; altfel, fraza se descompune.
-5. Se decide explicit: `acceptat`, `rescris` sau `respins`.
+3. Se verifică forma minimă. Verbul trebuie să apară în mini-lexicul activ, timpul trebuie să fie doar atât cât cere sensul, ordinea preferată trebuie să rămână recognoscibilă, iar operatorii trebuie reduși la minimul necesar.
+4. Se verifică structura. `&`, `|`, `^` și `{}` rămân doar dacă păstrează o relație obligatorie; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, fraza se descompune.
+5. Se decide explicit: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
 
 ---
 

@@ -4,10 +4,37 @@ Acest corpus este aliniat la filtrul `Compact, Precis, Simplu, Uniform`.
 Exemplele de bază evită supraîncărcarea și preferă un singur fenomen dominant pe
 propoziție.
 
-## Perechi RO și SR
+Corpusul este împărțit în două straturi:
+
+- `nucleu obligatoriu`: exemple validate, scurte și stabile
+- `margine experimentală`: exemple utile pentru extindere, dar încă secundare față de nucleu
+
+## Ordinea preferată a propoziției simple
+
+Schema preferată pentru nucleul de bază este:
+
+- `subiect + timp + verb + continuări scurte`
+
+Exemple:
+
+- `eu 9 mergea la magazin.`
+- `tu vedea @film.`
+- `Ana citea.`
+
+Fără marker temporal explicit, schema se reduce la:
+
+- `subiect + verb + continuări scurte`
+
+Abaterile sunt permise doar când câștigul de claritate este real.
+
+## Nucleu obligatoriu
+
+### Perechi RO și SR validate
+
+Perechile validate sunt rescrise astfel încât `SR` să urmeze cât mai clar ordinea preferată a nucleului, iar `RO` să nu împingă inutil spre structuri mai grele.
 
 **1**
-RO: `La ora 9, eu merg.`
+RO: `Eu merg la ora 9.`
 SR: `eu 9 mergea.`
 
 **2**
@@ -28,7 +55,7 @@ SR: `eu vedea ~10pasăre.`
 
 **6**
 RO: `Cartea Anei este aici.`
-SR: `Ana#@carte era aici.`
+SR: `Ana#@carte e aici.`
 
 **7**
 RO: `Trei cai intră.`
@@ -36,45 +63,43 @@ SR: `3cal intra.`
 
 **8**
 RO: `Casa este mare.`
-SR: `@casă era >mare.`
+SR: `@casă e >mare.`
 
 **9**
-RO: `El spune că tu bei vin.`
-SR: `el spunea {tu bea vin.}`
-
-**10**
-RO: `Dacă plouă, noi rămânem acasă.`
+RO: `Plouă. Noi rămânem acasă.`
 SR: `ploua. eu rămânea acasă.`
 
-**11**
+**10**
 RO: `Tu vorbești clar.`
 SR: `tu vorbea clar.`
 
-**12**
+**11**
 RO: `Ei ajung.`
 SR: `ei ajungea.`
 
-## Fenomen dominant pentru perechile RO și SR
+## Fenomen dominant pentru perechile RO și SR validate
 
 1. timp parțial
 2. definitudine
 3. pronume numerotat
 4. verb stabil
 5. aproximare nominală
-6. posesie plus copulă
+6. posesie plus locativ
 7. cardinalitate nominală
-8. copulă plus grad
-9. conținut raportat
-10. descompunere
-11. adverb de mod
-12. verb stabil simplu
+8. predicat adjectival cu grad
+9. descompunere
+10. adverb de mod
+11. verb stabil simplu
 
 ## Convenții de bază
 
 - timpul uzual este parțial sau relativ
 - forma completă a timpului este tehnică, nu implicită
 - forma verbală este stabilă și nu depinde de persoană sau număr
-- tipul verbal canonic este imperfectul de persoana a III-a singular folosit ca formă neutră
+- tipul verbal canonic este imperfectul de persoana a III-a singular folosit ca formă canonică fixă
+- această formă păstrează reziduu temporal istoric, dar timpul principal se citește din markerul temporal sau din context
+- în propozițiile nominale, adjectivale și locative, nucleul preferă copula invariabilă `e`
+- alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - mini-lexicul verbal este explicit; forma canonică nu se deduce automat din infinitiv
 - numărul la pronume apare doar când este relevant
 - singularul este baza pentru substantiv
@@ -94,7 +119,7 @@ SR: `ei ajungea.`
 2. `tu 20:30 vedea @film?`
 3. `eu -1D mergea la film.`
 4. `ei 3H venea.`
-5. `Ana 2026-03-08 9:00:00 citea @carte.`
+5. `Ana 8 citea @carte.`
 
 ## Corpus Minimal Temporal
 
@@ -105,7 +130,6 @@ SR: `ei ajungea.`
 5. `eu 15m răspundea.`
 6. `tu -30m ajungea.`
 7. `ei 2D pleca.`
-8. `Ana 2026-03-08 9:00:00 mergea.`
 
 ## Control Rapid Temporal
 
@@ -118,27 +142,23 @@ SR: `ei ajungea.`
 ## Corpus Minimal Structural
 
 1. `fruct <copt.`
-2. `@casă >mare.`
+2. `@casă e >mare.`
 3. `eu vedea ~10pasăre.`
 4. `tu bea vin?`
 5. `Ana striga!`
-6. `el spunea {tu bea vin?}`
-7. `ea credea {ei venea.}`
-8. `ploua. eu rămânea acasă.`
-9. `ei venea târziu. sală era închisă.`
-10. `tu vorbea clar.`
-11. `Ana citea & tu scria.`
-12. `tu bea apă | tu bea lapte.`
-13. `tu bea apă ^ tu bea lapte.`
+6. `ploua. eu rămânea acasă.`
+7. `ei venea târziu. sală e închisă.`
+8. `tu vorbea clar.`
+9. `Ana citea & tu scria.`
+10. `tu bea apă | tu bea lapte.`
 
 ## Control Rapid Structural
 
 1. Operatorul structural folosit este necesar pentru sens?
 2. Gradul sau aproximarea sunt marcate fără încărcare inutilă?
 3. `?` și `!` sunt suficiente fără forme duble?
-4. `&`, `|` și `^` apar doar când relația `și`, `sau` sau `XOR` nu poate fi lăsată implicit ori descompusă?
-5. `{}` apare doar pentru conținut raportat?
-6. Fraza poate fi descompusă mai clar în propoziții simple?
+4. `&` și `|` apar doar când relația `și` sau `sau` nu poate fi lăsată implicit ori descompusă?
+5. Fraza poate fi descompusă mai clar în propoziții simple?
 
 ## Lexic verbal activ 0.2
 
@@ -162,7 +182,7 @@ SR: `ei ajungea.`
 18. `a întreba -> întreba`
 19. `a răspunde -> răspundea`
 20. `a ploua -> ploua`
-21. `a fi -> era`
+21. `a fi -> e`
 22. `a avea -> avea`
 23. `a lua -> lua`
 24. `a scrie -> scria`
@@ -213,7 +233,7 @@ Regulă:
 18. `tu întreba asta?`
 19. `eu răspundea după.`
 20. `ploua.`
-21. `Ana era aici.`
+21. `Ana avea @carte.`
 22. `eu avea apă.`
 23. `tu lua @carte.`
 24. `ea scria.`
@@ -306,21 +326,42 @@ Regulă:
 4. `eu vedea clar @film.`
 5. `tu mergea repede.`
 
-## Nested și descompunere
+## Descompunere în nucleu
+
+1. `ploua. eu rămânea acasă.`
+2. `Ana întreba asta. eu răspundea după.`
+3. `ei venea târziu. sală e închisă.`
+
+## Margine experimentală
+
+Exemplele de mai jos nu ies din proiect, dar nu mai definesc reflexul principal de citire.
+În mod implicit, nested, timpul tehnic complet și `XOR` intră mai întâi aici, nu în nucleul obligatoriu.
+
+### Perechi RO și SR experimentale
+
+**1**
+RO: `El spune că tu bei vin.`
+SR: `el spunea {tu bea vin.}`
+
+### Temporal tehnic
+
+1. `Ana 2026-03-08 9:00:00 citea @carte.`
+2. `Ana 2026-03-08 9:00:00 mergea.`
+
+### Structural experimental
 
 1. `el spunea {tu bea vin?}`
-2. `ea credea {ei -1D ajungea la sală.}`
-3. `ploua. eu rămânea acasă.`
-4. `Ana întreba asta. eu răspundea după.`
-5. `ei venea târziu. sală era închisă.`
+2. `ea credea {ei venea.}`
+3. `tu bea apă ^ tu bea lapte.`
+4. `ea credea {ei -1D ajungea la sală.}`
 
 ## Protocol compact de revizie pentru exemple noi
 
 1. Se notează sursa și fenomenul dominant.
 2. Se verifică fidelitatea: nu se adaugă informație absentă în sursă.
-3. Se verifică forma minimă: verb din lexicul activ, timp suficient, operator minim necesar.
-4. Se verifică structura: `&`, `|`, `^` și `{}` rămân doar dacă păstrează explicit `și`, `sau`, `XOR` sau conținut raportat; altfel, exemplul se descompune.
-5. Se marchează verdictul: `acceptat`, `rescris` sau `respins`.
+3. Se verifică forma minimă: verb din lexicul activ, timp suficient, ordine preferată recognoscibilă, operator minim necesar.
+4. Se verifică structura: `&`, `|`, `^` și `{}` rămân doar dacă păstrează explicit `și`, `sau`, `XOR` sau conținut raportat; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, exemplul se descompune.
+5. Se marchează verdictul și stratul: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
 
 ## Ținte pentru extindere
 
@@ -329,6 +370,7 @@ Regulă:
 - 10 propoziții minimale pentru număr
 - 10 propoziții minimale pentru definitudine
 - 10 propoziții minimale pentru posesie
+- 10 propoziții minimale pentru copula `e`
 - 10 propoziții minimale pentru relații prepoziționale
 - 10 propoziții minimale pentru grad și aproximare
 - 10 propoziții minimale pentru `&`, `|` și `^`
