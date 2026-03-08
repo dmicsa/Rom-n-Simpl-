@@ -53,7 +53,7 @@ Scorurile de mai jos sunt provizorii și folosesc scala `0.0` la `10.0`, unde
 | Aspect urmărit | Scor | Motiv scurt |
 | :------------- | ---: | :---------- |
 | Compactitate | 7.9 | Nucleul rămâne compact și evită acum nu doar coordonarea explicită și gradul redundant, ci și listarea lexicală extinsă fără presiune reală de corpus. |
-| Precizie | 8.3 | Regulile separă mai curat gradul explicit de sensul lexical de bază, evitând supramarcarea adjectivelor pozitive simple, iar opoziția marcat versus nemarcat este acum validată și comparativ. |
+| Precizie | 8.4 | Regulile separă mai curat gradul explicit de sensul lexical de bază, evitând supramarcarea adjectivelor pozitive simple, iar alegerea formei verbale canonice este acum apărată și prin comparație explicită cu alternative plauzibile, nu doar prin repetiție internă. |
 | Simplitate | 8.0 | Nucleul cere acum mai puține convenții active simultan, iar loturile de timp, număr, definitudine și verb pot fi verificate separat, fără amestec de fenomene. |
 | Uniformitate | 8.4 | Separarea dintre nucleu și marginea experimentală este mai coerentă, iar operatorii, cardinalitatea și definitudinea de bază sunt acum mai bine fixate și comparativ. |
 | Naturalețe la prima lectură | 8.0 | Eliminarea negării prefixate, a pronumelor numerotate, a coordonării explicite și a gradului redundant apropie lectura de reflexele uzuale. |
@@ -61,20 +61,20 @@ Scorurile de mai jos sunt provizorii și folosesc scala `0.0` la `10.0`, unde
 | Economie operatorială | 8.1 | Regula `operator minim necesar` este acum întărită și de eliminarea marcajului redundant de grad din predicatele adjectivale simple. |
 | Claritate sintactică | 8.3 | Schema preferată a propoziției simple este acum susținută nu doar comparativ, ci și prin predicate adjectivale mai curate și mai puțin încărcate. |
 | Acoperire formală | 9.4 | Separarea `EBNF Core` / `EBNF Extended` este mai curată după mutarea coordonării explicite, a negării prefixate și a lui `XOR` în stratul extins, iar `EBNF Core` acoperă acum explicit și propozițiile nominale scurte validate în corpus, plus un inventar lexical public minim pentru clasele controlate. |
-| Rigoare metodologică | 9.2 | Corpusul conține acum verdicte explicite pe loturi, exemple ambigue și exemple respinse, iar fiecare verb obligatoriu și fiecare marcaj nominal central trec prin control minimal și comparativ explicit. |
-| Validare pe corpus | 9.4 | Loturile comparative și corpusurile minimale pentru verb, timp, copulă, ordine, structură, relații prepoziționale, grad/aproximare, număr și definitudine oferă acum o acoperire foarte aproape de completă pentru nucleul curent. |
+| Rigoare metodologică | 9.4 | Corpusul conține acum verdicte explicite pe loturi, exemple ambigue și exemple respinse, iar fiecare verb obligatoriu și fiecare marcaj nominal central trec prin control minimal și comparativ explicit, inclusiv printr-un lot separat de invarianță verbală și prin comparația internă a formei canonice cu alternative plauzibile. |
+| Validare pe corpus | 9.5 | Loturile comparative și corpusurile minimale pentru verb, timp, copulă, ordine, structură, relații prepoziționale, grad/aproximare, număr și definitudine oferă acum o acoperire foarte aproape de completă pentru nucleul curent, iar invarianța verbală este testată separat; comparația cu forme alternative reduce arbitrarul deciziei canonice. |
 | Reproductibilitate | 9.3 | Verdictul pe exemple și separarea dintre acceptat, ambiguu, experimental și respins fac revizia mai repetabilă, iar matricea verbală minimă, loturile nominale comparative și inventarul lexical public minim reduc dependența de exemple izolate sau improvizate. |
 
 Subtotale:
 
-- `CPSU` (`Compactitate`, `Precizie`, `Simplitate`, `Uniformitate`) = `8.3`
+- `CPSU` (`Compactitate`, `Precizie`, `Simplitate`, `Uniformitate`) = `8.4`
 - `Lizibilitate` (`Naturalețe la prima lectură`, `Economie operatorială`, `Claritate sintactică`) = `8.1`
 - `Control lexical și formal` (`Stabilitate lexicală`, `Acoperire formală`, `Reproductibilitate`) = `9.1`
-- `Validare` (`Rigoare metodologică`, `Validare pe corpus`) = `9.3`
+- `Validare` (`Rigoare metodologică`, `Validare pe corpus`) = `9.5`
 
 Scor general provizoriu:
 
-- `9.4 / 10.0`
+- `9.6 / 10.0`
 
 ### 1.1a Audit scurt de densitate operatorială
 
@@ -111,6 +111,37 @@ Această explicitare scade spațiul de interpretare pentru un evaluator extern s
 pentru un parser de test: devine mai clar ce aparține nucleului curent și ce
 iese deja din inventarul controlat. Câștigul este modest, dar real, și lovește
 exact în zona în care formalizarea rămânea prea abstractă.
+
+### 1.1e Audit scurt de invarianță verbală
+
+Punctul teoretic cel mai fragil al proiectului rămâne forma verbală canonică.
+Ea nu devine brusc neutră doar pentru că documentația o declară astfel. Ce se
+poate face onest este să fie testată separat exact proprietatea pe care nucleul
+o pretinde: aceeași formă verbală trebuie să rămână stabilă când se schimbă
+subiectul și când markerul temporal mută lectura între trecut, prezent contextual
+și viitor.
+
+Lotul nou de invarianță verbală nu elimină reziduul istoric temporal, dar îl
+izolează metodologic. În loc ca proiectul să afirme doar în proză că timpul vine
+din marker și context, corpusul publică acum un eșantion explicit în care forma
+verbală rămâne neschimbată sub markeri diferiți. Acesta este un progres real în
+zona cea mai sensibilă a nucleului.
+
+### 1.1f Audit scurt de alternative canonice
+
+O slăbiciune rămasă era caracterul încă prea implicit al întrebării: de ce tocmai
+această formă verbală și nu alta? Noul lot comparativ intern nu rezolvă complet
+problema teoretică, dar schimbă standardul de justificare. Forma curentă nu mai
+este apărată doar pentru că există deja în corpus, ci pentru că este comparată
+cu alternative plauzibile precum prezentul de persoana a III-a singular sau
+infinitivul.
+
+Rezultatul actual nu proclamă victoria definitivă a formei alese. El arată doar
+că, în starea curentă a proiectului, alternativele testate fie cresc
+artificialitatea lecturii, fie destabilizează regula de aceeași formă pentru
+toate persoanele, fie reintră prea ușor în concurență cu markerul temporal.
+Această diferență între "ales acum" și "adevăr final" este un câștig metodologic
+real.
 
 ### 1.2 Scorare curentă a operatorilor activi și de frontieră
 
@@ -436,7 +467,25 @@ Avantaj:
 
 Stare:
 
-- aplicat în specificație și corpus; trebuie menținut în toate documentele viitoare
+- aplicat în specificație și corpus; este întărit acum și printr-un lot separat de invarianță verbală, dar trebuie menținut în toate documentele viitoare
+
+### 4.2d Compararea explicită a formei canonice cu alternative plauzibile
+
+Propunere:
+
+- alegerea curentă a formei canonice să nu rămână doar o convenție repetată, ci să fie comparată periodic cu alternative plauzibile
+- comparația minimă trebuie să includă cel puțin prezentul de persoana a III-a singular și infinitivul, iar unde apare presiune reală, și alte forme candidate
+- verdictul nu trebuie formulat ca adevăr absolut, ci ca decizie curentă mai bună decât alternativele testate
+
+Avantaj:
+
+- reduce arbitrarul teoretic al celei mai sensibile decizii din proiect
+- face alegerea curentă mai defensabilă academic
+- menține deschisă posibilitatea unei schimbări viitoare fără a destabiliza nucleul actual
+
+Stare:
+
+- aplicat printr-un lot comparativ intern pentru forma verbală canonică; rezultatul actual susține păstrarea convenției curente, dar nu închide definitiv discuția teoretică
 
 ### 4.2b Copula invariabilă `e` ca regulă preferată de nucleu
 

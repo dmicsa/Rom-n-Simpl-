@@ -21,6 +21,8 @@ Nucleul actual lucrează cu un set redus de decizii:
 - timpul apare înaintea verbului
 - forma verbală este stabilă, controlată printr-un lexic verbal obligatoriu mic și tratată ca formă canonică fixă
 - această formă păstrează reziduu temporal istoric; timpul principal se citește din markerul temporal sau din context
+- invarianța verbală este testată separat: schimbarea markerului temporal nu cere schimbarea formei canonice de nucleu
+- forma canonică actuală este comparată și cu alternative plauzibile; ea rămâne convenția curentă pentru că alternativele testate nu reduc încă suficient costul total
 - predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleul de bază
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - timpul uzual este parțial sau relativ; forma completă rămâne tehnică

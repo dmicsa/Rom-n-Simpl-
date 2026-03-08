@@ -99,6 +99,11 @@ Reguli de bază:
   convenție lexicală stabilă, nu ca purtător principal de timp.
 - Interpretarea temporală principală vine din markerul temporal sau din cadrul
   narativ, nu din flexiunea istorică a formei canonice.
+- În lectura de nucleu, forma canonică nu licențiază singură o inferență
+  temporală tare: fără marker temporal explicit, ea rămâne sub-specificată și
+  se citește prin contextul local.
+- O schimbare de marker temporal nu cere schimbarea formei verbale canonice;
+  invarianta verbală este regulă de sistem, nu efect secundar tolerat.
 - Aceeași formă se folosește pentru `eu`, `tu`, `el`, `ea` și `ei` în nucleul strict.
 - Formele cu număr explicit, de tipul `eu5` sau `ei10`, rămân experimentale până la o validare separată.
 - Nucleul activ folosește un lexic verbal controlat,
@@ -168,6 +173,13 @@ Criterii de promovare din lexicul extins în nucleul obligatoriu:
 - forma lui canonică trebuie să rămână ușor recognoscibilă și stabilă la prima lectură
 - promovarea trebuie să reducă costul global al parafrazelor de nucleu, nu doar să acopere un gol accidental de corpus
 - promovarea trebuie documentată clar, cu motivul deciziei, în locurile unde schimbă regulile active
+
+Criterii de păstrare a formei canonice curente:
+
+- forma aleasă trebuie comparată periodic cu alternative plauzibile din româna standard, nu doar repetată prin inerție
+- alternative precum infinitivul, prezentul de persoana a III-a singular sau alte forme istorice trebuie judecate pe aceleași axe: lizibilitate, stabilitate, cost de învățare și compatibilitate cu markerul temporal explicit
+- dacă o alternativă nouă ar reduce clar reziduul temporal fără a crește costul cognitiv, alegerea curentă trebuie rediscutată explicit
+- cât timp această condiție nu este satisfăcută, forma curentă rămâne o convenție controlată, nu un adevăr teoretic închis
 
 Stare actuală:
 
@@ -709,6 +721,10 @@ verificat independent.
 Se recomandă și un lot comparativ verbal separat, astfel încât fiecare verb din
 lexicul verbal obligatoriu să aibă cel puțin o pereche scurtă `RO/SR`, nu doar
 prezență dispersată în exemple.
+
+Se recomandă și un corpus minimal separat pentru invarianta verbală, astfel
+încât aceeași formă canonică să fie testată explicit sub markeri temporali
+diferiți și fără marker, fără a reintra în concurență cu flexiunea istorică.
 
 Se recomandă și un corpus minimal copulativ separat, astfel încât excepția
 `a fi -> e` să fie testată explicit și să nu rămână doar o regulă declarată.

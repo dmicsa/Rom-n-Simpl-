@@ -162,6 +162,32 @@ Verdict:
 4. Semnul markerului relativ corespunde direcției temporale?
 5. Propoziția introduce un singur fenomen temporal dominant?
 
+## Corpus Minimal de Invarianță Verbală
+
+1. `eu mergea.`
+2. `eu 9 mergea.`
+3. `eu -1D mergea.`
+4. `eu 2D mergea.`
+5. `tu vedea @film.`
+6. `tu 20:30 vedea @film.`
+7. `tu -30m vedea @film.`
+8. `ei cerea pâine.`
+9. `ei 3H cerea pâine.`
+10. `ei -2D cerea pâine.`
+
+Verdict:
+
+- `acceptat pentru nucleul curent`
+- motiv: lotul arată explicit că schimbarea markerului temporal și a subiectului nu cere schimbarea formei canonice, iar interpretarea temporală dominantă rămâne în marker sau în context
+
+## Control Rapid pentru Invarianță Verbală
+
+1. Forma verbală rămâne identică atunci când se schimbă doar markerul temporal?
+2. Schimbarea de subiect evită orice revenire la acord verbal?
+3. Timpul dominant se recuperează din marker sau context, nu din flexiunea istorică a formei?
+4. Exemplul evită introducerea unei forme verbale concurente pentru același verb?
+5. Forma canonică rămâne lizibilă la prima lectură în toate variantele lotului?
+
 ## Corpus Minimal Structural
 
 1. `fruct e copt.`
@@ -367,6 +393,45 @@ Verdict:
 3. Propoziția introduce un singur fenomen dominant?
 4. Timpul este scurt dacă nu este nevoie de precizie tehnică?
 5. A fost evitat un operator care nu transportă sens obligatoriu?
+
+## Lot Comparativ Intern pentru Forma Verbală Canonică
+
+Scop: alegerea actuală nu este tratată ca dogmă. Ea este comparată periodic cu
+alternative plauzibile pentru aceeași funcție de nucleu.
+
+1. sens țintă: `Eu merg la ora 9.`
+   variantă acceptată: `eu 9 mergea.`
+   alternativă respinsă: `eu 9 merge.`
+   motiv scurt: forma de prezent intră mai ușor în concurență cu lectura temporală locală și nu reduce clar costul de interpretare
+2. sens țintă: `Tu vezi filmul la 20:30.`
+   variantă acceptată: `tu 20:30 vedea @film.`
+   alternativă respinsă: `tu 20:30 a vedea @film.`
+   motiv scurt: infinitivul scade naturalețea la prima lectură și pare mai mult etichetă decât predicat executabil
+3. sens țintă: `Ei vin peste 3 ore.`
+   variantă acceptată: `ei 3H venea.`
+   alternativă respinsă: `ei 3H vine.`
+   motiv scurt: prezentul singular concurează mai tare cu acordul standard și destabilizează regula de aceeași formă pentru toate persoanele
+4. sens țintă: `Ana citește cartea la ora 8.`
+   variantă acceptată: `Ana 8 citea @carte.`
+   alternativă respinsă: `Ana 8 citi @carte.`
+   motiv scurt: forma scurtă de tip perfect simplu sau conjunctiv livresc nu este suficient de naturală pentru nucleul curent
+5. sens țintă: `Eu cer pâine peste 2 zile.`
+   variantă acceptată: `eu 2D cerea pâine.`
+   alternativă respinsă: `eu 2D cer pâine.`
+   motiv scurt: forma de prezent arată mai compactă, dar reintră în conflict cu reflexele standard de persoană și timp
+
+Verdict:
+
+- `acceptat pentru starea curentă`
+- motiv: forma canonică actuală rămâne imperfectă teoretic, dar încă bate alternativele testate la stabilitate de sistem și compatibilitate cu markerul temporal explicit
+
+## Control Rapid pentru Alegerea Formei Canonice
+
+1. Varianta alternativă reduce clar reziduul temporal fără să crească artificialitatea lecturii?
+2. Varianta alternativă păstrează aceeași formă pentru toate persoanele fără ambiguități noi?
+3. Markerul temporal rămâne purtătorul principal de timp și în varianta alternativă?
+4. Varianta alternativă rămâne suficient de naturală pentru un cititor român la prima lectură?
+5. Câștigul față de forma curentă este real, nu doar teoretic?
 
 ## Lot Minim de Promovare Verbală
 
