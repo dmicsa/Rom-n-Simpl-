@@ -24,9 +24,13 @@ Nucleul actual lucrează cu un set redus de decizii:
 - predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleul de bază
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - timpul uzual este parțial sau relativ; forma completă rămâne tehnică
+- pronumele numerotate rămân experimentale; nucleul folosește `eu`, `tu`, `el`, `ea`, `ei`
 - `@` marchează definitudinea, `#` marchează posesia
-- `&`, `|` și `^` acoperă doar legăturile minime `și`, `sau`, `XOR`
+- adjectivul pozitiv simplu rămâne nemarcat; `>` și `<` apar doar când gradul este explicit
+- `&`, `|` și `^` rămân experimentale; în nucleu se preferă descompunerea
+- negarea prefixată cu `!` rămâne experimentală; în nucleu, `!` păstrează doar rolul final exclamativ
 - propoziția cu subiect exprimat urmează ordinea stabilă `subiect + timp + predicat` sau `subiect + predicat`
+- nucleul preferă un buget operatorial mic în propoziția de test
 - relațiile indirecte rămân prepoziționale
 - frazele grele se descompun, iar `{}` rămâne pentru conținut raportat
 - corpusul separă nucleul obligatoriu de marginea experimentală
@@ -37,8 +41,8 @@ Nucleul actual lucrează cu un set redus de decizii:
 - verbele de bază sunt separate de un lexic verbal extins, care nu definește nucleul strict
 - un verb nou intră în nucleu doar după lot minim de promovare și motivare clară a deciziei
 - în starea actuală, lexicul verbal obligatoriu este înghețat
-- unele verbe extinse sunt deja testate prin parafrază: `a sta` cade ușor în nucleu prin copula locativă, în timp ce `a avea` și `a crede` rezistă mai clar
-- dintre testele actuale, `a avea`, `a crede`, `a face` și `a dormi` apar ca presiuni lexicale mai serioase, fără a fi promovate
+- unele verbe extinse sunt deja testate prin parafrază doar provizoriu: `a sta` pare mai ușor absorbabil prin copula locativă, în timp ce `a avea` și `a crede` par să reziste în probele actuale
+- dintre testele actuale, `a avea`, `a crede`, `a face` și `a dormi` rămân doar ipoteze de presiune lexicală, fără validare completă
 - se aplică regula `operator minim necesar`
 
 ## Fișiere

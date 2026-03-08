@@ -44,6 +44,78 @@ La nivel de proiectare, RomânăSimplă reușește deja patru lucruri importante
 
 Verdictul provizoriu pentru forma actuală este: **parțial reușit, dar încă prea încărcat pentru a fi numit simplificat în sens tare**.
 
+### 1.1 Scorare curentă pe aspecte urmărite
+
+Scorurile de mai jos sunt provizorii și folosesc scala `0.0` la `10.0`, unde
+`10.0` înseamnă rezultat foarte puternic pentru obiectivul urmărit, iar `0.0`
+înseamnă eșec complet.
+
+| Aspect urmărit | Scor | Motiv scurt |
+| :------------- | ---: | :---------- |
+| Compactitate | 7.6 | Nucleul rămâne compact și evită acum nu doar coordonarea explicită, ci și marcajele de grad redundante pe adjectivele pozitive simple. |
+| Precizie | 8.2 | Regulile separă mai curat gradul explicit de sensul lexical de bază, evitând supramarcarea adjectivelor pozitive simple. |
+| Simplitate | 7.7 | Nucleul cere acum mai puține convenții active simultan, iar adjectivele pozitive simple nu mai poartă operatori redundanți. |
+| Uniformitate | 8.3 | Separarea dintre nucleu și marginea experimentală este mai coerentă, iar operatorii și pronumele de bază sunt mai bine fixați după scoaterea coordonării din nucleul strict. |
+| Naturalețe la prima lectură | 8.0 | Eliminarea negării prefixate, a pronumelor numerotate, a coordonării explicite și a gradului redundant apropie lectura de reflexele uzuale. |
+| Stabilitate lexicală | 7.3 | Separarea dintre lexic obligatoriu și lexic extins este bună, iar corpusul de bază exercită acum presiune mai clară asupra folosirii verbelor și relațiilor validate. |
+| Economie operatorială | 8.1 | Regula `operator minim necesar` este acum întărită și de eliminarea marcajului redundant de grad din predicatele adjectivale simple. |
+| Claritate sintactică | 8.3 | Schema preferată a propoziției simple este acum susținută nu doar comparativ, ci și prin predicate adjectivale mai curate și mai puțin încărcate. |
+| Acoperire formală | 8.4 | Separarea `EBNF Core` / `EBNF Extended` este mai curată după mutarea coordonării explicite, a negării prefixate și a lui `XOR` în stratul extins, iar evaluarea operatorilor respectă acum aceeași frontieră. |
+| Rigoare metodologică | 8.5 | Corpusul conține acum verdicte explicite pe loturi, exemple ambigue și exemple respinse, iar gradul lexical de bază și statutul operatorilor sunt separate mai clar de extensii. |
+| Validare pe corpus | 8.7 | Loturile comparative și corpusurile minimale pentru copulă, ordine, structură, relații prepoziționale, grad/aproximare și descompunere sunt acum susținute și de exemple adjectivale mai curate. |
+| Reproductibilitate | 8.6 | Verdictul pe exemple și separarea dintre acceptat, ambiguu, experimental și respins fac revizia mai repetabilă, iar gramatica de nucleu are mai puține suprapuneri operatoriale și mai puține confuzii de statut. |
+
+Subtotale:
+
+- `CPSU` (`Compactitate`, `Precizie`, `Simplitate`, `Uniformitate`) = `8.0`
+- `Lizibilitate` (`Naturalețe la prima lectură`, `Economie operatorială`, `Claritate sintactică`) = `8.1`
+- `Control lexical și formal` (`Stabilitate lexicală`, `Acoperire formală`, `Reproductibilitate`) = `8.2`
+- `Validare` (`Rigoare metodologică`, `Validare pe corpus`) = `8.7`
+
+Scor general provizoriu:
+
+- `8.5 / 10.0`
+
+### 1.2 Scorare curentă a operatorilor activi și de frontieră
+
+Grila de mai jos urmărește cinci criterii compacte: claritate semantică,
+ambiguitate de poziție, cost vizual, frecvență utilă și presiune de păstrare în
+nucleul strict. Coloana `Statut` separă explicit operatorii de nucleu de cei care
+rămân doar în marginea extinsă. Scorul final este orientativ și rămâne provizoriu.
+
+| Operator | Statut | Claritate | Ambiguitate controlată | Cost vizual | Utilitate frecventă | Scor final | Motiv scurt |
+| :------- | :----- | --------: | ---------------------: | ----------: | ------------------: | ---------: | :---------- |
+| `@` | nucleu | 8.9 | 9.2 | 7.9 | 8.4 | 8.6 | Foarte compact, foarte stabil și rar ambiguu. |
+| `#` | nucleu | 8.0 | 8.3 | 7.4 | 7.6 | 7.8 | Posesia rămâne clară și scurtă, deși simbolul cere puțin antrenament. |
+| `<` | nucleu | 7.8 | 8.6 | 7.8 | 6.8 | 7.8 | Gradul inferior este clar și ieftin, dar apare doar când gradul este explicit. |
+| `>` | nucleu | 7.9 | 8.7 | 7.8 | 6.9 | 7.9 | Simetric cu `<`, mai bine delimitat după scoaterea gradului redundant din adjectivele pozitive simple. |
+| `~` | nucleu | 8.1 | 8.7 | 7.5 | 7.4 | 7.9 | Aproximarea este bine fixată și ușor de citit în fața cantităților. |
+| `?` final | nucleu | 9.0 | 9.4 | 9.0 | 8.1 | 8.9 | Aproape gratuit cognitiv și deja complet familiar. |
+| `!` final | nucleu | 8.9 | 8.8 | 9.0 | 7.2 | 8.6 | Ca semn final rămâne foarte ieftin cognitiv după ce nu mai concurează cu un rol prefixal în nucleu. |
+| markerii temporali | nucleu | 8.4 | 8.6 | 7.3 | 8.7 | 8.3 | Sunt operatorii cei mai utili ai sistemului și rămân justificați chiar când apar frecvent. |
+| `&` | extins | 7.0 | 8.1 | 7.3 | 4.8 | 6.8 | Util doar în stratul extins, când descompunerea chiar pierde o relație importantă. |
+| `\|` | extins | 7.2 | 8.3 | 7.2 | 4.9 | 6.9 | Util doar în stratul extins, când alternativa trebuie păstrată într-o singură unitate. |
+
+Lectură rapidă:
+
+- operatorii cei mai solizi în nucleu rămân `@`, `?`, `!` final, markerii temporali, `~`, `<`, `>` și `#`
+- `^`, `{}` și negarea prefixată cu `!` trebuie ținute în marginea extinsă până la validare mai puternică
+- `&` și `|` apar acum explicit ca operatori extinși, nu ca pseudo-operatori de nucleu evaluați în aceeași categorie
+- bugetul operatorial întărește regula că nucleul bun nu este cel care marchează tot, ci cel care marchează minimul necesar
+- adjectivul pozitiv simplu nu mai poartă grad redundant; `>` și `<` rămân doar pentru grad explicit, ceea ce crește naturalețea și precizia
+- loturile cu verdict explicit și exemplele respinse fac evaluarea actuală mai greu de cosmetizat și deci mai credibilă
+- pragul de 10 perechi comparative pentru copulă, ordine și relații prepoziționale este acum atins în corpusul de bază
+- pronumele numerotate rămân interesante ca tehnică de compactare, dar nu mai apasă naturalitatea nucleului strict
+- corpusurile minimale pentru copulă, ordine și structură sunt acum complete pentru nucleul curent și pot servi drept bază repetabilă de control
+- corpusurile minimale pentru relații prepoziționale, grad/aproximare și descompunere sunt și ele complete pentru nucleul curent, ceea ce întărește controlul local al regulilor
+
+Interpretare scurtă:
+
+- peste `8.0`: foarte bine fixat și defensabil academic
+- între `7.0` și `7.9`: bun, dar cu câteva zone încă instabile
+- între `6.0` și `6.9`: promițător, dar încă insuficient consolidat
+- sub `6.0`: prea fragil pentru a susține încă pretenții tari
+
 ---
 
 ## 2. Ce funcționează deja bine
@@ -184,6 +256,12 @@ formal, dar încă fragile semantic.
 În schimb, dacă și gradul, și aproximarea, și nested, și posesia, și timpul sunt
 toate vizibile în aceeași propoziție, sarcina vizuală crește repede.
 
+În starea actuală, `!` prefix a fost scos din nucleul strict și mutat în zona
+experimentală. Aceasta este o corecție bună: reduce ambiguitatea, repară
+disciplina dintre nucleu și extensii și face scorul de lizibilitate mai onest.
+Economia de simbol rămâne interesantă, dar nu mai este plătită de cititorul
+care vrea doar forma de bază a sistemului.
+
 ### 3.6 Propoziția simplă nu are încă o schemă preferată suficient de strictă
 
 RomânăSimplă are deja multe decizii locale bune, dar încă nu fixează destul de
@@ -212,6 +290,27 @@ disciplină și corpus controlat, această zonă nu poate rămâne implicită.
 În plus, atomi frecvenți precum `asta` sau prepoziții deja active în corpus nu
 pot rămâne doar intuiți. Dacă apar în exemple, trebuie să aibă statut lexical
 public, altfel formalizarea promite mai mult decât execută.
+
+### 3.9 Probele actuale de parafrază sunt utile, dar încă prea slabe pentru concluzii tari
+
+Revizia recentă a introdus o direcție bună: înainte de promovarea unui verb din
+stratul extins, se testează mai întâi o parafrază simplă deja validată în nucleu.
+Problema este că execuția actuală nu îndeplinește încă propriul standard declarat.
+
+Lotul minim cere cel puțin trei exemple scurte și distincte, plus o pereche
+comparativă `RO/SR`. Probele curente folosesc însă, în practică, câte o singură
+substituție orientativă pentru fiecare verb. În această stare, ele pot susține
+ipoteze de lucru, dar nu încă ierarhii lexicale sau concluzii generale.
+
+Mai mult, unele parafraze testate schimbă prea mult tipul de sens:
+
+- posesia este testată printr-o propoziție locativă
+- credința este testată printr-un verb de enunț
+- producerea este testată printr-un verb de transfer
+- somnul este testat prin localizare
+
+Aceste eșecuri arată că parafrazele alese sunt slabe, dar nu demonstrează încă,
+în sens strict, că verbul testat rezistă tuturor parafrazelor simple de nucleu.
 
 ---
 
@@ -280,8 +379,8 @@ Avantaj:
 Stare:
 
 - de aplicat ca regulă permanentă pentru orice extindere viitoare a nucleului verbal
-- primele probe de parafrază confirmă deja o diferență utilă: unele verbe extinse pot fi ținute jos prin rescriere simplă, iar altele rezistă și devin candidați mai serioși pentru discuție viitoare
-- candidaturile cele mai puternice identificate până acum sunt `a avea`, `a crede`, `a face` și `a dormi`, tocmai pentru că parafraza de nucleu rămâne slabă sau artificială
+- primele probe de parafrază oferă doar observații provizorii și nu satisfac încă lotul minim complet
+- verbe precum `a avea`, `a crede`, `a face` și `a dormi` rămân doar ipoteze de presiune lexicală, nu candidaturi validate metodologic
 
 ### 4.2a Reformularea onestă a formei verbale canonice
 
@@ -325,7 +424,7 @@ Stare:
 Propunere:
 
 - `eu`, `tu`, `el`, `ea`, `ei` să fie formele standard pentru singular sau grup nespecificat contextual
-- forma numerică să apară doar când numărul este explicit relevant: `eu5`, `tu3`, `ei10`
+- forma numerică să rămână experimentală până la un lot separat care arată că avantajul de compactitate compensează costul de lectură
 
 Avantaj:
 
@@ -333,8 +432,9 @@ Avantaj:
 - păstrează expresivitatea când numărul contează
 - apropie sistemul de intuiția naturală a cititorului
 
-Această soluție păstrează ideea bună a pronumelor numerotate, dar o face mai
-puțin invazivă.
+Stare:
+
+- aplicat: pronumele numerotate au ieșit din nucleul strict și au rămas în marginea experimentală
 
 ### 4.4 Reducerea folosirii nested la un set strict de cazuri
 
@@ -377,7 +477,25 @@ Avantaj:
 - face corpusul mai fidel și mai curat
 - forțează o disciplină bună în proiectare
 
-Această regulă ar trebui să devină principiu general al versiunii `0.2`.
+Această regulă este acum mai puternică dacă este dublată de un buget operatorial
+explicit pentru propoziția de nucleu.
+
+### 4.6 bis Buget operatorial pentru nucleul de test
+
+Propunere:
+
+- propoziția de test din nucleul strict să prefere cel mult două marcaje vizibile, fără a număra markerul temporal și semnul final
+- dacă un exemplu cere mai mult de două marcaje, el trebuie justificat clar sau mutat în marginea experimentală
+
+Avantaj:
+
+- reduce densitatea grafică exact acolo unde citirea trebuie să fie cea mai ușoară
+- face regula `operator minim necesar` verificabilă, nu doar declarativă
+- crește comparabilitatea dintre exemple
+
+Stare:
+
+- aplicat în specificație și corpusul de nucleu
 
 ### 4.7 Regula „maxim un fenomen nou per propoziție de test”
 
@@ -396,8 +514,7 @@ Avantaj:
 
 Propunere:
 
-- `&` să fie folosit doar pentru acumulare explicită
-- `|` să fie folosit doar pentru alternativă simplă
+- `&` și `|` să iasă din nucleul strict și să rămână disponibile doar în stratul extins
 - `^` să fie păstrat strict pentru `XOR`, numai când exclusivitatea contează efectiv
 - dacă aceeași relație poate fi redată mai clar prin două propoziții, descompunerea rămâne preferată
 
@@ -510,7 +627,7 @@ Avantaj:
 
 Stare:
 
-- aplicat în corpusul de bază; trebuie extins cu mai multe perechi
+- aplicat în corpusul de bază; loturile centrale pentru copulă, ordine și relații prepoziționale au atins câte 10 perechi, iar corpusurile minimale pentru copulă, ordine, relații prepoziționale, grad/aproximare și descompunere au atins câte 10 exemple și trebuie acum doar menținute și revalidate periodic
 
 ---
 
@@ -526,7 +643,7 @@ De făcut:
 - verificarea nucleului astfel încât fiecare verb folosit să apară în lexicul verbal obligatoriu
 - păstrarea verbelor suplimentare numai în lexicul verbal extins până la promovare explicită
 - testarea unei parafraze mai simple înainte de orice promovare lexicală
-- notarea explicită a verbelor extinse care rezistă parafrazei simple
+- notarea explicită a verbelor extinse care par să reziste parafrazei simple, fără a transforma prematur observația în verdict
 - definirea unui lot minim obligatoriu pentru promovarea din extins în nucleu
 - eliminarea tuturor variantelor concurente din exemple
 - stabilizarea lui `a fi -> e` ca excepție controlată și naturală pentru predicatele simple de nucleu
@@ -553,7 +670,7 @@ De făcut:
 De făcut:
 
 - aplicarea regulii „operator minim necesar”
-- fixarea coerentă a lui `&`, `|` și `^` în nucleul activ
+- menținerea clară a lui `&`, `|` și `^` în marginea extinsă, fără recul în nucleul activ
 - limitarea nested la cazuri strict justificate
 - descompunerea preferențială a frazelor complexe
 
@@ -572,6 +689,7 @@ De făcut:
 - delimitarea clară a nucleului obligatoriu față de marginea experimentală
 - trecerea tuturor exemplelor noi prin protocolul compact înainte de a intra în nucleu
 - păstrarea combinațiilor dense numai în zona experimentală până la validare
+- păstrarea unui mini-lot de exemple ambigue și respinse pentru fiecare familie sensibilă de reguli
 
 ### Prioritatea 7: separarea gramaticii formale în `Core` și `Extended`
 
@@ -593,7 +711,7 @@ De făcut:
 
 De făcut:
 
-- extinderea perechilor comparative RO/SR pentru copulă, ordine și relații prepoziționale
+- menținerea și revalidarea periodică a perechilor comparative RO/SR pentru copulă, ordine și relații prepoziționale
 - separarea evaluării de naturalitate de evaluarea de regularitate pur formală
 - verificarea periodică a propozițiilor reduse pentru a nu reintra elipsa contextuală în nucleul strict
 
@@ -619,6 +737,8 @@ recomandă măsurarea explicită a următoarelor:
 - rata de propoziții care necesită explicație metalingvistică
 - timpul de citire comparativ pentru cititori noi
 - timpul de învățare pentru fiecare operator nou
+- rata de propoziții de nucleu care respectă bugetul operatorial
+- rata de propoziții mutate corect din nucleu în marginea experimentală după controlul de lizibilitate
 
 Pragul util pentru nucleul actual ar trebui să fie nu doar „mai regulat”, ci și „mai ușor
 de citit la prima vedere”.
@@ -640,6 +760,10 @@ Pentru fiecare categorie trebuie păstrate separat:
 - exemple respinse
 
 Acest lucru este necesar pentru a evita validarea prin selecție optimistă.
+
+Stare curentă:
+
+- aplicat pentru copulă, ordine și relații prepoziționale în corpusul de bază
 
 Control rapid pentru verb:
 
@@ -693,10 +817,11 @@ Control rapid pentru timp:
 Control rapid pentru structură:
 
 1. Operatorul structural este necesar pentru sens și nu doar decorativ?
-2. `?` și `!` sunt suficiente fără dublare inutilă?
-3. `<`, `>`, `~`, `&`, `|` și `^` sunt folosite economic?
-4. `{}` apare doar în conținut raportat?
-5. O propoziție complexă ar fi mai clară dacă ar fi descompusă sau dacă ar folosi copula `e`?
+2. Propoziția respectă bugetul operatorial de nucleu?
+3. `?` și `!` sunt suficiente fără dublare inutilă?
+4. `<`, `>`, `~`, `?` și `!` sunt folosite economic în nucleu, iar `&` și `|` rămân în extins?
+5. `{}` apare doar în conținut raportat?
+6. O propoziție complexă ar fi mai clară dacă ar fi descompusă sau dacă ar folosi copula `e`?
 
 Control rapid pentru ordine și economie:
 
@@ -743,6 +868,7 @@ toate condițiile de mai jos:
 - lexicul verbal obligatoriu rămâne clar mai mic decât lexicul verbal extins
 - fiecare promovare lexicală este justificată prin lot minim dedicat și motivare clară a deciziei
 - fiecare promovare lexicală arată explicit de ce parafraza mai simplă a fost respinsă
+- simplele probe orientative de parafrază nu sunt prezentate ca verdict lexical înainte de completarea lotului minim
 - starea curentă nu introduce promovări lexicale tacite după înghețarea nucleului verbal
 - copula `e` este validată printr-un lot minim copulativ separat
 - propoziția redusă din nucleu este limitată la impersonale reale
@@ -750,7 +876,7 @@ toate condițiile de mai jos:
 - corpusul de test separă clar fenomenele simple de fenomenele combinate
 - regulile de fidelitate nu permit inventarea de informație în translația exactă
 - nested este rar și justificat
-- `&`, `|` și `^` sunt folosite coerent, rar și numai cu funcțiile fixe `și`, `sau`, `XOR`
+- `&`, `|` și `^` rămân în marginea extinsă, sunt folosite coerent și nu revin tacit în nucleul strict
 - copula `e` este forma preferată în predicatele nominale, adjectivale și locative de nucleu
 - propoziția simplă are o ordine executabilă și stabilă în corpusul de bază
 - forma nemarcată rămâne soluția implicită acolo unde contrastul nu cere marcaj

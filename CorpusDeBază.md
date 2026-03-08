@@ -29,7 +29,7 @@ Fără marker temporal explicit, schema se reduce la:
 Exemple:
 
 - `Ana e aici.`
-- `@casă e >mare.`
+- `@casă e mare.`
 
 Propoziția fără subiect explicit rămâne permisă doar pentru impersonale reale.
 
@@ -55,8 +55,8 @@ RO: `Tu vezi filmul.`
 SR: `tu vedea @film.`
 
 **3**
-RO: `Noi cinci plecăm.`
-SR: `eu5 pleca.`
+RO: `Ana intră în sală.`
+SR: `Ana intra în sală.`
 
 **4**
 RO: `Ana citește.`
@@ -76,7 +76,7 @@ SR: `3cal intra.`
 
 **8**
 RO: `Casa este mare.`
-SR: `@casă e >mare.`
+SR: `@casă e mare.`
 
 **9**
 RO: `Plouă. Noi rămânem acasă.`
@@ -94,12 +94,12 @@ SR: `ei ajungea.`
 
 1. timp parțial
 2. definitudine
-3. pronume numerotat
+3. relație prepozițională locativă
 4. verb stabil
 5. aproximare nominală
 6. posesie plus locativ
 7. cardinalitate nominală
-8. predicat adjectival cu grad
+8. predicat adjectival simplu
 9. descompunere
 10. adverb de mod
 11. verb stabil simplu
@@ -115,17 +115,18 @@ SR: `ei ajungea.`
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - lexicul verbal obligatoriu este explicit; forma canonică nu se deduce automat din infinitiv
 - lexicul verbal extins nu definește nucleul și nu intră automat în loturile obligatorii
-- numărul la pronume apare doar când este relevant
+- pronumele numerotate rămân experimentale
 - singularul este baza pentru substantiv
 - `@` se adaugă doar când definitudinea trebuie exprimată clar
 - `#` marchează posesia
-- `&` marchează `și`, `|` marchează `sau`, iar `^` marchează `XOR`
+- `&`, `|` și `^` rămân experimentale; în nucleu se preferă descompunerea
 - relațiile indirecte simple rămân prepoziționale: `la`, `din`, `cu`, `pentru`, `pe`
 - adjectivele stau după substantiv
 - adverbele scurte stau după verb
 - `{}` este rezervat pentru conținut raportat
 - fraza complicată se descompune când această formă este mai clară
 - se aplică regula `operator minim necesar`
+- în nucleul de test se preferă cel mult două marcaje vizibile, fără a număra markerul temporal și semnul final
 
 ## Timp
 
@@ -155,24 +156,44 @@ SR: `ei ajungea.`
 
 ## Corpus Minimal Structural
 
-1. `fruct <copt.`
-2. `@casă e >mare.`
+1. `fruct e copt.`
+2. `@casă e mare.`
 3. `eu vedea ~10pasăre.`
 4. `tu bea vin?`
 5. `Ana striga!`
 6. `ploua. eu rămânea acasă.`
 7. `ei venea târziu. sală e închisă.`
 8. `tu vorbea clar.`
-9. `Ana citea & tu vorbea.`
-10. `tu bea apă | tu bea lapte.`
+9. `Ana citea. tu vorbea.`
+10. `tu bea apă. tu bea lapte.`
 
 ## Control Rapid Structural
 
 1. Operatorul structural folosit este necesar pentru sens?
 2. Gradul sau aproximarea sunt marcate fără încărcare inutilă?
-3. `?` și `!` sunt suficiente fără forme duble?
-4. `&` și `|` apar doar când relația `și` sau `sau` nu poate fi lăsată implicit ori descompusă?
-5. Fraza poate fi descompusă mai clar în propoziții simple?
+3. Propoziția respectă bugetul operatorial de nucleu?
+4. `?` și `!` sunt suficiente fără forme duble?
+5. Descompunerea este preferată ori de câte ori poate înlocui o coordonare fără pierdere de sens obligatoriu?
+6. Fraza poate fi descompusă mai clar în propoziții simple?
+
+## Margine experimentală pentru operatori
+
+Aceste exemple nu intră în scorarea nucleului strict. Ele rămân utile pentru
+testare, dar nu definesc forma de bază a limbii în starea curentă.
+
+1. `eu !vedea @film.`
+2. `@casă e !mare.`
+3. `Ana citea & tu vorbea.`
+4. `tu bea apă | tu bea lapte.`
+5. `tu bea apă ^ tu bea lapte.`
+
+## Control Rapid pentru operatori experimentali
+
+1. Operatorul experimental aduce un câștig real de compactitate, nu doar o noutate grafică?
+2. Sensul rămâne recuperabil la prima lectură fără explicație suplimentară?
+3. Exemplul poate fi parafrazat mai simplu în nucleu fără pierdere majoră?
+4. Ambiguitatea vizuală rămâne controlată?
+5. Există deja cel puțin o pereche `RO/SR` dedicată pentru acest operator?
 
 ## Control Rapid Ordine
 
@@ -321,85 +342,96 @@ Condiții:
 5. promovarea reduce parafraze artificiale în nucleu
 6. după promovare, motivul deciziei este notat clar acolo unde regula sau corpusul se schimbă
 
-## Probe Curente de Parafrază pentru Verbe Extinse
+## Probe Provizorii de Parafrază pentru Verbe Extinse
 
-Scop: înainte de orice promovare, se verifică dacă un verb extins poate fi
+Scop: înainte de orice promovare, se verifică preliminar dacă un verb extins poate fi
 înlocuit acceptabil printr-o structură deja validată în nucleu.
+
+Limită metodologică:
+
+- secțiunea de mai jos conține doar observații provizorii
+- ea nu satisface încă lotul minim complet de promovare verbală
+- niciun verdict de aici nu trebuie citit ca validare lexicală definitivă
 
 **1. `a sta -> stătea`**
 
 - exemplu extins: `Ana stătea aici.`
 - parafrază de nucleu: `Ana e aici.`
-- verdict: parafrază suficientă pentru multe contexte locative simple
+- verdict provizoriu: parafrază promițătoare pentru contexte locative simple
 - motiv: pentru sensul de localizare stabilă, copula `e` acoperă mai ieftin și mai natural cazul de bază
 
 **2. `a pune -> punea`**
 
 - exemplu extins: `tu punea @carte aici.`
 - parafrază de nucleu: `tu dădea @carte aici.`
-- verdict: parafrază parțial suficientă; verbul rămâne extins
+- verdict provizoriu: parafrază parțial utilă; verbul rămâne extins
 - motiv: în unele contexte simple, `a da` poate acoperi mutarea, dar nu păstrează curat toate valorile lui `a pune`
 
 **3. `a avea -> avea`**
 
 - exemplu extins: `Ana avea @carte.`
 - parafrază de nucleu testată: `Ana#@carte e aici.`
-- verdict: parafrază insuficientă; verbul rămâne extins
+- verdict provizoriu: parafrază insuficientă în forma testată; verbul rămâne extins
 - motiv: posesia generală nu se reduce natural la o propoziție locativă fără pierdere de sens
 
 **4. `a crede -> credea`**
 
 - exemplu extins: `el credea asta.`
 - parafrază de nucleu testată: `el spunea asta.`
-- verdict: parafrază insuficientă; verbul rămâne extins
+- verdict provizoriu: parafrază insuficientă în forma testată; verbul rămâne extins
 - motiv: `a spune` exteriorizează enunțul, dar nu păstrează clar starea internă de credință
 
 **5. `a face -> făcea`**
 
 - exemplu extins: `ea făcea pâine.`
 - parafrază de nucleu testată: `ea dădea pâine.`
-- verdict: parafrază insuficientă; verbul rămâne extins
+- verdict provizoriu: parafrază insuficientă în forma testată; verbul rămâne extins
 - motiv: producerea sau realizarea nu este redată corect de `a da`
 
 **6. `a dormi -> dormea`**
 
 - exemplu extins: `ei dormea.`
 - parafrază de nucleu testată: `ei e acasă.`
-- verdict: parafrază insuficientă; verbul rămâne extins
+- verdict provizoriu: parafrază insuficientă în forma testată; verbul rămâne extins
 - motiv: starea de somn nu poate fi redusă onest la o simplă localizare sau stare copulativă
 
-Concluzie de lucru:
+Concluzie provizorie de lucru:
 
-1. `a sta` este adesea absorbabil prin copula locativă și nu cere promovare.
+1. `a sta` pare adesea absorbabil prin copula locativă, dar concluzia trebuie retestată pe lot complet.
 2. `a pune` are unele parafraze utile, dar încă nu suficient de curate pentru promovare.
-3. `a avea`, `a crede`, `a face` și `a dormi` rezistă parafrazei simple și rămân candidați mai puternici decât alte verbe extinse, fără a fi promovați automat.
+3. `a avea`, `a crede`, `a face` și `a dormi` par să reziste parafrazei simple în probele actuale, fără a deveni încă candidaturi validate.
 
-## Candidaturi Lexicale Mai Puternice
+## Ipoteze Lexicale de Retestat
 
-Ordine de atenție pentru testări viitoare, fără promovare automată:
+Ordine provizorie de atenție pentru testări viitoare, fără promovare automată:
 
 1. `a avea -> avea`
-   motiv: apare frecvent și rezistă parafrazei simple fără pierdere clară de sens
+   motiv provizoriu: apare frecvent și rezistă parafrazei simple testate până acum fără pierdere clară de sens
 2. `a crede -> credea`
-   motiv: starea internă nu este păstrată curat de verbele de nucleu deja active
+   motiv provizoriu: starea internă nu este păstrată curat de verbele de nucleu testate până acum
 3. `a face -> făcea`
-   motiv: nucleul redă slab ideea de producere sau realizare
+   motiv provizoriu: nucleul redă slab ideea de producere sau realizare în proba actuală
 4. `a dormi -> dormea`
-   motiv: starea de somn nu poate fi redusă onest la copulă sau localizare
+   motiv provizoriu: starea de somn nu poate fi redusă onest la copulă sau localizare în proba actuală
 
 Regulă de interpretare:
 
 - această listă nu promovează verbele de mai sus
+- această listă nu stabilește încă o ierarhie lexicală validată
 - această listă spune doar ce verbe merită retestate înaintea altora dacă apare presiune reală de corpus
 
 ## Corpus Minimal Copulativ
 
 1. `Ana e aici.`
-2. `@casă e >mare.`
+2. `@casă e mare.`
 3. `Ana#@carte e aici.`
 4. `eu 9 e aici.`
 5. `ei e în sală.`
-6. `@fruct e <copt.`
+6. `@fruct e copt.`
+7. `Maria e aici.`
+8. `@ușă e închisă.`
+9. `pâine e aici.`
+10. `@film e aici.`
 
 ## Corpus Minimal Ordine
 
@@ -409,17 +441,39 @@ Regulă de interpretare:
 4. `eu 9 e aici.`
 5. `ploua.`
 6. `ploua târziu.`
+7. `Ana 8 citea @carte.`
+8. `ei ajungea târziu.`
+9. `eu răspundea după.`
+10. `Ana privea @film.`
+
+## Verdict rapid pentru corpusurile minimale
+
+- corpusul minimal copulativ: `complet pentru nucleul curent`; cele 10 exemple acoperă locativ, adjectival și posesiv scurt
+- corpusul minimal de ordine: `complet pentru nucleul curent`; cele 10 exemple acoperă propoziții cu și fără marker temporal, plus impersonale reale
+- corpusul minimal structural: `complet pentru nucleul curent`; cele 10 exemple acoperă grad, aproximare, enunț, coordonare și descompunere
 
 ## Corpus Comparativ Copulativ
 
 1. RO: `Ana este aici.`
    SR: `Ana e aici.`
 2. RO: `Casa este mare.`
-   SR: `@casă e >mare.`
+   SR: `@casă e mare.`
 3. RO: `Cartea Anei este aici.`
    SR: `Ana#@carte e aici.`
 4. RO: `Ei sunt în sală.`
    SR: `ei e în sală.`
+5. RO: `Fructul este copt.`
+   SR: `@fruct e copt.`
+6. RO: `Sala este închisă.`
+   SR: `sală e închisă.`
+7. RO: `Maria este aici.`
+   SR: `Maria e aici.`
+8. RO: `Ușa este închisă.`
+   SR: `@ușă e închisă.`
+9. RO: `Pâinea este aici.`
+   SR: `pâine e aici.`
+10. RO: `Filmul este aici.`
+   SR: `@film e aici.`
 
 ## Corpus Comparativ Ordine
 
@@ -431,6 +485,18 @@ Regulă de interpretare:
    SR: `Ana e aici.`
 4. RO: `Plouă.`
    SR: `ploua.`
+5. RO: `Ana citește cartea la ora 8.`
+   SR: `Ana 8 citea @carte.`
+6. RO: `Ei ajung târziu.`
+   SR: `ei ajungea târziu.`
+7. RO: `Eu văd pasărea.`
+   SR: `eu vedea @pasăre.`
+8. RO: `Tu întrebi asta?`
+   SR: `tu întreba asta?`
+9. RO: `Eu răspund după.`
+   SR: `eu răspundea după.`
+10. RO: `Ana privește filmul.`
+   SR: `Ana privea @film.`
 
 ## Corpus Comparativ Relații Prepoziționale
 
@@ -442,6 +508,57 @@ Regulă de interpretare:
    SR: `tu mergea cu Ana.`
 4. RO: `Ei sunt în sală.`
    SR: `ei e în sală.`
+5. RO: `Ana intră în sală.`
+   SR: `Ana intra în sală.`
+6. RO: `Eu cer pâine pentru Ana.`
+   SR: `eu cerea pâine pentru Ana.`
+7. RO: `Tu intri în sală.`
+   SR: `tu intra în sală.`
+8. RO: `Ana vine din sat.`
+   SR: `Ana venea din sat.`
+9. RO: `Eu rămân cu Ana.`
+   SR: `eu rămânea cu Ana.`
+10. RO: `Ei cer pâine pentru Ana.`
+   SR: `ei cerea pâine pentru Ana.`
+
+## Verdict rapid pentru loturile comparative
+
+- lotul copulativ: `acceptat în nucleu`; cele zece perechi de mai sus susțin folosirea lui `e` ca regulă de bază pentru predicate locative, adjectivale și posesive simple
+- lotul de ordine: `acceptat în nucleu`; cele zece perechi susțin schema `subiect + timp + predicat` sau `subiect + predicat`
+- lotul prepozițional: `acceptat în nucleu`; cele zece perechi susțin păstrarea relațiilor indirecte prin prepoziții scurte
+
+## Exemple ambigue de urmărit
+
+Aceste exemple nu sunt respinse, dar cer atenție la lectură și nu trebuie folosite
+ca argument unic pentru o regulă nouă.
+
+1. RO: `Noi cinci plecăm.`
+   SR: `eu5 pleca.`
+   verdict: `ambiguu`
+   motiv: compact, dar mai puțin natural la prima lectură decât restul nucleului curent
+2. RO: `Cartea Anei este aici.`
+   SR: `Ana#@carte e aici.`
+   verdict: `ambiguu controlat`
+   motiv: propoziția este validă, dar combină posesie, definitudine și locativ într-o singură unitate
+
+## Exemple respinse din nucleul strict
+
+1. RO: `Eu nu văd filmul.`
+   SR respins: `eu !vedea @film.`
+   verdict: `respins din nucleu; păstrat experimental`
+   motiv: negarea prefixată cu `!` rămâne prea ambiguă pentru forma de bază
+2. RO: `Tu bei apă sau lapte, dar nu ambele.`
+   SR respins: `tu bea apă ^ tu bea lapte.`
+   verdict: `respins din nucleu; păstrat experimental`
+   motiv: `XOR` nu este suficient de frecvent pentru a justifica intrarea în nucleul strict
+3. RO: `Eu merg la magazin la ora 9.`
+   SR respins: `mergea eu 9 la magazin.`
+   verdict: `respins`
+   motiv: rupe ordinea executabilă a nucleului fără câștig real de claritate
+4. RO: `Ana este aici.`
+   SR respins: `Ana era aici.`
+   verdict: `respins`
+   motiv: reintroduce o flexiune concurentă exact acolo unde nucleul a fixat copula `e`
 
 ## Control Rapid Copulativ
 
@@ -464,8 +581,16 @@ Regulă de interpretare:
 1. `eu = eu`
 2. `tu = tu`
 3. `ei = grup mixt sau nespecificat`
-4. `eu5 = noi cinci`
-5. `tu3 = voi trei`
+
+## Pronume numerotate experimentale
+
+1. `eu5 = noi cinci`
+2. `tu3 = voi trei`
+
+Verdict:
+
+- `păstrate experimental`
+- motiv: aduc compactitate reală, dar încă pierd prea mult la naturalețe pentru nucleul strict
 
 ## Corpus Minimal Nominal
 
@@ -477,8 +602,8 @@ Regulă de interpretare:
 6. `@*pasăre.`
 7. `Ana#@carte.`
 8. `eu#carte.`
-9. `fruct <copt.`
-10. `@casă e >mare.`
+9. `fruct copt.`
+10. `@casă e mare.`
 11. `eu dădea @carte la Ana.`
 12. `ei venea din sat.`
 13. `tu mergea cu Ana.`
@@ -511,20 +636,52 @@ Regulă de interpretare:
 3. `eu dădea @carte la Ana.`
 4. `ei venea din sat.`
 5. `tu mergea cu Ana.`
+6. `Ana intra în sală.`
+7. `eu cerea pâine pentru Ana.`
+8. `tu intra în sală.`
+9. `Ana venea din sat.`
+10. `eu rămânea cu Ana.`
+
+Verdict:
+
+- `complet pentru nucleul curent`
+- motiv: cele 10 exemple acoperă posesia și setul scurt de relații prepoziționale active fără operatori noi
 
 ## Adjective, adverbe și grad
 
 1. `@casă mare.`
-2. `@casă >mare.`
-3. `fruct <copt.`
+2. `@casă e >mare.`
+3. `fruct e <copt.`
 4. `eu vedea clar @film.`
 5. `tu mergea repede.`
+6. `@ușă închisă.`
+7. `@film e >clar.`
+8. `eu vedea ~2cal.`
+9. `Ana vorbea clar.`
+10. `ei ajungea repede.`
+
+Verdict:
+
+- `complet pentru nucleul curent`
+- motiv: cele 10 exemple acoperă adjectiv simplu, grad, aproximare și adverbe scurte fără densitate excesivă
 
 ## Descompunere în nucleu
 
 1. `ploua. eu rămânea acasă.`
 2. `Ana întreba asta. eu răspundea după.`
 3. `ei venea târziu. sală e închisă.`
+4. `Ana citea. eu vorbea după.`
+5. `tu întreba asta. Ana răspundea.`
+6. `ploua. drum e gol.`
+7. `ei pleca. sat e liniștit.`
+8. `Ana intra în sală. eu rămânea afară.`
+9. `tu vedea @film. eu vorbea după.`
+10. `frig. eu rămânea acasă.`
+
+Verdict:
+
+- `complet pentru nucleul curent`
+- motiv: cele 10 exemple arată că descompunerea poate rămâne forma preferată pentru informație multiplă fără a încărca o singură propoziție sau a cere coordonare explicită
 
 ## Margine experimentală
 
@@ -536,6 +693,10 @@ Exemplele de mai jos nu ies din proiect, dar nu mai definesc reflexul principal 
 **1**
 RO: `El spune că tu bei vin.`
 SR: `el spunea {tu bea vin.}`
+
+**2**
+RO: `Noi cinci plecăm.`
+SR: `eu5 pleca.`
 
 ### Temporal tehnic
 
@@ -563,17 +724,17 @@ SR: `el spunea {tu bea vin.}`
 
 - 10 propoziții minimale pentru timp
 - 10 propoziții minimale pentru verb
-- 10 propoziții minimale pentru ordine
+- menținere și revalidare periodică pentru cele 10 propoziții minimale de ordine
 - 10 propoziții minimale pentru număr
 - 10 propoziții minimale pentru definitudine
 - 10 propoziții minimale pentru posesie
-- 10 propoziții minimale pentru copula `e`
+- menținere și revalidare periodică pentru cele 10 propoziții minimale ale copulei `e`
 - 10 propoziții minimale pentru relații prepoziționale
-- 10 perechi comparative RO/SR pentru copulă `e`
-- 10 perechi comparative RO/SR pentru ordine
-- 10 perechi comparative RO/SR pentru relații prepoziționale
+- menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale copulei `e`
+- menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale ordinii
+- menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale relațiilor prepoziționale
 - 10 propoziții minimale pentru grad și aproximare
-- 10 propoziții minimale pentru `&`, `|` și `^`
+- menținere și revalidare periodică pentru exemplele experimentale cu `&`, `|` și `^`
 - 10 propoziții minimale pentru nested
 - 10 exemple unde descompunerea este mai clară decât fraza unică
 - 10 propoziții noi folosind doar verbe din lexicul verbal activ
