@@ -1,12 +1,16 @@
 # RomânăSimplă
 
-RomânăSimplă este un proiect de simplificare formală a limbii române construit
-în jurul a patru criterii obligatorii: `Compact`, `Precis`, `Simplu`, `Uniform`.
-O regulă nouă este acceptată doar dacă trece acest filtru.
+**Statut:** prezentare canonică scurtă  
+**Rol curent:** sinteză rapidă a nucleului, a documentelor principale și a modului de lucru
+
+RomânăSimplă este un cadru de lucru pentru o simplificare formală a limbii
+române construită în jurul filtrului `Compact`, `Precis`, `Simplu`, `Uniform`.
+Proiectul tratează limba ca sistem testabil: regulile intră în nucleu doar dacă
+pot fi definite clar, comparate pe corpus și revizuite consecvent.
 
 ## Scop
 
-Scopul curent nu este doar regularizarea, ci obținerea unui nucleu care:
+Scopul curent este un nucleu mic și coerent care:
 
 - scrie puțin și clar
 - nu inventează informație absentă în sursă
@@ -18,7 +22,7 @@ Scopul curent nu este doar regularizarea, ci obținerea unui nucleu care:
 Nucleul actual lucrează cu un set redus de decizii:
 
 - timpul apare înaintea verbului
-- forma verbală este stabilă, nu depinde de persoană sau număr și este tratată ca formă canonică fixă într-un lexic verbal obligatoriu mic
+- forma verbală este stabilă, controlată printr-un lexic verbal obligatoriu mic și tratată ca formă canonică fixă
 - această formă păstrează reziduu temporal istoric; timpul principal se citește din markerul temporal sau din context
 - invarianța verbală este testată separat: schimbarea markerului temporal nu cere schimbarea formei canonice de nucleu
 - forma canonică actuală este comparată și cu alternative plauzibile; ea rămâne convenția curentă pentru că alternativele testate nu reduc încă suficient costul total
@@ -26,17 +30,14 @@ Nucleul actual lucrează cu un set redus de decizii:
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - timpul uzual este parțial sau relativ; forma completă este tehnică
 - pronumele numerotate rămân experimentale; nucleul folosește `eu`, `tu`, `el`, `ea`, `ei`
-- substantivul folosește singularul ca bază
-- `@` marchează definitudinea numai când este necesară
+- `@` marchează definitudinea, `#` marchează posesia
 - adjectivul pozitiv simplu rămâne nemarcat; `>` și `<` apar doar când gradul este explicit
-- `#` marchează posesia
 - `&`, `|` și `^` rămân experimentale; în nucleu se preferă descompunerea
 - negarea prefixată cu `!` rămâne experimentală; în nucleu, `!` păstrează rolul final exclamativ
 - propoziția cu subiect exprimat urmează ordinea stabilă `subiect + timp + predicat` sau `subiect + predicat`
 - nucleul preferă un buget operatorial mic în propoziția de test
-- relațiile indirecte rămân exprimate cu un set mic de prepoziții uzuale
-- adjectivele stau după substantiv
-- frazele complicate se descompun, iar `{}` rămâne pentru conținut raportat
+- relațiile indirecte rămân prepoziționale
+- frazele grele se descompun, iar `{}` rămâne pentru conținut raportat
 - corpusul separă nucleul obligatoriu de marginea experimentală
 - gramatica formală separă `EBNF Core` de `EBNF Extended`
 - `EBNF Core` acoperă acum explicit și propozițiile nominale scurte validate în corpus
@@ -50,22 +51,23 @@ Nucleul actual lucrează cu un set redus de decizii:
 - lexicul verbal extins a fost redus la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază
 - fiecare verb din lexicul verbal obligatoriu are acum acoperire minimală și comparativă explicită în corpus
 - cardinalitatea și definitudinea de bază au acum și ele loturi comparative explicite, nu doar corpusuri minimale
-- primele probe de parafrază arată doar provizoriu că nu toate verbele extinse merită promovare: unele par să cadă în structuri simple, altele nu
-- dintre verbele testate, `a avea`, `a crede`, `a face` și `a dormi` rămân doar ipoteze mai serioase decât restul stratului extins, nu concluzii validate
-- nucleul preferă operatorul minim necesar
+- unele verbe extinse sunt deja testate prin parafrază doar provizoriu: `a sta` pare mai ușor absorbabil prin copula locativă, în timp ce `a avea` și `a crede` par să reziste în probele actuale
+- dintre testele actuale, `a avea`, `a crede`, `a face` și `a dormi` rămân doar ipoteze de presiune lexicală, fără validare completă
+- se aplică regula `operator minim necesar`
 
 ## Fișiere
 
-- `SpecificațieRomânăSimplă.md` conține regulile active, `EBNF Core`, `EBNF Extended` și apendicele lexical minim.
-- `CorpusDeBază.md` conține exemplele de test.
-- `EvaluareAcademică.md` conține analiza critică și criteriile de acceptare.
+- `SpecificațieRomânăSimplă.md` conține regulile active ale nucleului, `EBNF Core`, `EBNF Extended` și apendicele lexical minim.
+- `CorpusDeBază.md` conține exemplele de test și protocolul scurt de revizie.
+- `EvaluareAcademică.md` conține analiza critică, prioritățile și standardul de acceptare.
+- `Prezentare.md` rezumă proiectul în forma cea mai scurtă.
 
 ## Flux de lucru recomandat
 
 1. Se fixează sursa și fenomenul dominant.
 2. Se scrie forma minimă în `SR`, fără informație adăugată.
-3. Se verifică verbul, timpul și operatorii prin protocolul compact de revizie.
-4. Se decide dacă exemplul intră în nucleul obligatoriu sau rămâne în marginea experimentală.
+3. Se verifică verbul, timpul, ordinea și operatorii prin protocolul compact de revizie.
+4. Se decide dacă exemplul intră în nucleul obligatoriu sau rămâne experimental.
 5. Dacă verbul este extins, se rulează lotul minim de promovare înainte de orice mutare în nucleu.
 6. Se compară direct `RO` și `SR` pentru fidelitate și citibilitate.
 7. Abia apoi exemplul sau regula intră în corpusul extins sau urcă în nucleul obligatoriu.

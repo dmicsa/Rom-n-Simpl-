@@ -2,7 +2,8 @@
 
 > Ciornă de lucru pentru o variantă compactă, precisă, simplă și uniformă a limbii române.
 
-**Autor:** schelă de lucru inițială  
+**Statut:** specificație canonică de lucru  
+**Rol curent:** definirea regulilor active, a gramaticii formale și a lexicului controlat pentru nucleul curent  
 **Dată:** martie 2026
 
 ---

@@ -1,5 +1,8 @@
 # Corpusul de Bază RomânăSimplă
 
+**Statut:** corpus canonic validat pentru nucleul curent  
+**Rol curent:** loturi validate, controale rapide și perechi comparative `RO/SR` pentru testarea regulilor active
+
 Acest corpus este aliniat la filtrul `Compact, Precis, Simplu, Uniform`.
 Exemplele de bază evită supraîncărcarea și preferă un singur fenomen dominant pe
 propoziție.

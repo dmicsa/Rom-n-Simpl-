@@ -1,6 +1,7 @@
 # Evaluare Academică pentru RomânăSimplă
 
-**Stare evaluare:** revizie critică de lucru  
+**Statut:** evaluare canonică de lucru  
+**Rol curent:** analiză critică a nucleului, a limitelor teoretice și a priorităților de evoluție  
 **Dată:** martie 2026
 
 ---

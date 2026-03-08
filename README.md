@@ -1,5 +1,8 @@
 # RomânăSimplă
 
+**Statut:** index canonic al repo-ului  
+**Rol curent:** orientare rapidă pentru structura proiectului și pentru relația dintre documentele principale
+
 RomânăSimplă este un cadru de lucru pentru o simplificare formală a limbii
 române construită în jurul filtrului `Compact`, `Precis`, `Simplu`, `Uniform`.
 Proiectul tratează limba ca sistem testabil: regulile intră în nucleu doar dacă
@@ -58,6 +61,29 @@ Nucleul actual lucrează cu un set redus de decizii:
 - `CorpusDeBază.md` conține exemplele de test și protocolul scurt de revizie.
 - `EvaluareAcademică.md` conține analiza critică, prioritățile și standardul de acceptare.
 - `Prezentare.md` rezumă proiectul în forma cea mai scurtă.
+
+## Statutul documentelor
+
+Pentru lizibilitate academică, repo-ul trebuie citit cu o distincție clară între
+documentele canonice curente și urmele istorice de proiectare.
+
+Convenția editorială pentru fișierele controlate manual este `PascalCase`.
+Formele cu underscore sau kebab-case nu mai sunt folosite în documentația activă.
+
+Documente canonice curente:
+
+- `SpecificațieRomânăSimplă.md`
+- `CorpusDeBază.md`
+- `EvaluareAcademică.md`
+- `Prezentare.md`
+
+Documente istorice păstrate pentru trasabilitate:
+
+- `AcademicReview.md` păstrează schița timpurie a întrebărilor de audit și a riscurilor inițiale
+- `CorpusBaseline.md` păstrează primul lot brut de propoziții-sursă, anterior corpusului validat
+
+Această separare este intenționată: documentele istorice rămân utile pentru a
+arăta evoluția proiectului, dar nu trebuie confundate cu starea canonică actuală.
 
 ## Flux de lucru recomandat
 

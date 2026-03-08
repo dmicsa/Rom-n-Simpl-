@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luceafărul, primele 6 strofe, side by side</title>
+  <style>
+    :root {
+      --bg: #f5f1e8;
+      --panel: #fffaf0;
+      --line: #c9baa5;
+      --text: #2f261d;
+      --muted: #6f6253;
+      --accent: #8a5a2b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 32px;
+      background: linear-gradient(180deg, #efe6d7 0%, var(--bg) 100%);
+      color: var(--text);
+      font: 16px/1.55 Georgia, "Times New Roman", serif;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: 0 12px 30px rgba(47, 38, 29, 0.08);
+    }
+
+    th,
+    td {
+      vertical-align: top;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+    }
+
+    th {
+      background: #ede1cf;
+      text-align: left;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .stanza-id {
+      width: 72px;
+      text-align: center;
+      font-weight: 700;
+      color: var(--accent);
+      background: #f3eadc;
+    }
+
+    .poem {
+      white-space: pre-line;
+    }
+
+    .original {
+      font-style: italic;
+    }
+
+    .sr {
+      font-family: "Georgia", "Times New Roman", serif;
+    }
+
+    @media (max-width: 800px) {
+      body {
+        padding: 16px;
+      }
+
+      table,
+      thead,
+      tbody,
+      tr,
+      th,
+      td {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 16px;
+        border: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      td {
+        border: none;
+        border-top: 1px solid var(--line);
+      }
+
+      td:first-child {
+        border-top: none;
+      }
+
+      .stanza-id {
+        width: auto;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Luceafărul, primele 6 strofe, side by side</h1>
+    <p>Coloana din dreapta folosește o versiune SR de lucru. Fiecare vers rămâne pe linia lui, iar între strofe există o separare clară prin rânduri distincte.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="stanza-id">Strofă</th>
+          <th>Original</th>
+          <th>SR</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="stanza-id">1</td>
+          <td class="poem original">A fost odată ca-n povești,
+A fost ca niciodată,
+Din rude mari împărătești,
+O prea frumoasă fată.</td>
+          <td class="poem sr">a fost odată ca în *poveste.
+a fost ca niciodată.
+din *rudă &gt;împărătesc,
+e o fată &gt;frumoasă.</td>
+        </tr>
+        <tr>
+          <td class="stanza-id">2</td>
+          <td class="poem original">Și era una la părinți
+Și mândră-n toate cele,
+Cum e Fecioara între sfinți
+Și luna între stele.</td>
+          <td class="poem sr">&amp; e una la *părinte.
+      &amp; mândră în toate cele,
+ea e ca Fecioara între *sfânt.
+&amp; luna între *stea.</td>
+        </tr>
+        <tr>
+          <td class="stanza-id">3</td>
+          <td class="poem original">Din umbra falnicelor bolți
+Ea pasul și-l îndreaptă
+Lângă fereastră, unde-n colț
+Luceafărul așteaptă.</td>
+          <td class="poem sr">din umbra de sub *boltă înaltă,
+ea își ducea pasul.
+la fereastră, unde în colț,
+Luceafărul așteaptă.</td>
+        </tr>
+        <tr>
+          <td class="stanza-id">4</td>
+          <td class="poem original">Privea în zare cum pe mări
+Răsare și străluce,
+Pe mișcătoarele cărări
+Corăbii negre duce.</td>
+          <td class="poem sr">ea privea în zare, pe *mare,
+cum el răsare și străluce.
+pe *cărare mișcătoare,
+el ducea *corabie neagră.</td>
+        </tr>
+        <tr>
+          <td class="stanza-id">5</td>
+          <td class="poem original">Îl vede azi, îl vede mâni,
+Astfel dorința-i gata;
+El iar, privind de săptămâni,
+Îi cade dragă fata.</td>
+          <td class="poem sr">ea vedea pe el. ea 1D vedea pe el.
+astfel, ea#dorință e gata.
+iar el o privea de săptămâni.
+fata îi cade dragă.</td>
+        </tr>
+        <tr>
+          <td class="stanza-id">6</td>
+          <td class="poem original">Cum ea pe coate-și răzima
+Visând ale ei tâmple,
+De dorul lui și inima
+Și sufletu-i se împle.</td>
+          <td class="poem sr">cum ea stătea pe *cot,
+        visând, cu ea#tâmplă,
+        de el#dor, ea#inimă,
+        și ea#suflet se umple.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
