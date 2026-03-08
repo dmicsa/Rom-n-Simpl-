@@ -1,8 +1,7 @@
 # Evaluare Academică pentru RomânăSimplă
 
 **Stare evaluare:** revizie critică de lucru  
-**Dată:** martie 2026  
-**Versiune evaluată:** `0.2.0-draft`
+**Dată:** martie 2026
 
 ---
 
@@ -21,7 +20,7 @@ translație.
 Concluzia acestei evaluări este dublă:
 
 - nucleul este promițător și merită continuat
-- versiunea următoare trebuie să reducă mai agresiv numărul de decizii active pe propoziție
+- pasul următor trebuie să reducă mai agresiv numărul de decizii active pe propoziție
 
 ---
 
@@ -36,14 +35,14 @@ La nivel de proiectare, RomânăSimplă reușește deja patru lucruri importante
 
 În schimb, proiectul rămâne încă vulnerabil în cinci puncte:
 
-- forma verbală canonică trebuie ținută strict în mini-lexicul activ
+- forma verbală canonică trebuie ținută strict într-un lexic verbal obligatoriu mic
 - copula trebuie ținută pe o soluție naturală și stabilă, fără a reintra în deriva temporală a lui `era`
 - forma completă `YYYY-MM-DD h:m:s` trebuie să rămână tehnică, nu uzuală
 - sistemul de operatori riscă să devină dens vizual
 - delimitarea dintre „traducere exactă” și „normalizare activă” trebuie păstrată strict
 - propozițiile nested trebuie folosite mai rar decât permit exemplele actuale
 
-Verdictul provizoriu pentru `0.2.0` este: **parțial reușit, dar încă prea încărcat pentru a fi numit simplificat în sens tare**.
+Verdictul provizoriu pentru forma actuală este: **parțial reușit, dar încă prea încărcat pentru a fi numit simplificat în sens tare**.
 
 ---
 
@@ -75,7 +74,7 @@ Beneficii reale:
 
 ### 2.3 Posesia prin `#`
 
-Sistemul `posesor#obiect` este suficient de transparent pentru prima versiune.
+Sistemul `posesor#obiect` este suficient de transparent pentru forma actuală.
 El reduce dependența de genitiv și păstrează linearitatea sintaxei.
 
 Beneficii reale:
@@ -129,10 +128,15 @@ controlat.
 Revizia curentă a corectat terminologia în documentele normative. De aici înainte
 rămân patru obligații de menținere:
 
-- mini-lexicul trebuie să rămână public, închis și verificabil
-- corpusul trebuie să folosească numai verbe din lexicul activ
+- lexicul verbal trebuie să rămână explicit, închis și verificabil
+- nucleul trebuie să folosească numai verbe din lexicul verbal obligatoriu
 - orice verb nou trebuie aprobat lexical înainte de a intra în exemple
 - documentele trebuie să evite termenul „neutru” cât timp forma verbală de bază păstrează reziduu temporal recognoscibil
+
+În plus, un lexic de 40+ verbe este deja prea lat pentru un nucleu
+care pretinde să fie mic, memorabil și validabil rapid. Nucleul trebuie să
+folosească o listă scurtă de verbe obligatorii, iar restul să rămână într-un
+lexic extins separat până la promovare explicită.
 
 ### 3.2 Stratul temporal este prea greu în forma sa completă
 
@@ -201,9 +205,13 @@ uzual și stabil, versus strat extins, tehnic sau experimental.
 ### 3.8 Formalizarea lexicală a rămas prea abstractă
 
 Atunci când EBNF-ul trimite la clase ca `lexical-noun` sau
-`lexical-canonical-verb`, dar aceste clase nu au un minim de contur public,
+`lexical-core-verb`, dar aceste clase nu au un minim de contur public,
 formalizarea rămâne doar parțial executabilă. Pentru un proiect care insistă pe
 disciplină și corpus controlat, această zonă nu poate rămâne implicită.
+
+În plus, atomi frecvenți precum `asta` sau prepoziții deja active în corpus nu
+pot rămâne doar intuiți. Dacă apar în exemple, trebuie să aibă statut lexical
+public, altfel formalizarea promite mai mult decât execută.
 
 ---
 
@@ -225,14 +233,14 @@ Avantaj:
 Recomandare: forma completă să nu mai fie tratată ca normă principală, ci ca
 formă de precizie maximă.
 
-### 4.2 Înghețarea unui mini-lexic verbal pentru `0.2`
+### 4.2 Înghețarea unui lexic verbal obligatoriu
 
 Propunere:
 
-- versiunea `0.2` să includă o listă închisă de 30-50 verbe canonice
+- nucleul actual să includă un lexic verbal obligatoriu mic și un lexic verbal extins separat
 - tipul unic de formă verbală canonică să fie imperfectul de persoana a III-a singular
 - fiecare verb să aibă o singură formă acceptată în corpus
-- lista să fie publicată explicit în forma `infinitiv -> formă canonică`
+- lista să fie notată explicit în forma `infinitiv -> formă canonică`
 - această listă să devină baza pentru toate testele
 
 Avantaj:
@@ -244,6 +252,36 @@ Avantaj:
 
 Recomandare: până la stabilizarea sistemului, corpusul nu trebuie extins liber
 cu forme verbale noi.
+
+Stare:
+
+- aplicat prin separarea explicită dintre lexicul verbal obligatoriu și lexicul verbal extins
+- în starea actuală, nucleul verbal rămâne înghețat până la un lot de promovare și o motivare explicită a deciziei
+
+### 4.2c Promovarea din lexicul extins trebuie să fie rară și verificabilă
+
+Propunere:
+
+- înainte de promovare să fie testată o parafrază mai simplă, deja validată în nucleu
+- un verb nou să intre mai întâi doar în lexicul verbal extins
+- promovarea în nucleul obligatoriu să ceară cel puțin trei exemple scurte și distincte
+- promovarea să ceară și o pereche comparativă `RO/SR`, nu doar exemple interne proiectului
+- promovarea să fie acceptată doar dacă reduce parafrazele forțate din nucleu
+- orice promovare controversată să fie însoțită de o motivare clară a deciziei
+
+Avantaj:
+
+- păstrează nucleul mic și memorabil
+- oprește inflația lexicală accidentală
+- face promovările rare, explicite și defensabile academic
+- leagă utilitatea reală de costul cognitiv, nu doar de disponibilitatea unei forme canonice
+- păstrează agilitatea practică: rescriere simplă mai întâi, extindere lexicală doar când chiar ajută
+
+Stare:
+
+- de aplicat ca regulă permanentă pentru orice extindere viitoare a nucleului verbal
+- primele probe de parafrază confirmă deja o diferență utilă: unele verbe extinse pot fi ținute jos prin rescriere simplă, iar altele rezistă și devin candidați mai serioși pentru discuție viitoare
+- candidaturile cele mai puternice identificate până acum sunt `a avea`, `a crede`, `a face` și `a dormi`, tocmai pentru că parafraza de nucleu rămâne slabă sau artificială
 
 ### 4.2a Reformularea onestă a formei verbale canonice
 
@@ -373,7 +411,8 @@ Avantaj:
 
 Propunere:
 
-- pentru nucleul de bază, propoziția simplă să prefere ordinea `subiect + timp + verb + continuări scurte`
+- pentru nucleul de bază, propoziția simplă cu subiect exprimat să urmeze ordinea executabilă `subiect + timp + predicat` sau `subiect + predicat`
+- propoziția fără subiect explicit să rămână rezervată doar pentru impersonale reale în nucleul strict
 - abaterile de la această schemă să fie tratate ca forme permise, dar secundare
 - corpusul minimal să folosească aproape exclusiv această ordine, ca să fixeze reflexul de lectură
 
@@ -383,9 +422,13 @@ Avantaj:
 - scade costul de parsare pentru cititor și pentru instrumente
 - face mai clar când o propoziție este simplă și când este deja extinsă
 
+Stare:
+
+- aplicat în specificație și corpus; propoziția redusă a fost restrânsă la impersonale reale în nucleul strict
+
 Această propunere nu cere sintaxă rigidă absolută, ci doar o ordine implicită puternică.
 
-### 4.10 Principiul formei zero implicite
+### 4.10 Principiul formei nemarcate implicite
 
 Propunere:
 
@@ -451,20 +494,44 @@ Stare:
 
 - aplicat minimal; trebuie extins odată cu corpusul validat
 
+### 4.14 Loturi comparative obligatorii pentru naturalețe
+
+Propunere:
+
+- fiecare regulă sensibilă pentru lizibilitate să aibă și un lot comparativ RO versus SR
+- copula `e`, ordinea propoziției și relațiile prepoziționale să fie evaluate nu doar pe propoziții izolate, ci pe perechi paralele
+- verdictul de naturalețe să se bazeze pe astfel de loturi, nu doar pe intuiția locală a unui singur exemplu
+
+Avantaj:
+
+- ridică evaluarea de la gust personal la comparație controlată
+- face mai vizibil unde sistemul e natural și unde doar pare regulat
+- întărește exact prioritatea ta: rigoare fără pierderea inteligibilității naturale
+
+Stare:
+
+- aplicat în corpusul de bază; trebuie extins cu mai multe perechi
+
 ---
 
-## 5. Recomandări prioritare pentru versiunea următoare
+## 5. Recomandări prioritare pentru pasul următor
 
 ### Prioritatea 1: stabilizarea verbului
 
 De făcut:
 
 - definiție exactă a formei verbale canonice: imperfect 3 singular folosit ca formă convențională fixă, nu ca formă semantic neutră
-- mini-lexic verbal închis pentru corpusul de bază
+- lexic verbal obligatoriu mic și închis pentru corpusul de bază
 - publicarea mapării explicite `infinitiv -> formă canonică`
-- verificarea corpusului astfel încât fiecare verb folosit să apară în lexicul activ
+- verificarea nucleului astfel încât fiecare verb folosit să apară în lexicul verbal obligatoriu
+- păstrarea verbelor suplimentare numai în lexicul verbal extins până la promovare explicită
+- testarea unei parafraze mai simple înainte de orice promovare lexicală
+- notarea explicită a verbelor extinse care rezistă parafrazei simple
+- definirea unui lot minim obligatoriu pentru promovarea din extins în nucleu
 - eliminarea tuturor variantelor concurente din exemple
 - stabilizarea lui `a fi -> e` ca excepție controlată și naturală pentru predicatele simple de nucleu
+- construirea unui lot minim separat pentru propozițiile copulative, astfel încât `e` să fie validat explicit
+- menținerea propoziției fără subiect explicit numai pentru impersonale reale în nucleul strict
 
 ### Prioritatea 2: simplificarea stratului temporal de uz
 
@@ -494,7 +561,7 @@ De făcut:
 
 De făcut:
 
-- definirea explicită a schemei preferate `subiect + timp + verb + continuări scurte`
+- definirea explicită a schemei executabile `subiect + timp + predicat` sau `subiect + predicat` pentru propoziția cu subiect exprimat
 - rescrierea corpusului minimal astfel încât majoritatea exemplelor să respecte această schemă
 - tratarea abaterilor ca extensii controlate, nu ca reflex liber
 
@@ -519,8 +586,16 @@ De făcut:
 De făcut:
 
 - extinderea atentă a claselor lexicale controlate pentru noile teste formale
-- păstrarea legăturii explicite dintre gramatică, mini-lexic și corpus
+- păstrarea legăturii explicite dintre gramatică, lexicul verbal obligatoriu și corpus
 - adăugarea de derivări canonice pentru fiecare nouă propoziție reprezentativă
+
+### Prioritatea 9: loturi comparative pentru naturalețe
+
+De făcut:
+
+- extinderea perechilor comparative RO/SR pentru copulă, ordine și relații prepoziționale
+- separarea evaluării de naturalitate de evaluarea de regularitate pur formală
+- verificarea periodică a propozițiilor reduse pentru a nu reintra elipsa contextuală în nucleul strict
 
 ---
 
@@ -533,14 +608,19 @@ recomandă măsurarea explicită a următoarelor:
 - numărul mediu de decizii noi pe propoziție
 - lungimea medie în caractere față de româna standard
 - lungimea medie în tokeni
+- dimensiunea lexicului verbal obligatoriu față de lexicul verbal extins
+- numărul de promovări lexicale acceptate între două revizii documentate
 - variația ordinii în propoziția simplă
+- rata de propoziții cu subiect exprimat care respectă schema executabilă de nucleu
 - rata de propoziții care pot fi derivate clar din `EBNF Core`
+- rata de propoziții copulative în care `e` este perceput ca natural la prima lectură
+- rata de perechi comparative RO/SR în care relațiile prepoziționale rămân naturale și stabile
 - rata de propoziții care pot fi interpretate fără context suplimentar
 - rata de propoziții care necesită explicație metalingvistică
 - timpul de citire comparativ pentru cititori noi
 - timpul de învățare pentru fiecare operator nou
 
-Pragul util pentru `0.2` ar trebui să fie nu doar „mai regulat”, ci și „mai ușor
+Pragul util pentru nucleul actual ar trebui să fie nu doar „mai regulat”, ci și „mai ușor
 de citit la prima vedere”.
 
 ---
@@ -563,11 +643,28 @@ Acest lucru este necesar pentru a evita validarea prin selecție optimistă.
 
 Control rapid pentru verb:
 
-1. Verbul din exemplu există în lexicul verbal activ?
+1. Verbul din exemplu există în lexicul verbal obligatoriu dacă exemplul pretinde statut de nucleu?
 2. Forma folosită coincide exact cu maparea publicată?
 3. Exemplul introduce doar un fenomen dominant?
 4. Exemplul evită operatorii neesențiali?
 5. Documentul evită să numească forma verbală `neutră` dacă ea păstrează reziduu temporal recognoscibil?
+
+Control rapid pentru promovare lexicală:
+
+1. A fost testată mai întâi o parafrază simplă deja validată în nucleu?
+2. Verbul candidat apare în cel puțin trei exemple scurte și distincte?
+3. Verbul are o pereche comparativă `RO/SR` stabilă?
+4. Promovarea reduce parafraze artificiale sau ocolește un gol real de nucleu?
+5. Forma canonică rămâne memorabilă și lizibilă la prima lectură?
+6. Decizia este motivată clar acolo unde schimbă regula sau corpusul?
+
+Control rapid pentru copulă:
+
+1. Copula folosită este exact `e`?
+2. Propoziția este nominală, adjectivală sau locativă?
+3. `e` nu maschează un verb lexical care trebuia păstrat?
+4. Propoziția rămâne naturală pentru cititor fără a reintroduce timpul prin `era`?
+5. Exemplul are avantaj clar față de o variantă cu copulă zero?
 
 Control rapid pentru nominal:
 
@@ -576,6 +673,14 @@ Control rapid pentru nominal:
 3. Relația indirectă rămâne prepozițională dacă nu există motiv clar pentru altceva?
 4. Adjectivul stă după substantiv și nu introduce acord suplimentar?
 5. Exemplul rămâne citibil fără încărcare nominală excesivă?
+
+Control rapid pentru ordine:
+
+1. Dacă subiectul este exprimat, propoziția urmează schema `subiect + timp + predicat` sau `subiect + predicat`?
+2. Dacă subiectul lipsește, propoziția este impersonală reală și nu doar o elipsă contextuală?
+3. Predicatul nu a fost împins înaintea subiectului fără motiv clar?
+4. Continuările rămân după predicat și rămân scurte?
+5. Exemplul ar deveni mai clar dacă ar reveni la ordinea de nucleu?
 
 Control rapid pentru timp:
 
@@ -609,30 +714,45 @@ Control rapid pentru formalizare:
 4. Extensia nu a fost introdusă prea sus în ierarhia formală?
 5. Derivarea poate fi explicată scurt fără improvizație?
 
+Control rapid pentru comparație RO versus SR:
+
+1. Perechea comparativă păstrează aceeași informație de bază?
+2. Regula testată este clar izolată în pereche?
+3. Varianta `SR` rămâne naturală la prima lectură?
+4. Varianta `SR` nu pare doar mai regulată, ci și mai ușor de urmărit?
+5. Verdictul comparativ poate fi repetat pe mai multe exemple similare?
+
 Protocol compact de revizie pentru orice exemplu nou:
 
 1. Se fixează sursa și fenomenul dominant; exemplul nu trebuie să amestece gratuit mai multe noutăți.
 2. Se verifică fidelitatea: nu se adaugă timp, număr, definitudine, posesie, `sau` sau `XOR` absente din sursă.
-3. Se verifică forma minimă: verb din lexicul activ, timp suficient, formă zero păstrată unde este posibil, operator minim necesar.
-4. Se verifică structura: nominalul rămâne economic, ordinea preferată rămâne recognoscibilă, iar `&`, `|`, `^` și `{}` apar doar când valorile `și`, `sau`, `XOR` sau conținutul raportat sunt justificate.
-5. Se dă verdictul final: `acceptat`, `rescris` sau `respins`.
+3. Se verifică forma minimă: verb din lexicul verbal obligatoriu pentru nucleu, timp suficient, formă nemarcată păstrată unde este posibil, operator minim necesar.
+4. Se verifică structura: nominalul rămâne economic, ordinea executabilă rămâne recognoscibilă, copula `e` apare doar în predicate nominale, adjectivale și locative, iar `&`, `|`, `^` și `{}` apar doar când valorile `și`, `sau`, `XOR` sau conținutul raportat sunt justificate.
+5. Dacă propoziția este redusă, se verifică separat că este impersonală reală.
+6. Se dă verdictul final: `acceptat`, `rescris` sau `respins`.
 
 ---
 
 ## 8. Standard de acceptare revizuit
 
-Versiunea următoare poate fi considerată clar mai bună numai dacă îndeplinește
+Starea următoare poate fi considerată clar mai bună numai dacă îndeplinește
 toate condițiile de mai jos:
 
 - verbul canonic este stabil și exhaustiv pentru corpusul de bază
-- fiecare verb din corpus aparține explicit lexicului verbal activ
+- fiecare verb din nucleul obligatoriu aparține explicit lexicului verbal obligatoriu
+- lexicul verbal obligatoriu rămâne clar mai mic decât lexicul verbal extins
+- fiecare promovare lexicală este justificată prin lot minim dedicat și motivare clară a deciziei
+- fiecare promovare lexicală arată explicit de ce parafraza mai simplă a fost respinsă
+- starea curentă nu introduce promovări lexicale tacite după înghețarea nucleului verbal
+- copula `e` este validată printr-un lot minim copulativ separat
+- propoziția redusă din nucleu este limitată la impersonale reale
 - forma temporală uzuală este mai scurtă decât forma standard completă în majoritatea cazurilor
 - corpusul de test separă clar fenomenele simple de fenomenele combinate
 - regulile de fidelitate nu permit inventarea de informație în translația exactă
 - nested este rar și justificat
 - `&`, `|` și `^` sunt folosite coerent, rar și numai cu funcțiile fixe `și`, `sau`, `XOR`
 - copula `e` este forma preferată în predicatele nominale, adjectivale și locative de nucleu
-- propoziția simplă are o ordine preferată vizibilă și stabilă în corpusul de bază
+- propoziția simplă are o ordine executabilă și stabilă în corpusul de bază
 - forma nemarcată rămâne soluția implicită acolo unde contrastul nu cere marcaj
 - forma verbală canonică este descrisă onest ca convenție fixă, nu ca neutralitate semantică fictivă
 - densitatea de operatori pe propoziție scade față de corpusul actual
@@ -663,9 +783,10 @@ Recomandarea centrală a acestei evaluări este simplă:
 - timp uzual mai scurt
 - nested mai rar
 - ordine implicită mai stabilă
-- formă zero păstrată ori de câte ori este suficientă
+- formă nemarcată păstrată ori de câte ori este suficientă
+- propoziție redusă limitată la impersonale reale
 - gramatică de nucleu separată de extensii
 - operator introdus numai când transportă sens obligatoriu
 
-Dacă aceste nouă direcții sunt urmate, versiunea următoare poate deveni nu doar
+Dacă aceste nouă direcții sunt urmate, starea următoare poate deveni nu doar
 mai coerentă, ci și autentic mai simplă.

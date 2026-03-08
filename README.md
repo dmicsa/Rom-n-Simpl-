@@ -16,20 +16,29 @@ Scopul curent este un nucleu mic și coerent care:
 
 ## Nucleul curent
 
-Versiunea `0.2.0-draft` lucrează cu un set redus de decizii:
+Nucleul actual lucrează cu un set redus de decizii:
 
 - timpul apare înaintea verbului
-- forma verbală este stabilă, controlată prin mini-lexic și tratată ca formă canonică fixă
+- forma verbală este stabilă, controlată printr-un lexic verbal obligatoriu mic și tratată ca formă canonică fixă
 - această formă păstrează reziduu temporal istoric; timpul principal se citește din markerul temporal sau din context
 - predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleul de bază
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - timpul uzual este parțial sau relativ; forma completă rămâne tehnică
 - `@` marchează definitudinea, `#` marchează posesia
 - `&`, `|` și `^` acoperă doar legăturile minime `și`, `sau`, `XOR`
+- propoziția cu subiect exprimat urmează ordinea stabilă `subiect + timp + predicat` sau `subiect + predicat`
 - relațiile indirecte rămân prepoziționale
 - frazele grele se descompun, iar `{}` rămâne pentru conținut raportat
 - corpusul separă nucleul obligatoriu de marginea experimentală
 - gramatica formală separă `EBNF Core` de `EBNF Extended`
+- copula `e` este tratată ca regulă de nucleu cu validare dedicată în corpus
+- propoziția fără subiect explicit rămâne în nucleul strict doar pentru impersonale reale
+- naturalețea este verificată și pe perechi comparative `RO` versus `SR`
+- verbele de bază sunt separate de un lexic verbal extins, care nu definește nucleul strict
+- un verb nou intră în nucleu doar după lot minim de promovare și motivare clară a deciziei
+- în starea actuală, lexicul verbal obligatoriu este înghețat
+- unele verbe extinse sunt deja testate prin parafrază: `a sta` cade ușor în nucleu prin copula locativă, în timp ce `a avea` și `a crede` rezistă mai clar
+- dintre testele actuale, `a avea`, `a crede`, `a face` și `a dormi` apar ca presiuni lexicale mai serioase, fără a fi promovate
 - se aplică regula `operator minim necesar`
 
 ## Fișiere
@@ -45,5 +54,7 @@ Versiunea `0.2.0-draft` lucrează cu un set redus de decizii:
 2. Se scrie forma minimă în `SR`, fără informație adăugată.
 3. Se verifică verbul, timpul, ordinea și operatorii prin protocolul compact de revizie.
 4. Se decide dacă exemplul intră în nucleul obligatoriu sau rămâne experimental.
-5. Se compară direct `RO` și `SR` pentru fidelitate și citibilitate.
-6. Abia apoi exemplul sau regula intră în corpusul extins.
+5. Dacă verbul este extins, se rulează lotul minim de promovare înainte de orice mutare în nucleu.
+6. Se compară direct `RO` și `SR` pentru fidelitate și citibilitate.
+7. Abia apoi exemplul sau regula intră în corpusul extins sau urcă în nucleul obligatoriu.
+8. Dacă o decizie este controversată, motivul ei se notează direct lângă regula schimbată.

@@ -11,19 +11,32 @@ Corpusul este împărțit în două straturi:
 
 ## Ordinea preferată a propoziției simple
 
-Schema preferată pentru nucleul de bază este:
+Schema preferată și executabilă pentru nucleul de bază este:
 
-- `subiect + timp + verb + continuări scurte`
+- `subiect + timp + predicat + continuări scurte`
 
 Exemple:
 
 - `eu 9 mergea la magazin.`
+- `eu 9 e aici.`
 - `tu vedea @film.`
 - `Ana citea.`
 
 Fără marker temporal explicit, schema se reduce la:
 
-- `subiect + verb + continuări scurte`
+- `subiect + predicat + continuări scurte`
+
+Exemple:
+
+- `Ana e aici.`
+- `@casă e >mare.`
+
+Propoziția fără subiect explicit rămâne permisă doar pentru impersonale reale.
+
+Exemple:
+
+- `ploua.`
+- `ploua târziu.`
 
 Abaterile sunt permise doar când câștigul de claritate este real.
 
@@ -100,7 +113,8 @@ SR: `ei ajungea.`
 - această formă păstrează reziduu temporal istoric, dar timpul principal se citește din markerul temporal sau din context
 - în propozițiile nominale, adjectivale și locative, nucleul preferă copula invariabilă `e`
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
-- mini-lexicul verbal este explicit; forma canonică nu se deduce automat din infinitiv
+- lexicul verbal obligatoriu este explicit; forma canonică nu se deduce automat din infinitiv
+- lexicul verbal extins nu definește nucleul și nu intră automat în loturile obligatorii
 - numărul la pronume apare doar când este relevant
 - singularul este baza pentru substantiv
 - `@` se adaugă doar când definitudinea trebuie exprimată clar
@@ -149,7 +163,7 @@ SR: `ei ajungea.`
 6. `ploua. eu rămânea acasă.`
 7. `ei venea târziu. sală e închisă.`
 8. `tu vorbea clar.`
-9. `Ana citea & tu scria.`
+9. `Ana citea & tu vorbea.`
 10. `tu bea apă | tu bea lapte.`
 
 ## Control Rapid Structural
@@ -160,7 +174,15 @@ SR: `ei ajungea.`
 4. `&` și `|` apar doar când relația `și` sau `sau` nu poate fi lăsată implicit ori descompusă?
 5. Fraza poate fi descompusă mai clar în propoziții simple?
 
-## Lexic verbal activ 0.2
+## Control Rapid Ordine
+
+1. Dacă subiectul este exprimat, propoziția urmează ordinea `subiect + timp + predicat` sau `subiect + predicat`?
+2. Dacă subiectul lipsește, propoziția este impersonală reală?
+3. Copula `e` stă după subiect și după markerul temporal, nu într-o poziție concurentă?
+4. Continuările rămân scurte și după predicat?
+5. Exemplul ar deveni mai clar dacă ar reveni la ordinea preferată?
+
+## Lexic verbal obligatoriu
 
 1. `a merge -> mergea`
 2. `a vedea -> vedea`
@@ -170,48 +192,59 @@ SR: `ei ajungea.`
 6. `a citi -> citea`
 7. `a pleca -> pleca`
 8. `a spune -> spunea`
-9. `a face -> făcea`
-10. `a rămâne -> rămânea`
-11. `a zbura -> zbura`
-12. `a intra -> intra`
-13. `a vorbi -> vorbea`
-14. `a înțelege -> înțelegea`
-15. `a ajunge -> ajungea`
-16. `a duce -> ducea`
-17. `a crede -> credea`
-18. `a întreba -> întreba`
-19. `a răspunde -> răspundea`
-20. `a ploua -> ploua`
-21. `a fi -> e`
-22. `a avea -> avea`
-23. `a lua -> lua`
-24. `a scrie -> scria`
-25. `a ști -> știa`
-26. `a putea -> putea`
-27. `a vrea -> voia`
-28. `a cere -> cerea`
-29. `a trimite -> trimitea`
-30. `a găsi -> găsea`
-31. `a ține -> ținea`
-32. `a dormi -> dormea`
-33. `a sta -> stătea`
-34. `a lucra -> lucra`
-35. `a deschide -> deschidea`
-36. `a închide -> închidea`
-37. `a hrăni -> hrănea`
-38. `a cumpăra -> cumpăra`
-39. `a mânca -> mânca`
-40. `a asculta -> asculta`
-41. `a privi -> privea`
-42. `a simți -> simțea`
-43. `a pune -> punea`
-44. `a striga -> striga`
+9. `a rămâne -> rămânea`
+10. `a intra -> intra`
+11. `a vorbi -> vorbea`
+12. `a ajunge -> ajungea`
+13. `a întreba -> întreba`
+14. `a răspunde -> răspundea`
+15. `a ploua -> ploua`
+16. `a fi -> e`
+17. `a cere -> cerea`
+18. `a privi -> privea`
+19. `a striga -> striga`
+
+## Lexic verbal extins
+
+1. `a face -> făcea`
+2. `a zbura -> zbura`
+3. `a înțelege -> înțelegea`
+4. `a duce -> ducea`
+5. `a crede -> credea`
+6. `a avea -> avea`
+7. `a lua -> lua`
+8. `a scrie -> scria`
+9. `a ști -> știa`
+10. `a putea -> putea`
+11. `a vrea -> voia`
+12. `a trimite -> trimitea`
+13. `a găsi -> găsea`
+14. `a ține -> ținea`
+15. `a dormi -> dormea`
+16. `a sta -> stătea`
+17. `a lucra -> lucra`
+18. `a deschide -> deschidea`
+19. `a închide -> închidea`
+20. `a hrăni -> hrănea`
+21. `a cumpăra -> cumpăra`
+22. `a mânca -> mânca`
+23. `a asculta -> asculta`
+24. `a simți -> simțea`
+25. `a pune -> punea`
 
 Regulă:
 
-- Corpusul de bază folosește numai verbe din acest lexic activ.
+- Nucleul obligatoriu folosește numai verbe din acest lexic verbal obligatoriu.
+- Lexicul verbal extins este rezervat exemplelor secundare și nu definește standardul de bază.
 
-## Corpus Minimal Verbal
+Regulă de promovare:
+
+- înainte de promovare se testează mai întâi o parafrază simplă, deja validată în nucleu
+- un verb trece din extins în obligatoriu doar după un lot minim de validare și după documentarea clară a motivului
+- promovarea cere utilitate repetată pentru nucleu, nu doar apariție accidentală într-un singur exemplu
+- în starea actuală, nu există încă niciun verb extins promovat suplimentar în nucleu
+
+## Corpus Minimal Verbal de Nucleu
 
 1. `eu mergea.`
 2. `tu vedea.`
@@ -221,50 +254,210 @@ Regulă:
 6. `tu citea.`
 7. `ei pleca.`
 8. `el spunea asta.`
-9. `ea făcea pâine.`
-10. `eu rămânea aici.`
-11. `ei zbura.`
-12. `Ana intra în sală.`
-13. `tu vorbea clar.`
-14. `eu înțelegea asta.`
-15. `ei ajungea târziu.`
-16. `ea ducea @carte la Ana.`
-17. `el credea asta.`
-18. `tu întreba asta?`
-19. `eu răspundea după.`
-20. `ploua.`
-21. `Ana avea @carte.`
-22. `eu avea apă.`
-23. `tu lua @carte.`
-24. `ea scria.`
-25. `ei știa asta.`
-26. `eu putea intra.`
-27. `tu voia apă.`
-28. `Ana cerea pâine.`
-29. `el trimitea @carte.`
-30. `eu găsea apă.`
-31. `tu ținea @ușă.`
-32. `ei dormea.`
-33. `Ana stătea aici.`
-34. `eu lucra.`
-35. `tu deschidea @ușă.`
-36. `el închidea @ușă.`
-37. `ea hrănea 2cal.`
-38. `eu cumpăra pâine.`
-39. `tu mânca.`
-40. `ei asculta.`
-41. `Ana privea @film.`
-42. `eu simțea frig.`
-43. `tu punea @carte aici.`
-44. `el striga!`
+9. `eu rămânea aici.`
+10. `Ana intra în sală.`
+11. `tu vorbea clar.`
+12. `ei ajungea târziu.`
+13. `tu întreba asta?`
+14. `eu răspundea după.`
+15. `ploua.`
+16. `Ana cerea pâine.`
+17. `Ana privea @film.`
+18. `el striga!`
+
+## Corpus Verbal Extins
+
+1. `ea făcea pâine.`
+2. `ei zbura.`
+3. `eu înțelegea asta.`
+4. `ea ducea @carte la Ana.`
+5. `el credea asta.`
+6. `Ana avea @carte.`
+7. `eu avea apă.`
+8. `tu lua @carte.`
+9. `ea scria.`
+10. `ei știa asta.`
+11. `eu putea intra.`
+12. `tu voia apă.`
+13. `el trimitea @carte.`
+14. `eu găsea apă.`
+15. `tu ținea @ușă.`
+16. `ei dormea.`
+17. `Ana stătea aici.`
+18. `eu lucra.`
+19. `tu deschidea @ușă.`
+20. `el închidea @ușă.`
+21. `ea hrănea 2cal.`
+22. `eu cumpăra pâine.`
+23. `tu mânca.`
+24. `ei asculta.`
+25. `eu simțea frig.`
+26. `tu punea @carte aici.`
 
 ## Control Rapid Verbal
 
-1. Verbul apare în lexicul verbal activ?
+1. Verbul apare în lexicul verbal obligatoriu atunci când exemplul pretinde statut de nucleu?
 2. Forma folosită este exact cea din maparea `infinitiv -> formă canonică`?
 3. Propoziția introduce un singur fenomen dominant?
 4. Timpul este scurt dacă nu este nevoie de precizie tehnică?
 5. A fost evitat un operator care nu transportă sens obligatoriu?
+
+## Lot Minim de Promovare Verbală
+
+Model de validare pentru orice verb candidat din lexicul extins:
+
+1. propoziție simplă: `eu VERB.`
+2. propoziție cu continuare scurtă: `eu VERB aici.` sau `eu VERB @obiect.`
+3. pereche comparativă:
+   RO: `Eu VERB.`
+   SR: `eu VERB-canon.`
+
+Condiții:
+
+1. înainte de promovare este testată o parafrază simplă din nucleul deja validat
+2. verbul apare în cel puțin trei exemple scurte și distincte
+3. toate exemplele rămân lizibile fără explicație suplimentară
+4. forma canonică nu intră în concurență cu altă formă din proiect
+5. promovarea reduce parafraze artificiale în nucleu
+6. după promovare, motivul deciziei este notat clar acolo unde regula sau corpusul se schimbă
+
+## Probe Curente de Parafrază pentru Verbe Extinse
+
+Scop: înainte de orice promovare, se verifică dacă un verb extins poate fi
+înlocuit acceptabil printr-o structură deja validată în nucleu.
+
+**1. `a sta -> stătea`**
+
+- exemplu extins: `Ana stătea aici.`
+- parafrază de nucleu: `Ana e aici.`
+- verdict: parafrază suficientă pentru multe contexte locative simple
+- motiv: pentru sensul de localizare stabilă, copula `e` acoperă mai ieftin și mai natural cazul de bază
+
+**2. `a pune -> punea`**
+
+- exemplu extins: `tu punea @carte aici.`
+- parafrază de nucleu: `tu dădea @carte aici.`
+- verdict: parafrază parțial suficientă; verbul rămâne extins
+- motiv: în unele contexte simple, `a da` poate acoperi mutarea, dar nu păstrează curat toate valorile lui `a pune`
+
+**3. `a avea -> avea`**
+
+- exemplu extins: `Ana avea @carte.`
+- parafrază de nucleu testată: `Ana#@carte e aici.`
+- verdict: parafrază insuficientă; verbul rămâne extins
+- motiv: posesia generală nu se reduce natural la o propoziție locativă fără pierdere de sens
+
+**4. `a crede -> credea`**
+
+- exemplu extins: `el credea asta.`
+- parafrază de nucleu testată: `el spunea asta.`
+- verdict: parafrază insuficientă; verbul rămâne extins
+- motiv: `a spune` exteriorizează enunțul, dar nu păstrează clar starea internă de credință
+
+**5. `a face -> făcea`**
+
+- exemplu extins: `ea făcea pâine.`
+- parafrază de nucleu testată: `ea dădea pâine.`
+- verdict: parafrază insuficientă; verbul rămâne extins
+- motiv: producerea sau realizarea nu este redată corect de `a da`
+
+**6. `a dormi -> dormea`**
+
+- exemplu extins: `ei dormea.`
+- parafrază de nucleu testată: `ei e acasă.`
+- verdict: parafrază insuficientă; verbul rămâne extins
+- motiv: starea de somn nu poate fi redusă onest la o simplă localizare sau stare copulativă
+
+Concluzie de lucru:
+
+1. `a sta` este adesea absorbabil prin copula locativă și nu cere promovare.
+2. `a pune` are unele parafraze utile, dar încă nu suficient de curate pentru promovare.
+3. `a avea`, `a crede`, `a face` și `a dormi` rezistă parafrazei simple și rămân candidați mai puternici decât alte verbe extinse, fără a fi promovați automat.
+
+## Candidaturi Lexicale Mai Puternice
+
+Ordine de atenție pentru testări viitoare, fără promovare automată:
+
+1. `a avea -> avea`
+   motiv: apare frecvent și rezistă parafrazei simple fără pierdere clară de sens
+2. `a crede -> credea`
+   motiv: starea internă nu este păstrată curat de verbele de nucleu deja active
+3. `a face -> făcea`
+   motiv: nucleul redă slab ideea de producere sau realizare
+4. `a dormi -> dormea`
+   motiv: starea de somn nu poate fi redusă onest la copulă sau localizare
+
+Regulă de interpretare:
+
+- această listă nu promovează verbele de mai sus
+- această listă spune doar ce verbe merită retestate înaintea altora dacă apare presiune reală de corpus
+
+## Corpus Minimal Copulativ
+
+1. `Ana e aici.`
+2. `@casă e >mare.`
+3. `Ana#@carte e aici.`
+4. `eu 9 e aici.`
+5. `ei e în sală.`
+6. `@fruct e <copt.`
+
+## Corpus Minimal Ordine
+
+1. `eu 9 mergea la magazin.`
+2. `tu vedea @film.`
+3. `Ana e aici.`
+4. `eu 9 e aici.`
+5. `ploua.`
+6. `ploua târziu.`
+
+## Corpus Comparativ Copulativ
+
+1. RO: `Ana este aici.`
+   SR: `Ana e aici.`
+2. RO: `Casa este mare.`
+   SR: `@casă e >mare.`
+3. RO: `Cartea Anei este aici.`
+   SR: `Ana#@carte e aici.`
+4. RO: `Ei sunt în sală.`
+   SR: `ei e în sală.`
+
+## Corpus Comparativ Ordine
+
+1. RO: `Eu merg la ora 9.`
+   SR: `eu 9 mergea.`
+2. RO: `Tu vezi filmul.`
+   SR: `tu vedea @film.`
+3. RO: `Ana este aici.`
+   SR: `Ana e aici.`
+4. RO: `Plouă.`
+   SR: `ploua.`
+
+## Corpus Comparativ Relații Prepoziționale
+
+1. RO: `Eu dau cartea la Ana.`
+   SR: `eu dădea @carte la Ana.`
+2. RO: `Ei vin din sat.`
+   SR: `ei venea din sat.`
+3. RO: `Tu mergi cu Ana.`
+   SR: `tu mergea cu Ana.`
+4. RO: `Ei sunt în sală.`
+   SR: `ei e în sală.`
+
+## Control Rapid Copulativ
+
+1. Copula folosită este exact `e`?
+2. Propoziția este nominală, adjectivală sau locativă și nu cere un verb lexical diferit?
+3. Copula nu reintroduce timp suplimentar care nu există în sursă?
+4. Propoziția rămâne naturală pentru cititor fără să încarce inutil forma?
+5. Exemplul ar fi mai clar dacă ar rămâne copulativ, nu verbalizat artificial?
+
+## Control Rapid Reduced
+
+1. Propoziția fără subiect explicit este impersonală reală?
+2. Verbul folosit aparține setului impersonal minim, nu unei elipse contextuale mascate?
+3. Exemplul rămâne natural fără sprijin contextual extern?
+4. Forma redusă nu introduce ambiguitate inutilă?
+5. Un subiect exprimat ar schimba nejustificat statutul de nucleu al propoziției?
 
 ## Pronume și număr
 
@@ -285,7 +478,7 @@ Regulă:
 7. `Ana#@carte.`
 8. `eu#carte.`
 9. `fruct <copt.`
-10. `@casă >mare.`
+10. `@casă e >mare.`
 11. `eu dădea @carte la Ana.`
 12. `ei venea din sat.`
 13. `tu mergea cu Ana.`
@@ -301,6 +494,7 @@ Regulă:
 5. Relația indirectă poate rămâne prepozițională fără operator nou?
 6. Adjectivul stă după substantiv?
 7. Propoziția evită suprapunerea inutilă de fenomene nominale?
+8. Dacă propoziția este copulativă, folosește `e` și nu o formă concurentă?
 
 ## Substantive și definitudine
 
@@ -359,19 +553,25 @@ SR: `el spunea {tu bea vin.}`
 
 1. Se notează sursa și fenomenul dominant.
 2. Se verifică fidelitatea: nu se adaugă informație absentă în sursă.
-3. Se verifică forma minimă: verb din lexicul activ, timp suficient, ordine preferată recognoscibilă, operator minim necesar.
-4. Se verifică structura: `&`, `|`, `^` și `{}` rămân doar dacă păstrează explicit `și`, `sau`, `XOR` sau conținut raportat; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, exemplul se descompune.
-5. Se marchează verdictul și stratul: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
+3. Se verifică forma minimă: verb din lexicul verbal obligatoriu pentru nucleu, timp suficient, ordine preferată recognoscibilă, operator minim necesar.
+4. Dacă propoziția este cu subiect exprimat, ordinea preferată este respectată explicit.
+5. Se verifică structura: `&`, `|`, `^` și `{}` rămân doar dacă păstrează explicit `și`, `sau`, `XOR` sau conținut raportat; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, exemplul se descompune.
+6. Dacă propoziția este fără subiect explicit, se verifică separat că este impersonală reală.
+7. Se marchează verdictul și stratul: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
 
 ## Ținte pentru extindere
 
 - 10 propoziții minimale pentru timp
 - 10 propoziții minimale pentru verb
+- 10 propoziții minimale pentru ordine
 - 10 propoziții minimale pentru număr
 - 10 propoziții minimale pentru definitudine
 - 10 propoziții minimale pentru posesie
 - 10 propoziții minimale pentru copula `e`
 - 10 propoziții minimale pentru relații prepoziționale
+- 10 perechi comparative RO/SR pentru copulă `e`
+- 10 perechi comparative RO/SR pentru ordine
+- 10 perechi comparative RO/SR pentru relații prepoziționale
 - 10 propoziții minimale pentru grad și aproximare
 - 10 propoziții minimale pentru `&`, `|` și `^`
 - 10 propoziții minimale pentru nested

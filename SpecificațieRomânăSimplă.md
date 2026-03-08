@@ -3,7 +3,6 @@
 > Ciornă de lucru pentru o variantă compactă, precisă, simplă și uniformă a limbii române.
 
 **Autor:** schelă de lucru inițială  
-**Versiune:** 0.2.0-draft  
 **Dată:** martie 2026
 
 ---
@@ -14,13 +13,13 @@ RomânăSimplă urmărește patru ținte simultane: să fie `compactă`, `precis
 `simplă` și `uniformă`. Aceste patru criterii nu sunt doar descrieri, ci filtru
 de acceptare pentru orice regulă nouă.
 
-Direcția adoptată în versiunea curentă este una analitică: timpul trece înaintea
+Direcția adoptată în forma curentă este una analitică: timpul trece înaintea
 verbului, flexiunea se reduce, definitudinea devine explicită doar când este
 necesară, iar frazele grele se sparg în unități mai mici. În același timp,
 sistemul încearcă să nu înlocuiască morfologia veche cu o cantitate mare de
 operatori noi.
 
-Scopul versiunii `0.2.0` este un nucleu mic și testabil, nu o gramatică totală.
+Scopul actual este un nucleu mic și testabil, nu o gramatică totală.
 Regulile active trebuie să fie puține, să fie ușor de învățat și să se aplice
 la fel de la un exemplu la altul.
 
@@ -38,9 +37,13 @@ la fel de la un exemplu la altul.
 O regulă nouă intră în nucleu doar dacă îmbunătățește cel puțin două criterii și
 nu deteriorează sever celelalte două.
 
+Regulă de lucru:
+
+- dacă o decizie este controversată, motivul ei trebuie notat clar lângă regula pe care o schimbă
+
 ---
 
-## 2. Decizii de proiectare pentru nucleul 0.2
+## 2. Decizii de proiectare pentru nucleul actual
 
 Această secțiune fixează deciziile centrale pentru prima variantă coerentă a
 sistemului.
@@ -98,9 +101,10 @@ Reguli de bază:
   narativ, nu din flexiunea istorică a formei canonice.
 - Aceeași formă se folosește pentru `eu`, `tu`, `el`, `ea`, `ei`, precum și
   pentru formele cu număr explicit, de tipul `eu5` sau `ei10`.
-- Pentru versiunea `0.2`, corpusul activ folosește un mini-lexic verbal controlat.
-- În versiunea actuală, forma canonică nu se deduce automat din infinitiv;
-  fiecare verb activ intră explicit în mini-lexic.
+- Nucleul activ folosește un lexic verbal controlat,
+  împărțit în nucleu obligatoriu și lexic extins.
+- În forma actuală, forma canonică nu se deduce automat din infinitiv;
+  fiecare verb activ intră explicit în lexic.
 - În nucleul de bază, predicația nominală, adjectivală și locativă preferă
   copula invariabilă `e`.
 - Verbul copulativ formează o excepție controlată față de schema verbală
@@ -109,7 +113,16 @@ Reguli de bază:
   vorbitor de română decât `era` și cere mai puțin efort de interpretare decât
   copula zero.
 
-Mini-lexic verbal activ pentru nucleul `0.2`:
+Regulă de ordine pentru nucleu:
+
+- Când subiectul este exprimat, ordinea preferată și executabilă este
+  `subiect + timp + predicat` sau, fără marker temporal, `subiect + predicat`.
+- Propoziția fără subiect explicit rămâne permisă în nucleu doar pentru
+  impersonale reale.
+- Elipsa contextuală de tipul `Ana întreba. răspundea după.` nu mai aparține
+  nucleului strict; ea poate rămâne doar în stratul extins sau experimental.
+
+Lexic verbal obligatoriu pentru nucleul actual:
 
 - `a merge -> mergea`
 - `a vedea -> vedea`
@@ -119,26 +132,31 @@ Mini-lexic verbal activ pentru nucleul `0.2`:
 - `a citi -> citea`
 - `a pleca -> pleca`
 - `a spune -> spunea`
-- `a face -> făcea`
 - `a rămâne -> rămânea`
-- `a zbura -> zbura`
 - `a intra -> intra`
 - `a vorbi -> vorbea`
-- `a înțelege -> înțelegea`
 - `a ajunge -> ajungea`
-- `a duce -> ducea`
-- `a crede -> credea`
 - `a întreba -> întreba`
 - `a răspunde -> răspundea`
 - `a ploua -> ploua`
 - `a fi -> e`
+- `a cere -> cerea`
+- `a privi -> privea`
+- `a striga -> striga`
+
+Lexic verbal extins:
+
+- `a face -> făcea`
+- `a zbura -> zbura`
+- `a înțelege -> înțelegea`
+- `a duce -> ducea`
+- `a crede -> credea`
 - `a avea -> avea`
 - `a lua -> lua`
 - `a scrie -> scria`
 - `a ști -> știa`
 - `a putea -> putea`
 - `a vrea -> voia`
-- `a cere -> cerea`
 - `a trimite -> trimitea`
 - `a găsi -> găsea`
 - `a ține -> ținea`
@@ -151,16 +169,31 @@ Mini-lexic verbal activ pentru nucleul `0.2`:
 - `a cumpăra -> cumpăra`
 - `a mânca -> mânca`
 - `a asculta -> asculta`
-- `a privi -> privea`
 - `a simți -> simțea`
 - `a pune -> punea`
-- `a striga -> striga`
 
 Regulă de utilizare:
 
-- Corpusul de bază folosește numai verbe din această listă.
-- Dacă apare un verb nou, el intră mai întâi în mini-lexic și abia apoi în corpus.
+- Nucleul obligatoriu folosește numai verbe din lista obligatorie.
+- Lexicul extins poate susține doar exemple secundare, comparative sau exploratorii.
+- Dacă apare un verb nou, el intră mai întâi în lexicul extins și abia apoi poate fi promovat în nucleul obligatoriu.
 - Dacă există două forme candidate, una singură este admisă în nucleu.
+
+Criterii de promovare din lexicul extins în nucleul obligatoriu:
+
+- înainte de promovare se testează mai întâi dacă sensul poate fi păstrat printr-o parafrază mai simplă, deja validată în nucleu
+- verbul trebuie să apară repetat în exemple de bază, nu doar într-un singur caz izolat
+- verbul trebuie să treacă un lot minim de validare: propoziție simplă, propoziție cu continuare scurtă și pereche comparativă `RO/SR`
+- forma lui canonică trebuie să rămână ușor recognoscibilă și stabilă la prima lectură
+- promovarea trebuie să reducă costul global al parafrazelor de nucleu, nu doar să acopere un gol accidental de corpus
+- promovarea trebuie documentată clar, cu motivul deciziei, în locurile unde schimbă regulile active
+
+Stare actuală:
+
+- lista verbală obligatorie de mai sus este înghețată în starea curentă
+- niciun verb din lexicul extins nu urcă în nucleu fără lot de promovare și fără motivare explicită a deciziei
+- probele curente de parafrază arată deja că unele verbe extinse, ca `a sta`, pot fi absorbite prin structuri de nucleu, în timp ce altele, ca `a avea` sau `a crede`, rezistă parafrazei simple
+- dintre verbele testate până acum, `a avea`, `a crede`, `a face` și `a dormi` apar ca presiuni lexicale mai serioase decât restul stratului extins
 
 Exemple de nucleu:
 
@@ -361,7 +394,15 @@ core-text             = core-sentence, { ws, core-sentence };
 core-sentence         = simple-sentence, end-mark
                       | coordinated-sentence;
 
-simple-sentence       = [ subject, ws ], [ time-marker, ws ], predicate;
+simple-sentence       = explicit-subject-sentence
+                      | reduced-sentence;
+
+explicit-subject-sentence
+                      = subject, ws, [ time-marker, ws ], predicate;
+
+reduced-sentence      = impersonal-predicate;
+
+impersonal-predicate  = impersonal-verb, { ws, adverb };
 
 predicate             = verbal-predicate
                       | copular-predicate;
@@ -377,6 +418,7 @@ nonverbal-predicate   = nominal-group
                       | approximation-group;
 
 continuation          = nominal-group
+                      | demonstrative-atom
                       | prepositional-group
                       | adverb
                       | graded-adjective
@@ -399,6 +441,7 @@ graded-adjective      = grade-operator, adjective;
 approximation-group   = "~", integer, noun;
 
 prepositional-group   = preposition, ws, nominal-group;
+demonstrative-atom    = "asta";
 
 time-marker           = clock-time | relative-time;
 clock-time            = hour | hour, ":", minute;
@@ -407,10 +450,11 @@ relative-time         = [ "+" | "-" ], integer, time-unit;
 grade-operator        = "<" | ">";
 end-mark              = "." | "?" | "!";
 
-preposition           = "la" | "din" | "cu" | "pentru" | "pe";
+preposition           = "la" | "din" | "cu" | "pentru" | "pe" | "în";
 time-unit             = "m" | "H" | "D";
 canonical-verb        = lexical-verb;
 copula                = "e";
+impersonal-verb       = lexical-impersonal-verb;
 
 pronoun               = "eu" | "tu" | "el" | "ea" | "ei";
 
@@ -428,16 +472,19 @@ proper-name           = lexical-proper-name;
 noun                  = lexical-noun;
 adjective             = lexical-adjective;
 adverb                = lexical-adverb;
-lexical-verb          = lexical-canonical-verb;
+lexical-verb          = lexical-core-verb;
 ```
 
 Observații de lucru:
 
 - `core-sentence` descrie numai nucleul obligatoriu.
+- `explicit-subject-sentence` fixează ordinea preferată a nucleului pentru propozițiile cu subiect exprimat.
+- `reduced-sentence` rămâne rezervată numai pentru impersonale reale din nucleul strict.
 - `coordinated-sentence` cu `&` și `|` rămâne permis, dar trebuie folosit economic.
 - Copula invariabilă `e` este forma preferată în nucleu pentru predicate nominale, adjectivale și locative.
 - Nucleul nu include aici `XOR`, `nested` și timpul tehnic complet.
-- Simbolurile `lexical-noun`, `lexical-adjective`, `lexical-adverb`, `lexical-proper-name` și `lexical-canonical-verb` trimit la lexicul controlat al proiectului, nu la o clasă deschisă nelimitată.
+- `demonstrative-atom` nu intră în clasa `nominal-group`; el rămâne atom lexical separat pentru complemente foarte frecvente, de tipul `asta`.
+- Simbolurile `lexical-noun`, `lexical-adjective`, `lexical-adverb`, `lexical-proper-name`, `lexical-core-verb` și `lexical-impersonal-verb` trimit la lexicul controlat al proiectului, nu la o clasă deschisă nelimitată.
 
 ### 2.13 Sintaxă formală (EBNF Extended)
 
@@ -472,50 +519,58 @@ Observații de lucru:
 Acest apendice nu înlocuiește corpusul, dar fixează un minim de clase lexicale
 controlate pentru testare și parsare.
 
-- `lexical-canonical-verb`: exact verbele din mini-lexicul verbal activ `0.2`.
+- `lexical-core-verb`: exact verbele din lexicul verbal obligatoriu actual.
+- `lexical-extended-verb`: exact verbele din lexicul verbal extins actual.
+- `lexical-impersonal-verb`: `ploua`.
 - `reporting-verb`: `spunea`, `întreba`, `credea`.
-- `lexical-adverb`: `clar`, `repede`, `aici`, `târziu`, `după`.
-- `lexical-adjective`: `mare`, `copt`.
+- `lexical-adverb`: `clar`, `repede`, `aici`, `acasă`, `târziu`, `după`.
+- `lexical-adjective`: `mare`, `copt`, `închis`.
 - `lexical-proper-name`: `Ana`, `Maria`, `Ion`.
-- `lexical-noun`: setul minimal atestat în corpusul curent, de tipul `film`, `carte`, `pasăre`, `casă`, `cal`, `sală`, `magazin`, `vin`, `apă`, `lapte`, `sat`, `ușă`, `pâine`, `fruct`, `frig`.
+- `lexical-noun`: `film`, `carte`, `pasăre`, `casă`, `cal`, `sală`, `magazin`, `vin`, `apă`, `lapte`, `sat`, `ușă`, `pâine`, `fruct`, `frig`.
+- `demonstrative-atom`: `asta`.
+- `preposition`: `la`, `din`, `cu`, `pentru`, `pe`, `în`.
 
 Regulă de lucru:
 
-- Orice extindere a uneia dintre aceste clase trebuie publicată explicit înainte de a intra în nucleul obligatoriu.
+- Orice extindere a uneia dintre aceste clase trebuie notată explicit înainte de a intra în nucleul obligatoriu.
 
 ### 2.15 Derivări canonice minime
 
 Exemplele de mai jos arată cum se leagă propozițiile de regulile formale.
 
 1. `eu 9 mergea.`
-  `core-sentence -> simple-sentence end-mark -> subject time-marker predicate end-mark`
+  `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
 
 2. `tu vedea @film.`
-  `core-sentence -> simple-sentence end-mark -> subject predicate end-mark`
+  `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
 
 3. `Ana#@carte e aici.`
-  `core-sentence -> simple-sentence end-mark -> subject predicate end-mark`
+  `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
 
-4. `tu bea apă | tu bea lapte.`
+4. `ploua.`
+  `core-sentence -> simple-sentence end-mark -> reduced-sentence end-mark`
+
+5. `tu bea apă | tu bea lapte.`
   `core-sentence -> coordinated-sentence -> simple-sentence "|" simple-sentence end-mark`
 
-5. `el spunea {tu bea vin?}`
+6. `el spunea {tu bea vin?}`
   `extended-sentence -> reported-sentence -> reporting-clause "{" embedded-sentence "}"`
 
 ---
 
-## 3. Direcția adoptată pentru versiunea 0.2
+## 3. Direcția adoptată pentru nucleul actual
 
-Versiunea `0.2.0` adoptă o română analitică, dar mai disciplinată decât versiunile anterioare.
+Forma actuală adoptă o română analitică, dar mai disciplinată decât variantele anterioare de lucru.
 
 Caracteristici centrale:
 
 - timpul uzual este scurt, nu tehnic
-- verbul este stabil și controlat prin mini-lexic
+- verbul este stabil și controlat prin lexic verbal
 - predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu
 - numărul se exprimă doar când contează
 - `@` și `#` rămân operatorii nominali centrali
 - `&`, `|` și `^` rămân singurii conectori structurali noi din nucleul activ, cu valori fixe `și`, `sau`, `XOR`
+- propoziția cu subiect exprimat urmează ordinea fixă `subiect + timp + predicat` sau `subiect + predicat`
 - relațiile indirecte uzuale rămân prepoziționale, nu operatoriale
 - corpusul evită propozițiile care activează prea multe inovații simultan
 - fraza simplă este preferată, nested este rezervat
@@ -523,30 +578,31 @@ Caracteristici centrale:
 
 ---
 
-## 4. Set minim de reguli pentru versiunea 0.2
+## 4. Set minim de reguli pentru nucleul actual
 
-Prima versiune trebuie să rămână suficient de mică pentru a putea fi testată
+Nucleul trebuie să rămână suficient de mic pentru a putea fi testat
 în mod onest.
 
-Setul minim de reguli pentru `0.2.0`:
+Setul minim de reguli pentru nucleul actual:
 
 1. Diacriticele rămân canonice.
 2. Cratima iese din legarea gramaticală de bază.
 3. Timpul se scrie înaintea verbului.
 4. Forma temporală implicită este parțială sau relativă; forma completă este tehnică.
-5. Verbul folosește o formă stabilă din mini-lexicul activ.
-6. Predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu.
-7. Sufixul numeric la pronume apare doar când numărul este relevant.
-8. Substantivul folosește singularul ca bază; prefixul numeric marchează cardinalitatea.
-9. `*` marchează pluralul nenumărat.
-10. `@` marchează definitudinea numai când trebuie exprimată clar.
-11. `#` marchează posesia.
-12. Relațiile indirecte uzuale folosesc prepoziții scurte, nu operatori noi.
-13. Adjectivul stă după substantiv și nu se acordă.
-14. Adverbul scurt stă după verb; fraza grea se descompune.
-15. Operatorii de bază ai nucleului sunt `@`, `#`, `&`, `|`, `^`, `~`, `<`, `>`, `?`, `!`, `{}` și markerii temporali.
-16. Nested este rezervat pentru conținut raportat.
-17. Se aplică regula `operator minim necesar`.
+5. Verbul folosește o formă stabilă din lexicul verbal obligatoriu.
+6. Lexicul verbal este împărțit în nucleu obligatoriu și lexic extins.
+7. Predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu.
+8. Sufixul numeric la pronume apare doar când numărul este relevant.
+9. Substantivul folosește singularul ca bază; prefixul numeric marchează cardinalitatea.
+10. `*` marchează pluralul nenumărat.
+11. `@` marchează definitudinea numai când trebuie exprimată clar.
+12. `#` marchează posesia.
+13. Relațiile indirecte uzuale folosesc prepoziții scurte, nu operatori noi.
+14. Adjectivul stă după substantiv și nu se acordă.
+15. Adverbul scurt stă după verb; fraza grea se descompune.
+16. Operatorii de bază ai nucleului sunt `@`, `#`, `&`, `|`, `^`, `~`, `<`, `>`, `?`, `!`, `{}` și markerii temporali.
+17. Nested este rezervat pentru conținut raportat.
+18. Se aplică regula `operator minim necesar`.
 
 ---
 
@@ -562,6 +618,7 @@ Corpusul de bază trebuie să includă în primul rând propoziții scurte, cu u
 - definitudine marcată și nemarcată
 - posesie prin `#`
 - copula `e` în predicate simple
+- ordine explicită a propoziției cu subiect exprimat
 - relații prepoziționale simple
 - coordonare prin `&`, alternativă prin `|` și exclusivitate logică prin `^`
 - adjectiv după substantiv
@@ -576,6 +633,16 @@ structurale și temporale.
 
 Se recomandă și un corpus minimal separat pentru timp, verb și nominal, astfel
 încât fiecare strat al nucleului să poată fi verificat independent.
+
+Se recomandă și un corpus minimal copulativ separat, astfel încât excepția
+`a fi -> e` să fie testată explicit și să nu rămână doar o regulă declarată.
+
+Se recomandă și un control separat al ordinii, astfel încât propozițiile cu
+subiect exprimat să nu alunece din nou spre variante concurente greu de comparat.
+
+Se recomandă și loturi comparative RO versus SR pentru copulă, ordine și relații
+prepoziționale, astfel încât naturalețea să fie judecată pe perechi paralele,
+nu doar pe exemple izolate.
 
 Se recomandă și un corpus minimal structural pentru grad, aproximare, enunț,
 nested și descompunere, astfel încât operatorii să poată fi validați separat de
@@ -599,9 +666,42 @@ Pentru orice exemplu nou, revizia urmează aceeași secvență scurtă:
 
 1. Se fixează sursa și fenomenul dominant. Exemplul trebuie să testeze un singur lucru nou sau o singură combinație justificată.
 2. Se verifică fidelitatea. Nu se adaugă timp, număr, definitudine, posesie, coordonare, alternativă sau `XOR` care nu sunt susținute de sursă.
-3. Se verifică forma minimă. Verbul trebuie să apară în mini-lexicul activ, timpul trebuie să fie doar atât cât cere sensul, ordinea preferată trebuie să rămână recognoscibilă, iar operatorii trebuie reduși la minimul necesar.
+3. Se verifică forma minimă. Verbul trebuie să apară în lexicul verbal obligatoriu dacă propoziția pretinde statut de nucleu, timpul trebuie să fie doar atât cât cere sensul, ordinea preferată trebuie să rămână recognoscibilă, iar operatorii trebuie reduși la minimul necesar.
 4. Se verifică structura. `&`, `|`, `^` și `{}` rămân doar dacă păstrează o relație obligatorie; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, fraza se descompune.
-5. Se decide explicit: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
+5. Dacă verbul nu este încă în nucleul obligatoriu, se decide separat: `rămâne extins` sau `propus pentru promovare cu motivare`.
+6. Se decide explicit: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
+
+Pentru orice decizie controversată se adaugă și o scurtă motivare locală: de ce a fost preferată față de alternativa respinsă.
+
+Pentru propozițiile copulative se recomandă încă un control dedicat:
+
+1. Copula folosită este exact `e`?
+2. Propoziția este nominală, adjectivală sau locativă?
+3. `e` nu este folosit ca substitut pentru un verb lexical diferit?
+4. Forma rezultată rămâne mai naturală decât alternativa cu `era` sau decât omisiunea completă a copulei?
+
+Pentru propozițiile cu subiect exprimat se recomandă încă un control dedicat:
+
+1. Propoziția urmează ordinea `subiect + timp + predicat` sau `subiect + predicat`?
+2. O eventuală abatere este motivată clar prin economie sau recuperare contextuală?
+3. Propoziția fără subiect explicit este exclusă din acest control și verificată separat ca impersonală reală?
+4. Ordinea aleasă rămâne aceeași în exemplele paralele din corpus?
+
+Pentru propozițiile reduse se recomandă încă un control dedicat:
+
+1. Propoziția fără subiect explicit este impersonală reală?
+2. Verbul folosit aparține clasei `lexical-impersonal-verb`?
+3. Exemplul nu ascunde doar un subiect omis contextual?
+4. Forma redusă rămâne naturală fără sprijin contextual extern?
+
+Pentru promovarea unui verb din lexicul extins se recomandă încă un control dedicat:
+
+1. Verbul apare în cel puțin trei exemple scurte, distincte și utile pentru nucleu?
+2. Verbul trece o propoziție simplă, o propoziție cu continuare scurtă și o pereche comparativă `RO/SR`?
+3. O parafrază deja validată în nucleu a fost testată și s-a dovedit mai slabă sau mai artificială?
+4. Forma canonică rămâne ușor recognoscibilă la prima lectură?
+5. Promovarea reduce parafrazele forțate sau artificiale din nucleu?
+6. Promovarea este însoțită de o motivare clară a deciziei în documentația relevantă?
 
 ---
 
@@ -627,7 +727,7 @@ Pentru orice exemplu nou, revizia urmează aceeași secvență scurtă:
 
 ## 8. Pașii următori
 
-1. Fixarea mini-lexicului verbal pentru corpusul activ.
+1. Fixarea lexicului verbal pentru corpusul activ.
 2. Rescrierea corpusului de bază pe regula `un fenomen dominant per propoziție`.
 3. Aplicarea protocolului compact de revizie pentru fiecare exemplu nou.
 4. Măsurarea explicită a compactității, preciziei, simplității și uniformității.
