@@ -35,12 +35,17 @@ Nucleul actual lucrează cu un set redus de decizii:
 - frazele grele se descompun, iar `{}` rămâne pentru conținut raportat
 - corpusul separă nucleul obligatoriu de marginea experimentală
 - gramatica formală separă `EBNF Core` de `EBNF Extended`
+- `EBNF Core` acoperă acum explicit și propozițiile nominale scurte validate în corpus
+- apendicele lexical publică explicit inventarul minim al claselor controlate folosite de gramatică și de corpusul validat
 - copula `e` este tratată ca regulă de nucleu cu validare dedicată în corpus
 - propoziția fără subiect explicit rămâne în nucleul strict doar pentru impersonale reale
-- naturalețea este verificată și pe perechi comparative `RO` versus `SR`
+- naturalețea este verificată și pe perechi comparative `RO` versus `SR`, iar loturile centrale pentru verb, timp, copulă, ordine, număr, definitudine și relații prepoziționale sunt acum închise pentru nucleul curent
 - verbele de bază sunt separate de un lexic verbal extins, care nu definește nucleul strict
 - un verb nou intră în nucleu doar după lot minim de promovare și motivare clară a deciziei
 - în starea actuală, lexicul verbal obligatoriu este înghețat
+- lexicul verbal extins a fost redus la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază
+- fiecare verb din lexicul verbal obligatoriu are acum acoperire minimală și comparativă explicită în corpus
+- cardinalitatea și definitudinea de bază au acum și ele loturi comparative explicite, nu doar corpusuri minimale
 - unele verbe extinse sunt deja testate prin parafrază doar provizoriu: `a sta` pare mai ușor absorbabil prin copula locativă, în timp ce `a avea` și `a crede` par să reziste în probele actuale
 - dintre testele actuale, `a avea`, `a crede`, `a face` și `a dormi` rămân doar ipoteze de presiune lexicală, fără validare completă
 - se aplică regula `operator minim necesar`

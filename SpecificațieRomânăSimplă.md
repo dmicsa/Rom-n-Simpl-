@@ -141,36 +141,17 @@ Lexic verbal obligatoriu pentru nucleul actual:
 - `a ploua -> ploua`
 - `a fi -> e`
 - `a cere -> cerea`
-- `a privi -> privea`
-- `a striga -> striga`
 
 Lexic verbal extins:
 
 - `a face -> făcea`
-- `a zbura -> zbura`
-- `a înțelege -> înțelegea`
-- `a duce -> ducea`
 - `a crede -> credea`
 - `a avea -> avea`
-- `a lua -> lua`
-- `a scrie -> scria`
-- `a ști -> știa`
-- `a putea -> putea`
-- `a vrea -> voia`
-- `a trimite -> trimitea`
-- `a găsi -> găsea`
-- `a ține -> ținea`
 - `a dormi -> dormea`
 - `a sta -> stătea`
-- `a lucra -> lucra`
-- `a deschide -> deschidea`
-- `a închide -> închidea`
-- `a hrăni -> hrănea`
-- `a cumpăra -> cumpăra`
-- `a mânca -> mânca`
-- `a asculta -> asculta`
-- `a simți -> simțea`
 - `a pune -> punea`
+- `a privi -> privea`
+- `a striga -> striga`
 
 Regulă de utilizare:
 
@@ -192,6 +173,8 @@ Stare actuală:
 
 - lista verbală obligatorie de mai sus este înghețată în starea curentă
 - niciun verb din lexicul extins nu urcă în nucleu fără lot de promovare și fără motivare explicită a deciziei
+- lista verbală extinsă a fost redusă la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază; restul nu mai intră în starea activă a documentului
+- `a privi` și `a striga` au fost coborâte în lexicul extins: `a privi` dubla prea ușor funcția lui `a vedea`, iar `a striga` nu mai era necesar pentru testarea marcajului final `!`
 - probele curente de parafrază oferă doar observații provizorii: unele verbe extinse, ca `a sta`, par absorbabile prin structuri de nucleu, iar altele, ca `a avea` sau `a crede`, par să reziste parafrazei simple în forma testată
 - dintre verbele testate până acum, `a avea`, `a crede`, `a face` și `a dormi` rămân doar ipoteze de presiune lexicală și cer lot complet înainte de orice concluzie mai tare
 
@@ -199,7 +182,7 @@ Exemple de nucleu:
 
 - `eu 9 mergea la magazin.`
 - `tu 20:30 vedea @film?`
-- `ei10 bea vin.`
+- `ei bea vin.`
 - `eu -1D mergea la film.`
 - `ei 3H venea.`
 - `Ana 8 citea @carte.`
@@ -410,7 +393,10 @@ core-text             = core-sentence, { ws, core-sentence };
 core-sentence         = simple-sentence, end-mark;
 
 simple-sentence       = explicit-subject-sentence
+                      | nominal-sentence
                       | reduced-sentence;
+
+nominal-sentence      = nominal-group;
 
 explicit-subject-sentence
                       = subject, ws, [ time-marker, ws ], predicate;
@@ -557,16 +543,41 @@ Observații de lucru:
 Acest apendice nu înlocuiește corpusul, dar fixează un minim de clase lexicale
 controlate pentru testare și parsare.
 
-- `lexical-core-verb`: exact verbele din lexicul verbal obligatoriu actual.
-- `lexical-extended-verb`: exact verbele din lexicul verbal extins actual.
-- `lexical-impersonal-verb`: `ploua`.
-- `reporting-verb`: `spunea`, `întreba`, `credea`.
-- `lexical-adverb`: `clar`, `repede`, `aici`, `acasă`, `târziu`, `după`.
-- `lexical-adjective`: `mare`, `copt`, `închis`.
-- `lexical-proper-name`: `Ana`, `Maria`, `Ion`.
-- `lexical-noun`: `film`, `carte`, `pasăre`, `casă`, `cal`, `sală`, `magazin`, `vin`, `apă`, `lapte`, `sat`, `ușă`, `pâine`, `fruct`, `frig`.
-- `demonstrative-atom`: `asta`.
-- `preposition`: `la`, `din`, `cu`, `pentru`, `pe`, `în`.
+```ebnf
+lexical-core-verb     = "mergea" | "vedea" | "bea" | "venea" | "dădea"
+                      | "citea" | "pleca" | "spunea" | "rămânea"
+                      | "intra" | "vorbea" | "ajungea" | "întreba"
+                      | "răspundea" | "ploua" | "e" | "cerea";
+
+lexical-extended-verb = "făcea" | "credea" | "avea" | "dormea"
+                      | "stătea" | "punea" | "privea" | "striga";
+
+lexical-impersonal-verb
+                      = "ploua";
+
+reporting-verb        = "spunea" | "întreba" | "credea";
+
+lexical-adverb        = "clar" | "repede" | "aici" | "acasă"
+                      | "afară" | "târziu" | "după";
+
+lexical-adjective     = "mare" | "copt" | "închis" | "gol"
+                      | "liniștit";
+
+lexical-proper-name   = "Ana" | "Maria" | "Ion";
+
+lexical-noun          = "film" | "carte" | "pasăre" | "casă" | "cal"
+                      | "sală" | "magazin" | "vin" | "apă" | "lapte"
+                      | "sat" | "ușă" | "pâine" | "fruct" | "frig"
+                      | "drum" | "om";
+
+demonstrative-atom    = "asta";
+
+preposition           = "la" | "din" | "cu" | "pentru" | "pe" | "în";
+```
+
+Clasele de mai sus trebuie citite ca inventar public minim, nu ca lexic complet
+al limbii. Ele fac legătura explicită dintre gramatică, corpusul validat și
+parsarea de test.
 
 Regulă de lucru:
 
@@ -591,7 +602,25 @@ Exemplele de mai jos arată cum se leagă propozițiile de regulile formale.
 5. `tu bea apă. tu bea lapte.`
   `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
 
-6. `el spunea {tu bea vin?}`
+6. `3cal intra.`
+  `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
+
+7. `@casă e mare.`
+  `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
+
+8. `eu vedea ~10pasăre.`
+  `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
+
+9. `eu dădea @carte la Ana.`
+  `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
+
+10. `@2cal.`
+  `core-sentence -> nominal-sentence end-mark -> nominal-group end-mark`
+
+11. `@carte.`
+  `core-sentence -> nominal-sentence end-mark -> nominal-group end-mark`
+
+12. `el spunea {tu bea vin?}`
   `extended-sentence -> reported-sentence -> reporting-clause "{" embedded-sentence "}"`
 
 ---
@@ -655,14 +684,14 @@ Corpusul de bază trebuie să includă în primul rând propoziții scurte, cu u
 - timp parțial
 - timp relativ
 - verb stabil
-- pronume cu și fără număr
+- pronume de bază și cardinalitate nominală
 - cardinalitate nominală
 - definitudine marcată și nemarcată
 - posesie prin `#`
 - copula `e` în predicate simple
 - ordine explicită a propoziției cu subiect exprimat
 - relații prepoziționale simple
-- coordonare prin `&`, alternativă prin `|` și exclusivitate logică prin `^`
+- coordonare, alternativă și exclusivitate logică doar în marginea experimentală
 - adjectiv după substantiv
 - adverb scurt după verb
 - grad prin `<` și `>`
@@ -673,8 +702,13 @@ Pentru fiecare propoziție de bază se recomandă etichetarea fenomenului domina
 astfel încât validarea să poată separa clar testele verbale de testele nominale,
 structurale și temporale.
 
-Se recomandă și un corpus minimal separat pentru timp, verb și nominal, astfel
-încât fiecare strat al nucleului să poată fi verificat independent.
+Se recomandă și un corpus minimal separat pentru timp, verb, număr,
+definitudine și nominal, astfel încât fiecare strat al nucleului să poată fi
+verificat independent.
+
+Se recomandă și un lot comparativ verbal separat, astfel încât fiecare verb din
+lexicul verbal obligatoriu să aibă cel puțin o pereche scurtă `RO/SR`, nu doar
+prezență dispersată în exemple.
 
 Se recomandă și un corpus minimal copulativ separat, astfel încât excepția
 `a fi -> e` să fie testată explicit și să nu rămână doar o regulă declarată.
@@ -682,9 +716,10 @@ Se recomandă și un corpus minimal copulativ separat, astfel încât excepția
 Se recomandă și un control separat al ordinii, astfel încât propozițiile cu
 subiect exprimat să nu alunece din nou spre variante concurente greu de comparat.
 
-Se recomandă și loturi comparative RO versus SR pentru copulă, ordine și relații
-prepoziționale, astfel încât naturalețea să fie judecată pe perechi paralele,
-nu doar pe exemple izolate.
+Se recomandă și loturi comparative RO versus SR pentru verb, timp, copulă,
+ordine, număr, definitudine și relații prepoziționale, astfel încât
+naturalețea, stabilitatea lexicală și marcajul nominal să fie judecate pe
+perechi paralele, nu doar pe exemple izolate.
 
 Se recomandă și un corpus minimal structural pentru grad, aproximare, enunț,
 nested și descompunere, astfel încât operatorii să poată fi validați separat de

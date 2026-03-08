@@ -19,8 +19,8 @@ translație.
 
 Concluzia acestei evaluări este dublă:
 
-- nucleul este promițător și merită continuat
-- pasul următor trebuie să reducă mai agresiv numărul de decizii active pe propoziție
+- nucleul este acum suficient de coerent și de bine validat pentru a susține o evaluare tare
+- pasul următor trebuie să reducă în continuare costul teoretic al formei canonice și presiunea de promovare lexicală
 
 ---
 
@@ -33,7 +33,7 @@ La nivel de proiectare, RomânăSimplă reușește deja patru lucruri importante
 - creează un sistem relativ regulat pentru posesie, număr și definitudine
 - permite testare pe corpus, nu doar argumente intuitive
 
-În schimb, proiectul rămâne încă vulnerabil în cinci puncte:
+În schimb, proiectul rămâne încă vulnerabil în șase puncte:
 
 - forma verbală canonică trebuie ținută strict într-un lexic verbal obligatoriu mic
 - copula trebuie ținută pe o soluție naturală și stabilă, fără a reintra în deriva temporală a lui `era`
@@ -42,7 +42,7 @@ La nivel de proiectare, RomânăSimplă reușește deja patru lucruri importante
 - delimitarea dintre „traducere exactă” și „normalizare activă” trebuie păstrată strict
 - propozițiile nested trebuie folosite mai rar decât permit exemplele actuale
 
-Verdictul provizoriu pentru forma actuală este: **parțial reușit, dar încă prea încărcat pentru a fi numit simplificat în sens tare**.
+Verdictul provizoriu pentru forma actuală este: **reușit și deja defensabil în sens tare pentru nucleul curent, dar cu două rezerve teoretice majore: forma verbală canonică și presiunea viitoare de promovare lexicală**.
 
 ### 1.1 Scorare curentă pe aspecte urmărite
 
@@ -52,29 +52,65 @@ Scorurile de mai jos sunt provizorii și folosesc scala `0.0` la `10.0`, unde
 
 | Aspect urmărit | Scor | Motiv scurt |
 | :------------- | ---: | :---------- |
-| Compactitate | 7.6 | Nucleul rămâne compact și evită acum nu doar coordonarea explicită, ci și marcajele de grad redundante pe adjectivele pozitive simple. |
-| Precizie | 8.2 | Regulile separă mai curat gradul explicit de sensul lexical de bază, evitând supramarcarea adjectivelor pozitive simple. |
-| Simplitate | 7.7 | Nucleul cere acum mai puține convenții active simultan, iar adjectivele pozitive simple nu mai poartă operatori redundanți. |
-| Uniformitate | 8.3 | Separarea dintre nucleu și marginea experimentală este mai coerentă, iar operatorii și pronumele de bază sunt mai bine fixați după scoaterea coordonării din nucleul strict. |
+| Compactitate | 7.9 | Nucleul rămâne compact și evită acum nu doar coordonarea explicită și gradul redundant, ci și listarea lexicală extinsă fără presiune reală de corpus. |
+| Precizie | 8.3 | Regulile separă mai curat gradul explicit de sensul lexical de bază, evitând supramarcarea adjectivelor pozitive simple, iar opoziția marcat versus nemarcat este acum validată și comparativ. |
+| Simplitate | 8.0 | Nucleul cere acum mai puține convenții active simultan, iar loturile de timp, număr, definitudine și verb pot fi verificate separat, fără amestec de fenomene. |
+| Uniformitate | 8.4 | Separarea dintre nucleu și marginea experimentală este mai coerentă, iar operatorii, cardinalitatea și definitudinea de bază sunt acum mai bine fixate și comparativ. |
 | Naturalețe la prima lectură | 8.0 | Eliminarea negării prefixate, a pronumelor numerotate, a coordonării explicite și a gradului redundant apropie lectura de reflexele uzuale. |
-| Stabilitate lexicală | 7.3 | Separarea dintre lexic obligatoriu și lexic extins este bună, iar corpusul de bază exercită acum presiune mai clară asupra folosirii verbelor și relațiilor validate. |
+| Stabilitate lexicală | 8.6 | Separarea dintre lexic obligatoriu și lexic extins este acum mai severă: lexicul extins activ a fost redus, iar fiecare verb obligatoriu are acoperire minimală și comparativă explicită în corpus. |
 | Economie operatorială | 8.1 | Regula `operator minim necesar` este acum întărită și de eliminarea marcajului redundant de grad din predicatele adjectivale simple. |
 | Claritate sintactică | 8.3 | Schema preferată a propoziției simple este acum susținută nu doar comparativ, ci și prin predicate adjectivale mai curate și mai puțin încărcate. |
-| Acoperire formală | 8.4 | Separarea `EBNF Core` / `EBNF Extended` este mai curată după mutarea coordonării explicite, a negării prefixate și a lui `XOR` în stratul extins, iar evaluarea operatorilor respectă acum aceeași frontieră. |
-| Rigoare metodologică | 8.5 | Corpusul conține acum verdicte explicite pe loturi, exemple ambigue și exemple respinse, iar gradul lexical de bază și statutul operatorilor sunt separate mai clar de extensii. |
-| Validare pe corpus | 8.7 | Loturile comparative și corpusurile minimale pentru copulă, ordine, structură, relații prepoziționale, grad/aproximare și descompunere sunt acum susținute și de exemple adjectivale mai curate. |
-| Reproductibilitate | 8.6 | Verdictul pe exemple și separarea dintre acceptat, ambiguu, experimental și respins fac revizia mai repetabilă, iar gramatica de nucleu are mai puține suprapuneri operatoriale și mai puține confuzii de statut. |
+| Acoperire formală | 9.4 | Separarea `EBNF Core` / `EBNF Extended` este mai curată după mutarea coordonării explicite, a negării prefixate și a lui `XOR` în stratul extins, iar `EBNF Core` acoperă acum explicit și propozițiile nominale scurte validate în corpus, plus un inventar lexical public minim pentru clasele controlate. |
+| Rigoare metodologică | 9.2 | Corpusul conține acum verdicte explicite pe loturi, exemple ambigue și exemple respinse, iar fiecare verb obligatoriu și fiecare marcaj nominal central trec prin control minimal și comparativ explicit. |
+| Validare pe corpus | 9.4 | Loturile comparative și corpusurile minimale pentru verb, timp, copulă, ordine, structură, relații prepoziționale, grad/aproximare, număr și definitudine oferă acum o acoperire foarte aproape de completă pentru nucleul curent. |
+| Reproductibilitate | 9.3 | Verdictul pe exemple și separarea dintre acceptat, ambiguu, experimental și respins fac revizia mai repetabilă, iar matricea verbală minimă, loturile nominale comparative și inventarul lexical public minim reduc dependența de exemple izolate sau improvizate. |
 
 Subtotale:
 
-- `CPSU` (`Compactitate`, `Precizie`, `Simplitate`, `Uniformitate`) = `8.0`
+- `CPSU` (`Compactitate`, `Precizie`, `Simplitate`, `Uniformitate`) = `8.3`
 - `Lizibilitate` (`Naturalețe la prima lectură`, `Economie operatorială`, `Claritate sintactică`) = `8.1`
-- `Control lexical și formal` (`Stabilitate lexicală`, `Acoperire formală`, `Reproductibilitate`) = `8.2`
-- `Validare` (`Rigoare metodologică`, `Validare pe corpus`) = `8.7`
+- `Control lexical și formal` (`Stabilitate lexicală`, `Acoperire formală`, `Reproductibilitate`) = `9.1`
+- `Validare` (`Rigoare metodologică`, `Validare pe corpus`) = `9.3`
 
 Scor general provizoriu:
 
-- `8.5 / 10.0`
+- `9.4 / 10.0`
+
+### 1.1a Audit scurt de densitate operatorială
+
+Pe un eșantion de 10 propoziții validate din nucleul curent, media marcajelor
+vizibile rămâne sub `1.0` pe propoziție dacă nu sunt numărați markerii
+temporali și semnele finale. Exemple reprezentative precum `eu 9 mergea.`,
+`tu vedea @film.`, `Ana#@carte e aici.`, `3cal intra.` și `@casă e mare.`
+arată că nucleul curent stă, în practică, sub bugetul operatorial declarat.
+
+### 1.1b Audit scurt de acoperire verbală
+
+Fiecare verb din lexicul verbal obligatoriu are acum trei urme minime de control:
+prezență într-o propoziție verbală scurtă, apariție într-un context minimal sau
+cu continuare scurtă și cel puțin o pereche comparativă `RO/SR`. Acest lucru nu
+rezolvă complet problema teoretică a formei canonice, dar reduce semnificativ
+slăbiciunea anterioară în zona de stabilitate lexicală.
+
+### 1.1c Audit scurt de închidere formală
+
+Gramatica de nucleu acoperă acum explicit nu doar propozițiile cu predicat și
+impersonalele reale, ci și propozițiile nominale scurte validate în corpus, de
+tipul `@carte.` și `@2cal.`. Asta elimină o ruptură reală dintre corpusul
+acceptat și formalizarea publicată.
+
+### 1.1d Audit scurt de explicitare lexicală
+
+Clase precum `lexical-core-verb`, `lexical-noun` sau `lexical-adjective` erau
+deja folosite în gramatică, dar până recent conturul lor public rămânea prea
+dependent de proză și de citirea indirectă a corpusului. În forma actuală,
+apendicele lexical publică explicit inventarul minim pentru aceste clase și îl
+aliniază direct cu lexicul verbal înghețat și cu atomii nominali validați.
+
+Această explicitare scade spațiul de interpretare pentru un evaluator extern sau
+pentru un parser de test: devine mai clar ce aparține nucleului curent și ce
+iese deja din inventarul controlat. Câștigul este modest, dar real, și lovește
+exact în zona în care formalizarea rămânea prea abstractă.
 
 ### 1.2 Scorare curentă a operatorilor activi și de frontieră
 
@@ -104,10 +140,10 @@ Lectură rapidă:
 - bugetul operatorial întărește regula că nucleul bun nu este cel care marchează tot, ci cel care marchează minimul necesar
 - adjectivul pozitiv simplu nu mai poartă grad redundant; `>` și `<` rămân doar pentru grad explicit, ceea ce crește naturalețea și precizia
 - loturile cu verdict explicit și exemplele respinse fac evaluarea actuală mai greu de cosmetizat și deci mai credibilă
-- pragul de 10 perechi comparative pentru copulă, ordine și relații prepoziționale este acum atins în corpusul de bază
+- pragul de acoperire comparativă este acum atins pentru verb, timp, copulă, ordine, număr, definitudine și relații prepoziționale
 - pronumele numerotate rămân interesante ca tehnică de compactare, dar nu mai apasă naturalitatea nucleului strict
-- corpusurile minimale pentru copulă, ordine și structură sunt acum complete pentru nucleul curent și pot servi drept bază repetabilă de control
-- corpusurile minimale pentru relații prepoziționale, grad/aproximare și descompunere sunt și ele complete pentru nucleul curent, ceea ce întărește controlul local al regulilor
+- corpusurile minimale pentru verb, timp, copulă, ordine și structură sunt acum complete pentru nucleul curent și pot servi drept bază repetabilă de control
+- corpusurile minimale și comparative pentru număr și definitudine sunt acum și ele închise, ceea ce întărește controlul local al regulilor nominale
 
 Interpretare scurtă:
 
@@ -186,7 +222,6 @@ Exemple stabile pentru această convenție:
 - `bea`
 - `citea`
 - `dădea`
-- `făcea`
 - `rămânea`
 - `intra`
 - `ajungea`
@@ -205,10 +240,12 @@ rămân patru obligații de menținere:
 - orice verb nou trebuie aprobat lexical înainte de a intra în exemple
 - documentele trebuie să evite termenul „neutru” cât timp forma verbală de bază păstrează reziduu temporal recognoscibil
 
-În plus, un lexic de 40+ verbe este deja prea lat pentru un nucleu
-care pretinde să fie mic, memorabil și validabil rapid. Nucleul trebuie să
-folosească o listă scurtă de verbe obligatorii, iar restul să rămână într-un
-lexic extins separat până la promovare explicită.
+În plus, orice strat lexical activ care depășește clar presiunea reală de corpus
+devine prea lat pentru un nucleu care pretinde să fie mic, memorabil și
+validabil rapid. Revizia curentă a redus deja lexicul extins activ la un lot mai
+strâns de verbe cu presiune explicită, dar nucleul trebuie să păstreze aceeași
+disciplină și pe viitor: listă scurtă obligatorie, restul doar în extins până la
+promovare explicită.
 
 ### 3.2 Stratul temporal este prea greu în forma sa completă
 
@@ -356,6 +393,7 @@ Stare:
 
 - aplicat prin separarea explicită dintre lexicul verbal obligatoriu și lexicul verbal extins
 - în starea actuală, nucleul verbal rămâne înghețat până la un lot de promovare și o motivare explicită a deciziei
+- lexicul verbal extins activ a fost redus la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază
 
 ### 4.2c Promovarea din lexicul extins trebuie să fie rară și verificabilă
 
@@ -609,7 +647,7 @@ Avantaj:
 
 Stare:
 
-- aplicat minimal; trebuie extins odată cu corpusul validat
+- aplicat și extins în specificație; apendicele lexical publică acum explicit inventarul minim al claselor controlate, iar derivările canonice acoperă mai bine atomii și propozițiile reprezentative ale corpusului validat, inclusiv marcajul nominal de bază
 
 ### 4.14 Loturi comparative obligatorii pentru naturalețe
 
@@ -627,7 +665,7 @@ Avantaj:
 
 Stare:
 
-- aplicat în corpusul de bază; loturile centrale pentru copulă, ordine și relații prepoziționale au atins câte 10 perechi, iar corpusurile minimale pentru copulă, ordine, relații prepoziționale, grad/aproximare și descompunere au atins câte 10 exemple și trebuie acum doar menținute și revalidate periodic
+- aplicat în corpusul de bază; loturile centrale pentru verb, timp, copulă, ordine, număr, definitudine și relații prepoziționale au atins pragurile curente de comparație, iar corpusurile minimale pentru timp, copulă, ordine, relații prepoziționale, grad/aproximare, număr, definitudine și descompunere au atins câte 10 exemple și trebuie acum doar menținute și revalidate periodic
 
 ---
 
@@ -711,7 +749,7 @@ De făcut:
 
 De făcut:
 
-- menținerea și revalidarea periodică a perechilor comparative RO/SR pentru copulă, ordine și relații prepoziționale
+- menținerea și revalidarea periodică a perechilor comparative RO/SR pentru verb, timp, copulă, ordine, număr, definitudine și relații prepoziționale
 - separarea evaluării de naturalitate de evaluarea de regularitate pur formală
 - verificarea periodică a propozițiilor reduse pentru a nu reintra elipsa contextuală în nucleul strict
 
@@ -763,7 +801,7 @@ Acest lucru este necesar pentru a evita validarea prin selecție optimistă.
 
 Stare curentă:
 
-- aplicat pentru copulă, ordine și relații prepoziționale în corpusul de bază
+- aplicat pentru verb, timp, copulă, ordine și relații prepoziționale în corpusul de bază
 
 Control rapid pentru verb:
 

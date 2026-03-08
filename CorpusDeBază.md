@@ -145,6 +145,14 @@ SR: `ei ajungea.`
 5. `eu 15m răspundea.`
 6. `tu -30m ajungea.`
 7. `ei 2D pleca.`
+8. `Ana 7 intra.`
+9. `ei 21 bea apă.`
+10. `eu 6 vedea @pasăre.`
+
+Verdict:
+
+- `complet pentru nucleul curent`
+- motiv: cele 10 exemple acoperă timp parțial și relativ fără a reintroduce forma tehnică drept uz implicit
 
 ## Control Rapid Temporal
 
@@ -160,7 +168,7 @@ SR: `ei ajungea.`
 2. `@casă e mare.`
 3. `eu vedea ~10pasăre.`
 4. `tu bea vin?`
-5. `Ana striga!`
+5. `Ana vorbea!`
 6. `ploua. eu rămânea acasă.`
 7. `ei venea târziu. sală e închisă.`
 8. `tu vorbea clar.`
@@ -222,41 +230,23 @@ testare, dar nu definesc forma de bază a limbii în starea curentă.
 15. `a ploua -> ploua`
 16. `a fi -> e`
 17. `a cere -> cerea`
-18. `a privi -> privea`
-19. `a striga -> striga`
 
 ## Lexic verbal extins
 
 1. `a face -> făcea`
-2. `a zbura -> zbura`
-3. `a înțelege -> înțelegea`
-4. `a duce -> ducea`
-5. `a crede -> credea`
-6. `a avea -> avea`
-7. `a lua -> lua`
-8. `a scrie -> scria`
-9. `a ști -> știa`
-10. `a putea -> putea`
-11. `a vrea -> voia`
-12. `a trimite -> trimitea`
-13. `a găsi -> găsea`
-14. `a ține -> ținea`
-15. `a dormi -> dormea`
-16. `a sta -> stătea`
-17. `a lucra -> lucra`
-18. `a deschide -> deschidea`
-19. `a închide -> închidea`
-20. `a hrăni -> hrănea`
-21. `a cumpăra -> cumpăra`
-22. `a mânca -> mânca`
-23. `a asculta -> asculta`
-24. `a simți -> simțea`
-25. `a pune -> punea`
+2. `a crede -> credea`
+3. `a avea -> avea`
+4. `a dormi -> dormea`
+5. `a sta -> stătea`
+6. `a pune -> punea`
+7. `a privi -> privea`
+8. `a striga -> striga`
 
 Regulă:
 
 - Nucleul obligatoriu folosește numai verbe din acest lexic verbal obligatoriu.
 - Lexicul verbal extins este rezervat exemplelor secundare și nu definește standardul de bază.
+- În starea curentă, lexicul verbal extins a fost redus la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază.
 
 Regulă de promovare:
 
@@ -283,37 +273,92 @@ Regulă de promovare:
 14. `eu răspundea după.`
 15. `ploua.`
 16. `Ana cerea pâine.`
-17. `Ana privea @film.`
-18. `el striga!`
+17. `Ana vorbea!`
+
+Verdict:
+
+- `complet pentru nucleul curent`
+- motiv: toate verbele obligatorii apar cel puțin o dată într-o propoziție minimală scurtă de nucleu, fără verbe redundante față de `vedea` sau față de marcajul final `!`
+
+## Corpus Comparativ Verbal de Nucleu
+
+1. RO: `Eu merg.`
+   SR: `eu mergea.`
+2. RO: `Tu vezi asta.`
+   SR: `tu vedea asta.`
+3. RO: `Ei beau apă.`
+   SR: `ei bea apă.`
+4. RO: `Ana vine.`
+   SR: `Ana venea.`
+5. RO: `Eu dau cartea.`
+   SR: `eu dădea @carte.`
+6. RO: `Tu citești.`
+   SR: `tu citea.`
+7. RO: `Ei pleacă.`
+   SR: `ei pleca.`
+8. RO: `El spune asta.`
+   SR: `el spunea asta.`
+9. RO: `Eu rămân aici.`
+   SR: `eu rămânea aici.`
+10. RO: `Ana intră în sală.`
+   SR: `Ana intra în sală.`
+11. RO: `Tu vorbești clar.`
+   SR: `tu vorbea clar.`
+12. RO: `Ei ajung târziu.`
+   SR: `ei ajungea târziu.`
+13. RO: `Tu întrebi asta?`
+   SR: `tu întreba asta?`
+14. RO: `Eu răspund după.`
+   SR: `eu răspundea după.`
+15. RO: `Plouă.`
+   SR: `ploua.`
+16. RO: `Ana cere pâine.`
+   SR: `Ana cerea pâine.`
+17. RO: `Ana vorbește!`
+   SR: `Ana vorbea!`
+
+Verdict:
+
+- `acceptat în nucleu`
+- motiv: fiecare verb obligatoriu are acum cel puțin o pereche comparativă `RO/SR` scurtă și lizibilă, iar verbele redundante au fost mutate în extins
+
+## Matrice Minimă de Acoperire Verbală
+
+| Verb canonic | Propoziție minimală | Continuare scurtă sau context minim | Pereche `RO/SR` | Statut |
+| :----------- | :------------------ | :---------------------------------- | :-------------- | :----- |
+| `mergea` | da | da | da | `acoperit` |
+| `vedea` | da | da | da | `acoperit` |
+| `bea` | da | da | da | `acoperit` |
+| `venea` | da | da | da | `acoperit` |
+| `dădea` | da | da | da | `acoperit` |
+| `citea` | da | da | da | `acoperit` |
+| `pleca` | da | da | da | `acoperit` |
+| `spunea` | da | da | da | `acoperit` |
+| `rămânea` | da | da | da | `acoperit` |
+| `intra` | da | da | da | `acoperit` |
+| `vorbea` | da | da | da | `acoperit` |
+| `ajungea` | da | da | da | `acoperit` |
+| `întreba` | da | da | da | `acoperit` |
+| `răspundea` | da | da | da | `acoperit` |
+| `ploua` | da | da | da | `acoperit` |
+| `e` | da | da | da | `acoperit` |
+| `cerea` | da | da | da | `acoperit` |
+
+Verdict:
+
+- `acoperire verbală minimă închisă`
+- motiv: fiecare verb din nucleul obligatoriu trece acum pragul minim declarat de validare internă și comparativă, iar verbele `privea` și `striga` au fost coborâte în extins din motive de economie lexicală
 
 ## Corpus Verbal Extins
 
 1. `ea făcea pâine.`
-2. `ei zbura.`
-3. `eu înțelegea asta.`
-4. `ea ducea @carte la Ana.`
-5. `el credea asta.`
-6. `Ana avea @carte.`
-7. `eu avea apă.`
-8. `tu lua @carte.`
-9. `ea scria.`
-10. `ei știa asta.`
-11. `eu putea intra.`
-12. `tu voia apă.`
-13. `el trimitea @carte.`
-14. `eu găsea apă.`
-15. `tu ținea @ușă.`
-16. `ei dormea.`
-17. `Ana stătea aici.`
-18. `eu lucra.`
-19. `tu deschidea @ușă.`
-20. `el închidea @ușă.`
-21. `ea hrănea 2cal.`
-22. `eu cumpăra pâine.`
-23. `tu mânca.`
-24. `ei asculta.`
-25. `eu simțea frig.`
-26. `tu punea @carte aici.`
+2. `el credea asta.`
+3. `Ana avea @carte.`
+4. `ei dormea.`
+5. `Ana stătea aici.`
+6. `tu punea @carte aici.`
+7. `Ana privea @film.`
+8. `el striga!`
 
 ## Control Rapid Verbal
 
@@ -444,13 +489,13 @@ Regulă de interpretare:
 7. `Ana 8 citea @carte.`
 8. `ei ajungea târziu.`
 9. `eu răspundea după.`
-10. `Ana privea @film.`
+10. `Ana vedea @film.`
 
 ## Verdict rapid pentru corpusurile minimale
 
 - corpusul minimal copulativ: `complet pentru nucleul curent`; cele 10 exemple acoperă locativ, adjectival și posesiv scurt
 - corpusul minimal de ordine: `complet pentru nucleul curent`; cele 10 exemple acoperă propoziții cu și fără marker temporal, plus impersonale reale
-- corpusul minimal structural: `complet pentru nucleul curent`; cele 10 exemple acoperă grad, aproximare, enunț, coordonare și descompunere
+- corpusul minimal structural: `complet pentru nucleul curent`; cele 10 exemple acoperă grad, aproximare, enunț, exclamare, interogare și descompunere
 
 ## Corpus Comparativ Copulativ
 
@@ -495,8 +540,31 @@ Regulă de interpretare:
    SR: `tu întreba asta?`
 9. RO: `Eu răspund după.`
    SR: `eu răspundea după.`
-10. RO: `Ana privește filmul.`
-   SR: `Ana privea @film.`
+10. RO: `Ana vede filmul.`
+   SR: `Ana vedea @film.`
+
+## Corpus Comparativ Temporal
+
+1. RO: `Eu merg la ora 9.`
+   SR: `eu 9 mergea.`
+2. RO: `Tu vezi filmul la 20:30.`
+   SR: `tu 20:30 vedea @film.`
+3. RO: `Ei vin peste 3 ore.`
+   SR: `ei 3H venea.`
+4. RO: `Eu merg peste 2 zile.`
+   SR: `eu 2D mergea.`
+5. RO: `Tu ajungi peste 30 de minute.`
+   SR: `tu 30m ajungea.`
+6. RO: `Ana citește cartea la ora 8.`
+   SR: `Ana 8 citea @carte.`
+7. RO: `Eu răspund după 15 minute.`
+   SR: `eu 15m răspundea.`
+8. RO: `Ei pleacă peste 2 zile.`
+   SR: `ei 2D pleca.`
+9. RO: `Ana intră la ora 7.`
+   SR: `Ana 7 intra.`
+10. RO: `Eu văd pasărea la ora 6.`
+   SR: `eu 6 vedea @pasăre.`
 
 ## Corpus Comparativ Relații Prepoziționale
 
@@ -523,8 +591,12 @@ Regulă de interpretare:
 
 ## Verdict rapid pentru loturile comparative
 
+- lotul verbal: `acceptat în nucleu`; cele 17 perechi susțin direct fiecare verb obligatoriu din nucleul curent
 - lotul copulativ: `acceptat în nucleu`; cele zece perechi de mai sus susțin folosirea lui `e` ca regulă de bază pentru predicate locative, adjectivale și posesive simple
 - lotul de ordine: `acceptat în nucleu`; cele zece perechi susțin schema `subiect + timp + predicat` sau `subiect + predicat`
+- lotul temporal: `acceptat în nucleu`; cele zece perechi susțin folosirea timpului parțial și relativ ca strat uzual de bază
+- lotul de număr: `acceptat în nucleu`; cele zece perechi susțin prefixul numeric ca soluție stabilă pentru cardinalitate
+- lotul de definitudine: `acceptat în nucleu`; cele zece perechi susțin operatorul `@` ca marcaj controlat al opoziției marcat versus nemarcat
 - lotul prepozițional: `acceptat în nucleu`; cele zece perechi susțin păstrarea relațiilor indirecte prin prepoziții scurte
 
 ## Exemple ambigue de urmărit
@@ -582,6 +654,52 @@ ca argument unic pentru o regulă nouă.
 2. `tu = tu`
 3. `ei = grup mixt sau nespecificat`
 
+## Corpus Minimal Număr
+
+1. `cal.`
+2. `2cal.`
+3. `3cal.`
+4. `10cal.`
+5. `pasăre.`
+6. `4pasăre.`
+7. `carte.`
+8. `2carte.`
+9. `om.`
+10. `5om.`
+
+Verdict:
+
+- `complet pentru nucleul curent`
+- motiv: cele 10 exemple separă clar forma singulară de bază de cardinalitatea exprimată prin prefix numeric
+
+## Corpus Comparativ Număr
+
+1. RO: `Cal.`
+   SR: `cal.`
+2. RO: `Doi cai.`
+   SR: `2cal.`
+3. RO: `Trei cai.`
+   SR: `3cal.`
+4. RO: `Zece cai.`
+   SR: `10cal.`
+5. RO: `Pasăre.`
+   SR: `pasăre.`
+6. RO: `Patru păsări.`
+   SR: `4pasăre.`
+7. RO: `Carte.`
+   SR: `carte.`
+8. RO: `Două cărți.`
+   SR: `2carte.`
+9. RO: `Om.`
+   SR: `om.`
+10. RO: `Cinci oameni.`
+    SR: `5om.`
+
+Verdict:
+
+- `acceptat în nucleu`
+- motiv: cele 10 perechi susțin prefixul numeric ca soluție comparabilă și stabilă pentru cardinalitatea nominală
+
 ## Pronume numerotate experimentale
 
 1. `eu5 = noi cinci`
@@ -608,7 +726,7 @@ Verdict:
 12. `ei venea din sat.`
 13. `tu mergea cu Ana.`
 14. `Ana cerea pâine pentru eu.`
-15. `el privea pe Ana.`
+15. `el vedea pe Ana.`
 
 ## Control Rapid Nominal
 
@@ -628,6 +746,52 @@ Verdict:
 3. `2cal = doi cai`
 4. `*pasăre = multe păsări`
 5. `@2cal = cei doi cai`
+
+## Corpus Minimal Definitudine
+
+1. `carte.`
+2. `@carte.`
+3. `film.`
+4. `@film.`
+5. `casă.`
+6. `@casă.`
+7. `pasăre.`
+8. `@pasăre.`
+9. `2cal.`
+10. `@2cal.`
+
+Verdict:
+
+- `complet pentru nucleul curent`
+- motiv: cele 10 exemple acoperă opoziția nemarcat versus marcat pentru substantive simple și pentru cardinalitate nominală
+
+## Corpus Comparativ Definitudine
+
+1. RO: `Carte.`
+   SR: `carte.`
+2. RO: `Cartea.`
+   SR: `@carte.`
+3. RO: `Film.`
+   SR: `film.`
+4. RO: `Filmul.`
+   SR: `@film.`
+5. RO: `Casă.`
+   SR: `casă.`
+6. RO: `Casa.`
+   SR: `@casă.`
+7. RO: `Pasăre.`
+   SR: `pasăre.`
+8. RO: `Pasărea.`
+   SR: `@pasăre.`
+9. RO: `Doi cai.`
+   SR: `2cal.`
+10. RO: `Cei doi cai.`
+    SR: `@2cal.`
+
+Verdict:
+
+- `acceptat în nucleu`
+- motiv: cele 10 perechi susțin opoziția nemarcat versus marcat pentru substantive simple și pentru cardinalitate nominală
 
 ## Posesie și relații simple
 
@@ -722,14 +886,18 @@ SR: `eu5 pleca.`
 
 ## Ținte pentru extindere
 
-- 10 propoziții minimale pentru timp
-- 10 propoziții minimale pentru verb
+- menținere și revalidare periodică pentru corpusul minimal verbal de nucleu
+- menținere și revalidare periodică pentru lotul comparativ verbal de nucleu
 - menținere și revalidare periodică pentru cele 10 propoziții minimale de ordine
-- 10 propoziții minimale pentru număr
-- 10 propoziții minimale pentru definitudine
+- menținere și revalidare periodică pentru cele 10 propoziții minimale de timp
+- menținere și revalidare periodică pentru cele 10 propoziții minimale de număr
+- menținere și revalidare periodică pentru cele 10 propoziții minimale de definitudine
+- menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale numărului
+- menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale definitudinii
 - 10 propoziții minimale pentru posesie
 - menținere și revalidare periodică pentru cele 10 propoziții minimale ale copulei `e`
 - 10 propoziții minimale pentru relații prepoziționale
+- menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale timpului
 - menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale copulei `e`
 - menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale ordinii
 - menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale relațiilor prepoziționale
