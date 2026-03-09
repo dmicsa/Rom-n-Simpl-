@@ -1,0 +1,34 @@
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+
+\IfFontExistsTF{Cambria}{\setmainfont{Cambria}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Liberation Mono}{\setmonofont{Liberation Mono}[Scale=MatchLowercase]}{\setmonofont{Courier New}[Scale=MatchLowercase]}
+
+\definecolor{RSBlue}{HTML}{16324F}
+\definecolor{RSGray}{HTML}{E8EDF2}
+\definecolor{RSRule}{HTML}{D6DCE3}
+
+\captionsetup[table]{font=small,labelfont=bf,labelsep=period,skip=6pt,justification=raggedright,singlelinecheck=false}
+
+\newcommand{\rs}[1]{\texttt{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\RStablelayout}{%
+\footnotesize
+\setlength{\tabcolsep}{6pt}%
+\renewcommand{\arraystretch}{1.12}%
+\arrayrulecolor{RSRule}%
+}
+\newcommand{\RSDenseTablelayout}{%
+\footnotesize
+\setlength{\tabcolsep}{4pt}%
+\renewcommand{\arraystretch}{1.03}%
+\setlength{\LTleft}{\fill}%
+\setlength{\LTright}{\fill}%
+\arrayrulecolor{RSRule}%
+}

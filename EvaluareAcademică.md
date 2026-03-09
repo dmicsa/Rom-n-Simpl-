@@ -359,34 +359,42 @@ Regula bună aici este simplă: dublarea lui `!`, `?`, `<` și `>` crește efect
 operatorului deja cunoscut. Dacă intensificarea nu aduce o diferență reală de
 sens sau de ton, forma simplă rămâne preferată.
 
-### 3.6 Propoziția simplă nu are încă o schemă preferată suficient de strictă
+### 3.6 Schema preferată a propoziției simple a fost fixată, dar trebuie menținută strict
 
-RomânăSimplă are deja multe decizii locale bune, dar încă nu fixează destul de
-clar forma implicită a propoziției simple. Când ordinea rămâne prea liberă,
-uniformitatea scade și fiecare exemplu cere o mică reinterpretare.
+Un progres real al reviziei curente este că propoziția simplă are acum o schemă
+preferată explicită și executabilă: `subiect + timp + predicat` sau, fără marker
+temporal, `subiect + predicat`. Restrângerea propoziției fără subiect explicit la
+impersonale reale repară și o sursă veche de elipsă ambiguă.
 
-Pentru un limbaj care vrea să fie compact și uniform, nu este suficient să aibă
-operatori clari. Are nevoie și de o linie sintactică implicită, ușor de recunoscut.
+Problema nu mai este absența regulii, ci disciplina de menținere. Dacă exemplele
+noi reintroduc prea multe abateri nejustificate de la această ordine, uniformitatea
+poate scădea din nou și cititorul va pierde reflexul de lectură pe care corpusul de
+nucleu tocmai l-a fixat.
 
-### 3.7 EBNF-ul încă amestecă prea mult nucleul cu extensiile
+### 3.7 Separarea EBNF-ului de extensii este acum mai curată, dar trebuie păstrată
 
 O gramatică formală bună nu trebuie doar să accepte propoziții, ci să arate clar
-ce aparține nucleului și ce aparține periferiei. În forma anterioară, alternativa exclusivă,
-`nested` și timpul tehnic erau puse prea sus în aceeași ierarhie formală.
+ce aparține nucleului și ce aparține periferiei. Revizia curentă a reparat tocmai
+zona în care forma anterioară amesteca prea mult straturile: alternativa exclusivă,
+`nested` și timpul tehnic nu mai stau în aceeași ierarhie de bază cu nucleul uzual.
 
-Aceasta slăbea exact distincția pe care proiectul o cere în proză: nucleu mic,
-uzual și stabil, versus strat extins, tehnic sau experimental.
+Riscul rămas este unul de întreținere: pe măsură ce apar exemple noi sau extensii
+utile, documentația nu trebuie să reamestece tacit `EBNF Core` cu `EBNF Extended`.
+Altfel, proiectul ar pierde din nou distincția pe care acum o susține explicit în
+proza normativă și în corpus.
 
-### 3.8 Formalizarea lexicală a rămas prea abstractă
+### 3.8 Formalizarea lexicală este acum mai explicită, dar trebuie menținută executabilă
 
-Atunci când EBNF-ul trimite la clase ca `lexical-noun` sau
-`lexical-core-verb`, dar aceste clase nu au un minim de contur public,
-formalizarea rămâne doar parțial executabilă. Pentru un proiect care insistă pe
-disciplină și corpus controlat, această zonă nu poate rămâne implicită.
+Zona lexicală nu mai este la fel de abstractă ca înainte. Apendicele lexical și
+derivările canonice publică acum explicit un contur minim pentru clase precum
+`lexical-noun`, `lexical-core-verb` sau clasele adjectivale și adverbiale active
+în corpus.
 
-În plus, atomi frecvenți precum `asta` sau prepoziții deja active în corpus nu
-pot rămâne doar intuiți. Dacă apar în exemple, trebuie să aibă statut lexical
-public, altfel formalizarea promite mai mult decât execută.
+Totuși, câștigul rămâne fragil dacă nu este întreținut strict. Pentru un proiect
+care insistă pe disciplină și corpus controlat, niciun atom frecvent și nicio
+clasă invocată de gramatică nu trebuie lăsate din nou doar implicite. Dacă apar
+în exemple, trebuie să își păstreze statutul lexical public, altfel formalizarea
+ar recădea într-o executabilitate doar parțială.
 
 ### 3.9 Probele actuale de parafrază sunt utile, dar încă prea slabe pentru concluzii tari
 

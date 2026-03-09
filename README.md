@@ -64,6 +64,8 @@ Nucleul actual lucrează cu un set redus de decizii:
 - `CorpusDeBază.md` conține exemplele de test și protocolul scurt de revizie.
 - `EvaluareAcademică.md` conține analiza critică, prioritățile și standardul de acceptare.
 - `Prezentare.md` rezumă proiectul în forma cea mai scurtă.
+- `RomanaSimplaAcademic.tex` este sursa LaTeX canonică pentru articolul publicat și pentru PDF-ul de release din rădăcina repo-ului.
+- `RomanaSimplaAcademicSubmission.tex` păstrează o variantă de layout pentru trimitere editorială; nu redefinește nucleul normativ și nu este sursa canonică de release.
 - `Extra/` conține materiale auxiliare ilustrative; acestea nu trebuie citite automat ca probe normative de nucleu.
 
 ## Statutul documentelor
@@ -102,7 +104,7 @@ arăta evoluția proiectului, dar nu trebuie confundate cu starea canonică actu
 
 ## Build
 
-PDF-ul canonic al articolului este `RomanaSimplaAcademic.pdf` din rădăcina repo-ului.
+PDF-ul canonic al articolului este `RomanaSimplaAcademic.pdf` din rădăcina repo-ului, generat din `RomanaSimplaAcademic.tex`.
 
 Reconstrucția recomandată se face prin scriptul:
 
