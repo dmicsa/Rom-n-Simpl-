@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.10.9)  9 MAR 2026 14:30
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2025.10.9)  9 MAR 2026 14:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./RomanaSimplaAcademic.tex
-(RomanaSimplaAcademic.tex
+**D:/My/Work/RomânăSimplă/RomanaSimplaAcademic.tex
+(D:/My/Work/RomânăSimplă/RomanaSimplaAcademic.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -574,7 +574,7 @@ Space,Scale=MatchLowercase].
 
 Package hyperref Info: Option `colorlinks' set `true' on input line 64.
 
-(RomanaSimplaAcademic.aux)
+(D:\My\Work\RomânăSimplă\Extra\Build\RomanaSimplaAcademic.aux)
 \openout1 = `RomanaSimplaAcademic.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
@@ -714,7 +714,8 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 Package hyperref Info: Link coloring ON on input line 95.
-(RomanaSimplaAcademic.out) (RomanaSimplaAcademic.out)
+(D:\My\Work\RomânăSimplă\Extra\Build\RomanaSimplaAcademic.out)
+(D:\My\Work\RomânăSimplă\Extra\Build\RomanaSimplaAcademic.out)
 \@outlinefile=\write3
 \openout3 = `RomanaSimplaAcademic.out'.
 
@@ -736,7 +737,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
  [2
 
-] (RomanaSimplaAcademic.toc
+] (D:\My\Work\RomânăSimplă\Extra\Build\RomanaSimplaAcademic.toc
 LaTeX Font Info:    Font shape `TU/LiberationMono(0)/m/n' will be
 (Font)              scaled to size 10.60254pt on input line 15.
  [3
@@ -745,7 +746,8 @@ LaTeX Font Info:    Font shape `TU/LiberationMono(0)/m/n' will be
 \tf@toc=\write4
 \openout4 = `RomanaSimplaAcademic.toc'.
 
- [4] [5
+
+[4] [5
 
 ] [6
 
@@ -898,7 +900,7 @@ Underfull \hbox (badness 2495) in paragraph at lines 1129--1133
 
 [29
 
-] (RomanaSimplaAcademic.aux)
+] (D:\My\Work\RomânăSimplă\Extra\Build\RomanaSimplaAcademic.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -907,12 +909,13 @@ Package rerunfilecheck Info: File `RomanaSimplaAcademic.out' has not changed.
 (rerunfilecheck)             Checksum: FC8AD49ED1384153240696D96B621553;9029.
  ) 
 Here is how much of TeX's memory you used:
- 16375 strings out of 409615
- 311572 string characters out of 5774373
+ 16377 strings out of 409615
+ 311930 string characters out of 5774373
  1947191 words of memory out of 5000000
  38270 multiletter control sequences out of 15000+600000
  564962 words of font info for 108 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 79i,12n,119p,1019b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,119p,1041b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on RomanaSimplaAcademic.pdf (29 pages).
+Output written on D:\My\Work\RomânăSimplă\Extra\Build\RomanaSimplaAcademic.pdf 
+(29 pages).
