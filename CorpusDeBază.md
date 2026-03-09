@@ -119,7 +119,7 @@ SR: `ei pleca.`
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - lexicul verbal obligatoriu este explicit; forma canonică nu se deduce automat din infinitiv
 - lexicul verbal extins nu definește nucleul și nu intră automat în loturile obligatorii
-- pronumele numerotate rămân experimentale
+- pronumele pot primi în nucleu sufix numeric sau `*` ca subiect sau ca posesor compact, când cardinalitatea participanților contează; `*` marchează plural neexact
 - singularul este baza pentru substantiv
 - `@` se adaugă doar când definitudinea trebuie exprimată clar
 - `#` marchează posesia
@@ -132,6 +132,7 @@ SR: `ei pleca.`
 - forma nemarcată este implicită; marcajul fără contrast justificabil se rescrie sau coboară din nucleul dur
 - se aplică regula `operator minim necesar`
 - în nucleul de test se preferă cel mult două marcaje vizibile, fără a număra markerul temporal și semnul final
+- un cluster cuantificat de tipul `eu5`, `tu3` sau `ei*` contează ca un singur marcaj vizibil
 
 ## Timp
 
@@ -211,7 +212,7 @@ Verdict:
 1. Operatorul structural folosit este necesar pentru sens?
 2. Gradul sau aproximarea sunt marcate fără încărcare inutilă?
 3. Propoziția respectă bugetul operatorial de nucleu?
-4. `?` și `!` sunt suficiente fără forme duble?
+4. Dacă apare o formă dublă de tip `??`, `!!`, `<<` sau `>>`, ea intensifică un operator de bază deja necesar și nu introduce doar zgomot grafic?
 5. Descompunerea este preferată ori de câte ori poate înlocui o coordonare fără pierdere de sens obligatoriu?
 6. Fraza poate fi descompusă mai clar în propoziții simple?
 
@@ -219,6 +220,9 @@ Verdict:
 
 Aceste exemple nu intră în scorarea nucleului strict. Ele rămân utile pentru
 testare, dar nu definesc forma de bază a limbii în starea curentă.
+
+Formele duble `<<`, `>>`, `??`, `!!` nu intră aici: ele sunt tratate în nucleu
+ca intensificări ale operatorilor de bază, nu ca operatori experimentali separați.
 
 1. `eu !vedea @film.`
 2. `@casă e !mare.`
@@ -697,11 +701,7 @@ fără a le reactiva ca verbe obligatorii de nucleu.
 Aceste exemple nu sunt respinse, dar cer atenție la lectură și nu trebuie folosite
 ca argument unic pentru o regulă nouă.
 
-1. RO: `Noi cinci plecăm.`
-   SR: `eu5 pleca.`
-   verdict: `ambiguu`
-   motiv: compact, dar mai puțin natural la prima lectură decât restul nucleului curent
-2. RO: `Cartea Anei este aici.`
+1. RO: `Cartea Anei este aici.`
    SR: `Ana#@carte e aici.`
    verdict: `ambiguu controlat`
    motiv: propoziția este validă, dar combină posesie, definitudine și locativ într-o singură unitate
@@ -793,15 +793,66 @@ Verdict:
 - `acceptat în nucleu`
 - motiv: cele 10 perechi susțin prefixul numeric ca soluție comparabilă și stabilă pentru cardinalitatea nominală
 
-## Pronume numerotate experimentale
+## Pronume cuantificate de nucleu
 
 1. `eu5 = noi cinci`
 2. `tu3 = voi trei`
+3. `ei10 = zece participanți`
+4. `eu* = noi, număr nespecificat`
+5. `ei* = ei, număr nespecificat`
 
 Verdict:
 
-- `păstrate experimental`
-- motiv: aduc compactitate reală, dar încă pierd prea mult la naturalețe pentru nucleul strict
+- `acceptat în nucleu`
+- motiv: cardinalitatea participanților este tratată acum ca informație de grup 1, dar numai în poziție de subiect; `*` rămâne plural neexact, iar clusterul cuantificat se numără ca un singur marcaj vizibil
+
+## Limite pentru pronume cuantificate
+
+1. `eu5 pleca.`
+   verdict: `acceptat în nucleu`
+   motiv: cardinalitatea participanților este exprimată în poziția permisă, de subiect
+2. `ei* 3H venea.`
+   verdict: `acceptat în nucleu`
+   motiv: `*` marchează plural neexact, iar clusterul cuantificat se numără ca un singur marcaj vizibil
+3. `eu5#carte.`
+   verdict: `acceptat în nucleu`
+   motiv: cuantificarea posesorului comprimă direct informația de grup fără operator nou
+4. `ei*#@sală.`
+   verdict: `acceptat în nucleu`
+   motiv: posesia de grup rămâne lizibilă când relația nominală este centrală
+
+## Control Rapid Buget Operatorial
+
+1. `eu5 3H venea.`
+   verdict: `acceptat în nucleu`
+   motiv: clusterul cuantificat și markerul temporal nu depășesc bugetul activ
+2. `eu5 vedea @2cal.`
+   verdict: `acceptat în nucleu`
+   motiv: clusterul cuantificat contează ca un singur marcaj, iar `@2cal` concentrează marcajul nominal în limita bugetului
+3. `eu3#5carte.`
+   verdict: `acceptat în nucleu`
+   motiv: densitatea este justificată de comprimarea exactă a posesiei de grup și a cardinalității nominale
+4. `eu5 vedea @2cal >clar.`
+   verdict: `respins din nucleu; păstrat experimental`
+   motiv: propoziția depășește bugetul operatorial util pentru testul de nucleu fără o justificare structurală comparabilă
+
+## Corpus Minimal Plural Uman
+
+1. `eu2 venea.`
+2. `eu3 mergea.`
+3. `tu4 vedea @film.`
+4. `ei5 bea apă.`
+5. `eu* rămânea acasă.`
+6. `ei* 3H venea.`
+7. `eu3#carte.`
+8. `eu3#5carte.`
+9. `ei*#@sală.`
+10. `tu2#@film.`
+
+Verdict:
+
+- `acceptat în nucleu`
+- motiv: lotul fixează explicit pluralul uman atât ca subiect, cât și ca posesor compact, cu forme exacte și neexacte
 
 ## Corpus Minimal Nominal
 
@@ -949,7 +1000,7 @@ Verdict:
 Exemplele de mai jos nu ies din proiect, dar nu mai definesc reflexul principal de citire.
 În mod implicit, nested, timpul tehnic complet și alternativa exclusivă marcată explicit intră mai întâi aici, nu în nucleul obligatoriu.
 
-### Perechi RO și SR experimentale
+### Perechi RO și SR suplimentare
 
 **1**
 RO: `El spune că tu bei vin.`

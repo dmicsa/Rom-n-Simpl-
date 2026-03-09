@@ -156,11 +156,11 @@ rămân doar în marginea extinsă. Scorul final este orientativ și rămâne pr
 | :------- | :----- | --------: | ---------------------: | ----------: | ------------------: | ---------: | :---------- |
 | `@` | nucleu | 8.9 | 9.2 | 7.9 | 8.4 | 8.6 | Foarte compact, foarte stabil și rar ambiguu. |
 | `#` | nucleu | 8.0 | 8.3 | 7.4 | 7.6 | 7.8 | Posesia rămâne clară și scurtă, deși simbolul cere puțin antrenament. |
-| `<` | nucleu | 7.8 | 8.6 | 7.8 | 6.8 | 7.8 | Gradul inferior este clar și ieftin, dar apare doar când gradul este explicit. |
-| `>` | nucleu | 7.9 | 8.7 | 7.8 | 6.9 | 7.9 | Simetric cu `<`, mai bine delimitat după scoaterea gradului redundant din adjectivele pozitive simple. |
+| `<` / `<<` | nucleu | 7.8 | 8.5 | 7.6 | 6.8 | 7.7 | `<<` nu introduce o categorie nouă, ci intensifică efectul lui `<`; forma simplă rămâne preferată când sursa nu cere accentuare. |
+| `>` / `>>` | nucleu | 7.9 | 8.6 | 7.6 | 6.9 | 7.8 | `>>` intensifică efectul lui `>` fără a deschide o familie nouă de operatori; forma simplă rămâne reflexul de bază. |
 | `~` | nucleu | 8.1 | 8.7 | 7.5 | 7.4 | 7.9 | Aproximarea este bine fixată și ușor de citit în fața cantităților. |
-| `?` final | nucleu | 9.0 | 9.4 | 9.0 | 8.1 | 8.9 | Aproape gratuit cognitiv și deja complet familiar. |
-| `!` final | nucleu | 8.9 | 8.8 | 9.0 | 7.2 | 8.6 | Ca semn final rămâne foarte ieftin cognitiv după ce nu mai concurează cu un rol prefixal în nucleu. |
+| `?` / `??` final | nucleu | 9.0 | 9.3 | 8.9 | 8.1 | 8.8 | `??` crește efectul interogativ al lui `?`, dar nu introduce un operator nou; forma simplă rămâne norma implicită. |
+| `!` / `!!` final | nucleu | 8.9 | 8.7 | 8.9 | 7.2 | 8.5 | `!!` intensifică exclamarea lui `!`; păstrarea lui în nucleu este defensabilă dacă rămâne rar și strict motivat. |
 | markerii temporali | nucleu | 8.4 | 8.6 | 7.3 | 8.7 | 8.3 | Sunt operatorii cei mai utili ai sistemului și rămân justificați chiar când apar frecvent. |
 | `și` | extins | 8.5 | 8.8 | 8.9 | 6.1 | 8.1 | Este forma cea mai naturală pentru coordonare explicită atunci când descompunerea nu e suficientă. |
 | `sau` | extins | 8.1 | 7.5 | 8.9 | 6.0 | 7.7 | Rămâne lizibil și familiar, dar trebuie fixat explicit ca OR incluziv pentru a evita ambiguitatea pragmatică. |
@@ -169,7 +169,7 @@ rămân doar în marginea extinsă. Scorul final este orientativ și rămâne pr
 
 Lectură rapidă:
 
-- operatorii cei mai solizi în nucleu rămân `@`, `?`, `!` final, markerii temporali, `~`, `<`, `>` și `#`
+- operatorii cei mai solizi în nucleu rămân `@`, `#`, `~`, `<`, `>`, `?`, `!` final și markerii temporali; doar `<`, `>`, `?` și `!` au forme duble intensificatoare
 - `ori`, `{}` și negarea prefixată cu `!` trebuie ținute în marginea extinsă până la validare mai puternică
 - `și`, `sau` și `ori` sunt mai bune ca forme semantice principale decât simbolurile `&`, `|` și `^`
 - `&`, `|` și `^` rămân doar abrevieri opționale ale stratului extins
@@ -177,7 +177,7 @@ Lectură rapidă:
 - adjectivul pozitiv simplu nu mai poartă grad redundant; `>` și `<` rămân doar pentru grad explicit, ceea ce crește naturalețea și precizia
 - loturile cu verdict explicit și exemplele respinse fac evaluarea actuală mai greu de cosmetizat și deci mai credibilă
 - pragul de acoperire comparativă este acum atins pentru verb, timp, copulă, ordine, număr, definitudine și relații prepoziționale
-- pronumele numerotate rămân interesante ca tehnică de compactare, dar nu mai apasă naturalitatea nucleului strict
+- pronumele cuantificate cu număr sau `*` au trecut în nucleul strict și trebuie evaluate ca parte a compactării de bază, nu ca ornament periferic
 - corpusurile minimale pentru verb, timp, copulă, ordine și structură sunt acum complete pentru nucleul curent și pot servi drept bază repetabilă de control
 - corpusurile minimale și comparative pentru număr și definitudine sunt acum și ele închise, ceea ce întărește controlul local al regulilor nominale
 
@@ -259,21 +259,27 @@ Beneficii reale:
 ### 3.1 Lexicul verbal a primit o soluție bună, dar trebuie impus strict
 
 Problema centrală a fost clarificată prin revizia curentă, dar riscul teoretic
-trebuie păstrat explicit în evaluare. Toate verbele din nucleu folosesc
-imperfectul de persoana a III-a singular, adică o formă care în româna standard
-păstrează încărcătură temporală și aspectuală recognoscibilă.
+trebuie păstrat explicit în evaluare. Nucleul verbal obligatoriu folosește acum
+un miez dur de forme canonice, în majoritate imperfect de persoana a III-a
+singular, adică forme care în româna standard păstrează încă încărcătură
+temporală și aspectuală recognoscibilă. Copula `e` rămâne excepția controlată.
 
-Exemple stabile pentru această convenție:
+Exemple stabile pentru nucleul verbal obligatoriu:
 
 - `mergea`
 - `vedea`
 - `bea`
+- `venea`
 - `citea`
-- `dădea`
+- `pleca`
 - `rămânea`
 - `intra`
-- `ajungea`
-- `spunea`
+- `vorbea`
+- `ploua`
+- `e`
+
+Formele `dădea`, `spunea`, `ajungea`, `întreba`, `răspundea` și `cerea` nu mai
+definesc nucleul dur; ele aparțin acum stratului `permis, dar nerecomandat`.
 
 Consecința critică rămâne următoarea: proiectul nu poate spune onest că a
 obținut o formă verbală semantic neutră. Poate spune doar că a fixat o formă
@@ -337,7 +343,9 @@ formal, dar încă fragile semantic.
 
 ### 3.5 Operatorii de enunț sunt utili, dar pot deveni redundanți
 
-`?` și `!` sunt ieftine și aproape gratuite. `??` și `!!` sunt încă acceptabile.
+`?` și `!` sunt ieftine și aproape gratuite. `??` și `!!` rămân acceptabile în
+nucleu ca intensificări ale formelor simple, nu ca operatori noi separați.
+Aceeași logică se aplică și pentru `<<` și `>>` față de `<` și `>`.
 În schimb, dacă și gradul, și aproximarea, și nested, și posesia, și timpul sunt
 toate vizibile în aceeași propoziție, sarcina vizuală crește repede.
 
@@ -346,6 +354,10 @@ experimentală. Aceasta este o corecție bună: reduce ambiguitatea, repară
 disciplina dintre nucleu și extensii și face scorul de lizibilitate mai onest.
 Economia de simbol rămâne interesantă, dar nu mai este plătită de cititorul
 care vrea doar forma de bază a sistemului.
+
+Regula bună aici este simplă: dublarea lui `!`, `?`, `<` și `>` crește efectul
+operatorului deja cunoscut. Dacă intensificarea nu aduce o diferență reală de
+sens sau de ton, forma simplă rămâne preferată.
 
 ### 3.6 Propoziția simplă nu are încă o schemă preferată suficient de strictă
 
@@ -524,22 +536,24 @@ Stare:
 
 - aplicat în specificație, corpus și formalizare; trebuie validat pe un lot mai mare de exemple
 
-### 4.3 Extinderea regulii „fără sufix numeric pentru singular” la toate pronumele
+### 4.3 Promovarea pronumelor cuantificate în nucleul strict
 
 Propunere:
 
-- `eu`, `tu`, `el`, `ea`, `ei` să fie formele standard pentru singular sau grup nespecificat contextual
-- forma numerică să rămână experimentală până la un lot separat care arată că avantajul de compactitate compensează costul de lectură
+- `eu`, `tu`, `el`, `ea`, `ei` să rămână formele standard pentru singular sau grup nespecificat contextual
+- formele `eu5`, `tu3`, `ei10` și formele cu `*`, de tipul `eu*`, să intre în nucleul strict în poziție de subiect și de posesor compact, când cardinalitatea participanților contează explicit
+- sufixul `*` să însemne plural neexact, nu grup mare, nu totalitate și nu număr aproximativ
 
 Avantaj:
 
-- scade zgomotul vizual
-- păstrează expresivitatea când numărul contează
-- apropie sistemul de intuiția naturală a cititorului
+- comprimă cardinalitatea participanților în același loc în care cititorul caută deja centrul de persoană
+- aliniază mai bine pronumele cu tratamentul cardinalității nominale prin prefix numeric și `*`
+- păstrează forma nemarcată ca implicită, dar nu mai exilează în experimental o informație care apare frecvent
+- oferă și o soluție compactă pentru posesia de grup, fără operator nou
 
 Stare:
 
-- aplicat: pronumele numerotate au ieșit din nucleul strict și au rămas în marginea experimentală
+- aplicat: pronumele cuantificate cu număr sau `*` au intrat în nucleul strict ca subiect și ca posesor compact; `*` este citit drept plural neexact, iar clusterul cuantificat contează ca un singur marcaj vizibil în bugetul operatorial
 
 ### 4.4 Reducerea folosirii nested la un set strict de cazuri
 
@@ -590,6 +604,7 @@ explicit pentru propoziția de nucleu.
 Propunere:
 
 - propoziția de test din nucleul strict să prefere cel mult două marcaje vizibile, fără a număra markerul temporal și semnul final
+- un cluster cuantificat de tipul `eu5`, `tu3` sau `ei*` să conteze ca un singur marcaj vizibil
 - dacă un exemplu cere mai mult de două marcaje, el trebuie justificat clar sau mutat în marginea experimentală
 
 Avantaj:
@@ -597,6 +612,18 @@ Avantaj:
 - reduce densitatea grafică exact acolo unde citirea trebuie să fie cea mai ușoară
 - face regula `operator minim necesar` verificabilă, nu doar declarativă
 - crește comparabilitatea dintre exemple
+
+Probe recomandate pentru control:
+
+- `eu5 3H venea.` trebuie să rămână acceptabil în nucleu
+- `eu5 vedea @2cal.` trebuie să rămână acceptabil în nucleu
+- `eu3#5carte.` trebuie să rămână acceptabil în nucleu ca posesie de grup compactă
+- `eu5 vedea @2cal >clar.` trebuie să fie respins din nucleul strict sau mutat în experimental
+
+Notă de interpretare:
+
+- la pronume, `*` înseamnă plural neexact
+- la substantive, `*` poate rămâne mai larg: plural nenumărat sau mulțime nedefinită
 
 Stare:
 
@@ -621,6 +648,7 @@ Propunere:
 
 - `și`, `sau` și `ori` să fie formele semantice principale pentru coordonare și alternativă în stratul extins
 - `&`, `|` și `^` să rămână doar abrevieri opționale pentru aceste forme
+- dublarea lui `<`, `>`, `?` și `!` să fie tratată ca intensificare a operatorului de bază, nu ca familie separată de operatori
 - dacă aceeași relație poate fi redată mai clar prin două propoziții, descompunerea rămâne preferată
 
 Avantaj:
@@ -994,6 +1022,7 @@ toate condițiile de mai jos:
 - regulile de fidelitate nu permit inventarea de informație în translația exactă
 - nested este rar și justificat
 - `și`, `sau` și `ori` rămân în marginea extinsă, iar `&`, `|` și `^` sunt folosite coerent doar ca abrevieri și nu revin tacit în nucleul strict
+- `<<`, `>>`, `??` și `!!` sunt tratate coerent ca intensificări ale operatorilor de bază, nu ca familie nouă de marcaje
 - copula `e` este forma preferată în predicatele nominale, adjectivale și locative de nucleu
 - propoziția simplă are o ordine executabilă și stabilă în corpusul de bază
 - forma nemarcată rămâne soluția implicită acolo unde contrastul nu cere marcaj

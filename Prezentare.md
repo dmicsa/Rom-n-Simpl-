@@ -30,9 +30,10 @@ Nucleul actual lucrează cu un set redus de decizii:
 - predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleul de bază
 - alegerea lui `e` este deliberată: pare mai naturală pentru vorbitor decât `era` și costă cognitiv mai puțin decât copula zero
 - timpul uzual este parțial sau relativ; forma completă este tehnică
-- pronumele numerotate rămân experimentale; nucleul folosește `eu`, `tu`, `el`, `ea`, `ei`
+- nucleul folosește `eu`, `tu`, `el`, `ea`, `ei`, iar cardinalitatea participanților poate fi marcată direct prin sufix numeric sau `*` la subiect și în posesia compactă; `*` înseamnă plural neexact: `eu5`, `tu3`, `ei10`, `eu*`, `eu3#carte`
 - `@` marchează definitudinea, `#` marchează posesia
 - adjectivul pozitiv simplu rămâne nemarcat; `>` și `<` apar doar când gradul este explicit
+- dublarea lui `<`, `>`, `?` și `!` crește efectul operatorului de bază; `<<`, `>>`, `??`, `!!` nu deschid o familie nouă de operatori
 - `și`, `sau` și `ori` sunt formele semantice preferate pentru coordonare și alternativă; `&`, `|` și `^` rămân doar abrevieri experimentale, iar în nucleu se preferă descompunerea
 - negarea prefixată cu `!` rămâne experimentală; în nucleu, `!` păstrează rolul final exclamativ
 - propoziția cu subiect exprimat urmează ordinea stabilă `subiect + timp + predicat` sau `subiect + predicat`

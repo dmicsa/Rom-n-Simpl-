@@ -107,7 +107,7 @@ Reguli de bază:
 - O schimbare de marker temporal nu cere schimbarea formei verbale canonice;
   invarianta verbală este regulă de sistem, nu efect secundar tolerat.
 - Aceeași formă se folosește pentru `eu`, `tu`, `el`, `ea` și `ei` în nucleul strict.
-- Formele cu număr explicit, de tipul `eu5` sau `ei10`, rămân experimentale până la o validare separată.
+- Aceeași formă se folosește și pentru pronumele cuantificate din nucleu, de tipul `eu5`, `tu3`, `ei10` sau `eu*`.
 - Nucleul activ folosește un lexic verbal controlat,
   împărțit în nucleu obligatoriu, strat permis dar nerecomandat și lexic extins.
 - În forma actuală, forma canonică nu se deduce automat din infinitiv;
@@ -228,20 +228,21 @@ Reguli de bază:
 - Fără sufix numeric, pronumele rămâne forma standard de bază.
 - Subiectul explicit este preferat.
 - Cliticele și legarea cu cratimă ies din nucleul activ.
-- Sufixul numeric la pronume iese din nucleul strict și rămâne experimental.
-- Motivația locală este naturalitatea: economia de simbol există, dar `eu5`, `tu3`, `ei10` cer încă prea mult efort de lectură pentru forma de bază.
+- Sufixul numeric la pronume intră în nucleul strict când cardinalitatea participanților contează explicit.
+- În nucleul strict, pronumele cuantificate sunt permise în poziție de subiect și ca posesori compacți înainte de `#`, când cardinalitatea participanților contează explicit.
+- Sufixul `*` la pronume marchează plural neexact: grupul este intenționat nespecificat numeric, dar este clar mai mare decât unu.
+- Forma nemarcată rămâne implicită când cardinalitatea nu aduce informație nouă.
 
 Exemple:
 
 - `eu = eu`
 - `tu = tu`
 - `ei = ei / grup nespecificat`
-
-Exemple experimentale:
-
 - `eu5 = noi cinci`
 - `tu3 = voi trei`
 - `ei10 = zece participanți`
+- `eu* = noi, număr nespecificat`
+- `ei* = ei, număr nespecificat`
 
 ### 2.5 Gen, număr și acord
 
@@ -251,12 +252,13 @@ Reguli de bază:
 - Relațiile care în româna standard ar cere genitiv, dativ sau alte flexiuni sunt preferabil exprimate analitic prin operatori.
 - Genul este redus la trei valori funcționale în sistemul de pronume: masculin,
   feminin și neutru/mix.
-- În nucleul strict, informația de număr pentru participanți nu este mutată într-un sufix pronominal; ea rămâne contextuală sau se exprimă separat.
+- În nucleul strict, informația de număr pentru participanți poate rămâne contextuală sau poate fi comprimată direct în sufixul pronominal numeric ori în `*`, atât în poziție de subiect, cât și în posesia compactă.
 - Pentru substantive, forma de bază este singularul neprefixat.
 - Un substantiv neprefixat este interpretat implicit ca un exemplar: `carte = o carte`.
 - Cardinalitatea explicită a substantivului se marchează prin prefix numeric lipit
   direct de forma de singular: `2cal = doi cai`.
 - Operatorul `*` marchează plural nenumărat sau mulțime nedefinită: `*pasăre = multe păsări`.
+- La substantive, `*` rămâne mai larg decât la pronume: el poate acoperi plural nenumărat sau mulțime nedefinită, nu doar plural neexact cu centru personal.
 - Operatorul `@` poate preceda și aceste forme pentru a marca definitudinea: `@2cal`, `@*pasăre`.
 - După prefix numeric sau după `*`, substantivul rămâne în forma de singular de bază.
 - Acordul trebuie păstrat doar acolo unde ajută claritatea; unde nu ajută,
@@ -278,13 +280,13 @@ Reguli de bază:
 - Adjectivele rămân în forma lor de bază și nu se acordă.
 - În propozițiile simple cu predicat adjectival, nucleul preferă copula invariabilă `e`.
 - În nucleul compact, operatorii de grad activi sunt `>` și `<`.
-- `>>` și `<<` rămân în stratul extins, nu în corpusul de bază.
+- Formele duble `>>` și `<<` nu introduc operatori noi; ele cresc efectul lui `>` și `<` atunci când sursa cere intensificare reală.
 - Adverbele de mod scurte stau imediat după verb.
 - Dacă un adverb sau un grup adverbial devine greu, informația se mută într-o propoziție separată.
 - Când o informație temporală poate fi exprimată prin markerul temporal, aceasta nu mai este exprimată și prin adverb temporal separat.
 - Operatorii de grad înlocuiesc, de regulă, adverbele lexicale de grad atunci când sensul rămâne clar.
 - Adjectivul pozitiv simplu nu primește operator de grad redundant. Pentru `Casa este mare.` se folosește `@casă e mare.`, nu `@casă e >mare.`.
-- Operatorii `>` și `<` rămân pentru grad explicit, de tipul `foarte`, `mai` sau `prea puțin`, nu pentru sensul lexical de bază al adjectivului.
+- Operatorii `>`, `<`, `>>` și `<<` rămân pentru grad explicit, nu pentru sensul lexical de bază al adjectivului; forma dublă marchează doar un efect mai puternic decât forma simplă.
 
 Exemple:
 
@@ -303,6 +305,8 @@ Reguli de bază:
 - Operatorul `#` se lipește de termenii pe care îi leagă.
 - Forma recomandată este `posesor#obiect`.
 - Ambii termeni rămân în nominativ; nu se schimbă forma lor pentru posesie.
+- În nucleul strict, posesorul poate fi pronume simplu, pronume cuantificat, nume propriu sau substantiv.
+- Când cardinalitatea grupului posesor este importantă, forma compactă recomandată este pronumele cuantificat înainte de `#`: `eu3#carte`, `ei*#@sală`.
 - Operatorul `#` poate fi folosit și cu substantive deja marcate prin `@`, prefix numeric sau `*`.
 - Relațiile indirecte uzuale rămân exprimate printr-un set mic de prepoziții simple: `la`, `din`, `cu`, `pentru`, `pe`.
 - Nucleul `0.2` nu introduce operatori noi pentru dativ, locativ sau direcție.
@@ -315,6 +319,9 @@ Exemple:
 - `frate#@carte = cartea fratelui`
 - `eu#2cal = cei doi cai ai mei`
 - `ei#@sală = sala lor`
+- `eu3#carte = cartea noastră, a celor trei`
+- `eu3#5carte = cele cinci cărți ale noastre, ale celor trei`
+- `ei*#@sală = sala lor, a grupului nespecificat`
 - `eu mergea la Ana`
 - `ei venea din sat`
 
@@ -323,7 +330,7 @@ Exemple:
 Reguli de bază:
 
 - Sistemul favorizează operatorii compacți și expliciți.
-- Alăturarea pronume plus număr funcționează ca operator de cardinalitate a participanților numai în stratul experimental.
+- Alăturarea pronume plus număr sau `*` funcționează în nucleu ca operator de cardinalitate a participanților în poziție de subiect și în posesia compactă cu `#`.
 - Prefixul numeric înaintea substantivului funcționează ca operator de cardinalitate nominală.
 - Operatorul `*` înaintea substantivului funcționează ca marcaj de plural nenumărat.
 - Operatorul `@` înaintea substantivului funcționează ca marcaj de definitudine.
@@ -338,10 +345,19 @@ Reguli de bază:
 - Principiul de bază este `operator minim necesar`: dacă sensul rămâne clar fără un operator, operatorul nu se adaugă.
 - Forma marcată fără contrast justificabil nu intră în nucleul obligatoriu; ea este rescrisă sau coboară cel puțin în stratul `permis, dar nerecomandat`.
 - În nucleul strict, propoziția de test preferă cel mult două marcaje vizibile dintre `@`, `#`, prefixul numeric, `*`, `<`, `>` și `~`; markerul temporal și semnul final nu intră în acest buget.
+- Un cluster cuantificat, de tipul `eu5`, `tu3` sau `ei*`, contează ca un singur marcaj vizibil în acest buget.
+- O construcție posesivă compactă de tipul `eu3#5carte` poate depăși acest prag; ea rămâne acceptabilă când comprimă exact o relație nominală centrală fără pierdere de informație.
 
 Exemplu de nucleu:
 
 - `Ana citea. tu scria.`
+
+Exemple de control pentru bugetul operatorial:
+
+- `eu5 3H venea.` = acceptabil în nucleu: un cluster cuantificat și un marker temporal
+- `eu5 vedea @2cal.` = acceptabil în nucleu: un cluster cuantificat și un marcaj nominal
+- `eu3#5carte.` = acceptabil ca posesie compactă: dens, dar justificat prin relația nominală centrală
+- `eu5 vedea @2cal >clar.` = prea dens pentru nucleul de test; cere rescriere sau coborâre
 
 Exemple experimentale:
 
@@ -361,7 +377,7 @@ Reguli de bază:
 - Operatorul `~` marchează aproximarea.
 - Operatorii de enunț activi la final de propoziție sunt `?` și `!`.
 - Negarea prefixată cu `!` iese din nucleul strict și rămâne experimentală până la un lot dedicat de validare. Motivația locală este simplă: economia de simbol nu compensează încă suficient costul de ambiguitate dintre `!` prefix și `!` final.
-- Formele duble `<<`, `>>`, `??`, `!!` rămân disponibile doar în stratul extins.
+- Formele duble `<<`, `>>`, `??`, `!!` nu introduc operatori noi; ele intensifică efectul formelor simple `<`, `>`, `?`, `!` și rămân permise în nucleu doar când intensificarea este cerută de sursă sau de contrastul urmărit.
 - Nu se lasă spațiu înainte de `!`, `?`, `.`, `,` și `:`.
 
 Exemple:
@@ -369,9 +385,12 @@ Exemple:
 - `casa e mare.`
 - `fruct e copt.`
 - `casa e >mare.`
+- `casa e >>mare.`
 - `eu vedea ~10pasăre.`
 - `tu 3H bea vin?`
+- `tu 3H bea vin??`
 - `Ana vorbea!`
+- `Ana vorbea!!`
 
 Exemple experimentale:
 
@@ -458,11 +477,12 @@ continuation          = nominal-group
                       | approximation-group;
 
 subject               = pronoun
+                      | quantified-pronoun
                       | proper-name
                       | nominal-group;
 
 nominal-group         = [ possessor, "#" ], nominal-core, [ ws, adjective-tail ];
-possessor             = pronoun | proper-name | noun;
+possessor             = pronoun | quantified-pronoun | proper-name | noun;
 nominal-core          = [ "@" ], [ integer | "*" ], noun;
 adjective-tail        = adjective | graded-adjective;
 graded-adjective      = grade-operator, adjective;
@@ -475,8 +495,8 @@ time-marker           = clock-time | relative-time;
 clock-time            = hour | hour, ":", minute;
 relative-time         = [ "+" | "-" ], integer, time-unit;
 
-grade-operator        = "<" | ">";
-end-mark              = "." | "?" | "!";
+grade-operator        = "<" | ">" | "<<" | ">>";
+end-mark              = "." | "?" | "!" | "??" | "!!";
 
 preposition           = "la" | "din" | "cu" | "pentru" | "pe" | "în";
 time-unit             = "m" | "H" | "D";
@@ -485,6 +505,7 @@ copula                = "e";
 impersonal-verb       = lexical-impersonal-verb;
 
 pronoun               = "eu" | "tu" | "el" | "ea" | "ei";
+quantified-pronoun    = pronoun, ( integer | "*" );
 
 ws                    = " ", { " " };
 integer               = digit, { digit };
@@ -531,8 +552,7 @@ extended-sentence       = xor-sentence
                 | technical-time-sentence
                 | negated-verbal-sentence
                 | negated-copular-sentence
-                | negated-impersonal-sentence
-                | numbered-subject-sentence;
+                | negated-impersonal-sentence;
 
 lexical-and-sentence    = simple-sentence, ws, "și", ws, simple-sentence, end-mark;
 lexical-or-sentence     = simple-sentence, ws, "sau", ws, simple-sentence, end-mark;
@@ -561,11 +581,6 @@ negated-copular-sentence
 negated-impersonal-sentence
                        = "!", impersonal-verb, { ws, adverb }, end-mark;
 
-numbered-subject-sentence
-                       = numbered-pronoun, ws, [ time-marker, ws ], predicate, end-mark;
-
-numbered-pronoun       = pronoun, integer;
-
 reporting-verb          = "spunea" | "întreba" | "credea";
 ```
 
@@ -577,7 +592,7 @@ Observații de lucru:
 - `reported-sentence` rămâne în stratul extins pentru că nested este rar și costisitor vizual.
 - `technical-time-sentence` rămâne în stratul tehnic pentru că formatul complet nu trebuie să domine uzul curent.
 - propozițiile cu negare prefixată rămân în stratul extins până când un lot separat arată că `!` prefix este citit sigur fără cost excesiv.
-- propozițiile cu pronume numerotate rămân în stratul extins până când un lot separat arată că avantajul de compactitate compensează costul de naturalitate.
+- pronumele cuantificate cu număr sau `*` au urcat în nucleu pentru că cardinalitatea participanților este tratată acum ca informație de bază, nu ca ornament experimental.
 
 ### 2.14 Apendice lexical minim pentru formalizare
 
@@ -678,8 +693,9 @@ Caracteristici centrale:
 - verbul este stabil și controlat prin lexic verbal
 - predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu
 - numărul se exprimă doar când contează
-- pronumele numerotate rămân experimentale
+- pronumele pot primi direct sufix numeric sau `*` în nucleu ca subiect și ca posesor compact; `*` marchează plural neexact: `eu5`, `tu3`, `ei10`, `eu*`, `eu3#carte`
 - `@` și `#` rămân operatorii nominali centrali
+- dublarea lui `<`, `>`, `?` și `!` crește efectul operatorului de bază, dar nu deschide o familie nouă de operatori
 - `și`, `sau` și `ori` rămân în stratul extins când coordonarea trebuie păstrată explicit, iar `&`, `|` și `^` rămân doar abrevieri opționale ale lor
 - propoziția cu subiect exprimat urmează ordinea fixă `subiect + timp + predicat` sau `subiect + predicat`
 - relațiile indirecte uzuale rămân prepoziționale, nu operatoriale
@@ -704,7 +720,7 @@ Setul minim de reguli pentru nucleul actual:
 5. Verbul folosește o formă stabilă din lexicul verbal obligatoriu.
 6. Lexicul verbal este împărțit în nucleu obligatoriu, `permis, dar nerecomandat` și lexic extins.
 7. Predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu.
-8. Pronumele numerotate rămân în stratul experimental.
+8. Pronumele pot primi în nucleu sufix numeric sau `*` pentru cardinalitatea participanților în poziție de subiect și de posesor compact.
 9. Substantivul folosește singularul ca bază; prefixul numeric marchează cardinalitatea.
 10. `*` marchează pluralul nenumărat.
 11. `@` marchează definitudinea numai când trebuie exprimată clar.
@@ -712,13 +728,13 @@ Setul minim de reguli pentru nucleul actual:
 13. Relațiile indirecte uzuale folosesc prepoziții scurte, nu operatori noi.
 14. Adjectivul stă după substantiv și nu se acordă.
 15. Adverbul scurt stă după verb; fraza grea se descompune.
-16. Operatorii de bază ai nucleului sunt `@`, `#`, `~`, `<`, `>`, `?`, `!` și markerii temporali.
+16. Operatorii de bază ai nucleului sunt `@`, `#`, `~`, `<`, `>`, `?`, `!` și markerii temporali; dintre aceștia, doar `<`, `>`, `?` și `!` au forme duble intensificatoare.
 17. `și`, `sau`, `ori`, `{}` și negarea prefixată cu `!` rămân în stratul extins; `&`, `|` și `^` sunt doar abrevieri opționale ale coordonării și alternativei.
 18. Nested este rezervat pentru conținut raportat.
 19. Nucleul verbal este împărțit în `obligatoriu`, `permis, dar nerecomandat` și `extins`.
 20. Se aplică regula tare a formei nemarcate: dacă marcajul nu aduce contrast necesar, forma marcată cade din nucleul strict.
 21. Se aplică regula `operator minim necesar`.
-22. Nucleul preferă un buget operatorial redus în propoziția de test.
+22. Nucleul preferă un buget operatorial redus în propoziția de test; un cluster cuantificat contează ca un singur marcaj vizibil.
 
 ---
 
@@ -862,4 +878,4 @@ Pentru promovarea unui verb din lexicul extins se recomandă încă un control d
 3. Aplicarea protocolului compact de revizie pentru fiecare exemplu nou.
 4. Măsurarea explicită a compactității, preciziei, simplității și uniformității.
 5. Păstrarea doar a regulilor care trec filtrul CPSU.
-6. Mutarea operatorilor dubli și a formelor grele în stratul extins, nu în nucleu.
+6. Păstrarea operatorilor dubli doar ca intensificări controlate ale operatorilor de bază, nu ca familie separată de marcaje.
