@@ -1,0 +1,1067 @@
+\documentclass[12pt,onecolumn,letterpaper]{article}
+
+\usepackage{geometry}
+\geometry{letterpaper, left=0.8in, right=0.8in, top=0.95in, bottom=0.8in}
+
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage[table]{xcolor}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{etoolbox}
+\usepackage{verbatim}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+
+\IfFontExistsTF{Cambria}{\setmainfont{Cambria}}{\setmainfont{TeX Gyre Termes}}
+\IfFontExistsTF{Liberation Mono}{\setmonofont{Liberation Mono}[Scale=MatchLowercase]}{\setmonofont{Courier New}[Scale=MatchLowercase]}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\headheight}{15pt}
+\setlength{\emergencystretch}{2em}
+\setstretch{1.08}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+
+\definecolor{RSBlue}{HTML}{16324F}
+\definecolor{RSGray}{HTML}{E8EDF2}
+\definecolor{RSRule}{HTML}{D6DCE3}
+
+\titleformat{\section}{\Large\bfseries}{\thesection}{0.65em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+\titlespacing*{\section}{0pt}{1.5em}{0.7em}
+\titlespacing*{\subsection}{0pt}{1.1em}{0.45em}
+\titlespacing*{\subsubsection}{0pt}{0.9em}{0.35em}
+\pretocmd{\section}{\clearpage}{}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape RomânăSimplă: propunere de normalizare și formalizare a limbii române}
+\fancyhead[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.35pt}
+
+\urlstyle{same}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=RSBlue,
+    filecolor=RSBlue,
+    urlcolor=RSBlue,
+    pdftitle={RomânăSimplă: propunere de normalizare și formalizare a limbii române},
+    pdfauthor={Dan Micșa, PhD},
+    pdfsubject={Propunere de normalizare și formalizare pentru nucleul RomânăSimplă}
+}
+
+\captionsetup[table]{font=small,labelfont=bf,labelsep=period,skip=6pt,justification=raggedright,singlelinecheck=false}
+
+\newcommand{\rs}[1]{\texttt{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\RStablelayout}{%
+\footnotesize
+\setlength{\tabcolsep}{6pt}%
+\renewcommand{\arraystretch}{1.12}%
+\arrayrulecolor{RSRule}%
+}
+
+\title{\Huge\textbf{RomânăSimplă}\\[0.2em]
+\LARGE O propunere de normalizare și formalizare a limbii române\\[0.35em]
+\large cu nucleu curent restrâns, corpus controlat, operatori și formalizare gramaticală}
+
+\author{\textbf{Dan Micșa, PhD}\\
+\small \href{mailto:dmicsa@gmail.com}{dmicsa@gmail.com}\\
+\small \url{https://github.com/dmicsa/Rom-n-Simpl-.git}}
+\date{Martie 2026}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{quote}
+\small\textit{AI Attribution: Acest document a fost elaborat cu asistență extinsă din partea modelelor lingvistice mari. \textbf{GPT-5.4} a contribuit la redactare, reorganizare academică, formalizare și integrarea exemplelor tehnice în forma publicată aici. Responsabilitatea intelectuală pentru direcția proiectului, pentru deciziile de normalizare și pentru validarea conținutului rămâne a autorului uman.}
+\end{quote}
+
+\clearpage
+
+\begin{abstract}
+RomânăSimplă este o propunere de normalizare și formalizare controlată a limbii române,
+construită în jurul a patru criterii explicite: \textit{Compact},
+\textit{Precis}, \textit{Simplu} și \textit{Uniform}. Nucleul actual urmărește
+o gramatică mică și testabilă, în care timpul este scris înaintea verbului,
+forma verbală rămâne stabilă, definitudinea se marchează numai când este
+necesar prin \rs{@}, posesia prin \rs{\#}, iar propozițiile grele sunt
+descompuse în unități scurte. Lucrarea prezintă proiectul ca răspuns la
+complexitatea gramaticală a românei standard și la densitatea ei de excepții,
+propunând un nucleu disciplinat, explicit și formalizabil. Documentul sintetizează
+specificația, corpusul canonic și formalizarea gramaticală într-o formă orientată
+spre publicare. Rezultatul este o propunere coerentă de normalizare pentru un
+subansamblu controlat al limbii, însoțită de criterii de acceptare, exemple
+validate, operatori descriși sistematic și anexe tehnice. În forma actuală,
+proiectul rămâne deliberat limitat la un nucleu restrâns, nu la o gramatică
+exhaustivă, tocmai pentru a păstra testabilitatea și disciplina formală.
+\end{abstract}
+
+\tableofcontents
+\vspace{1em}
+
+\section{Introducere}
+
+RomânăSimplă pornește de la o ipoteză simplă: o parte importantă din costul
+românei standard stă nu în vocabularul de bază, ci în flexiune, în marcaje
+redundante și în variații care mută informația în prea multe locuri simultan.
+Proiectul nu urmărește o reformă totală a limbii, ci o variantă controlată,
+comparabilă și testabilă, potrivită pentru transcriere simplificată, analiză
+formală și evaluare pe corpus.
+
+Forma actuală a sistemului este intenționat restrânsă. Nucleul nu încearcă să
+acopere toate funcțiile românei contemporane, ci fixează un set mic de reguli
+care pot fi aplicate repetabil. Accentul cade pe stabilitate și pe verificare,
+nu pe expresivitate maximă.
+
+\section{Cadru metodologic}
+
+\subsection{Filtrul CPSU}
+
+Toate regulile active sunt judecate prin filtrul CPSU: \textit{Compact},
+\textit{Precis}, \textit{Simplu}, \textit{Uniform}. O regulă nouă intră în
+nucleu numai dacă îmbunătățește clar cel puțin două dintre aceste criterii și nu
+deteriorează sever celelalte două.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}lYY@{}}
+\rowcolor{RSGray}
+\textbf{Principiu} & \textbf{Întrebare de control} & \textbf{Consecință operațională} \\
+Compact & Spune aceeași informație în mai puține semne? & Se preferă forme scurte, analitice și propoziții cu un singur fenomen dominant. \\
+Precis & Evită deducția riscantă? & Nu se inventează timp, număr sau definitudine absente din sursă. \\
+Simplu & Scade costul de învățare? & Se limitează numărul de reguli active și de excepții. \\
+Uniform & Se aplică regula la fel în tot corpusul? & Se fixează lexic, ordine și formate stabile. \\
+\bottomrule
+\end{tabularx}
+\caption{Filtrul CPSU folosit pentru selecția regulilor active}
+\end{table}
+
+Două reguli auxiliare traversează toate deciziile proiectului. Prima este
+preferința pentru forma nemarcată: dacă două formulări păstrează aceeași
+informație de bază, nucleul alege varianta cu mai puține marcaje vizibile. A
+doua este regula \textit{operator minim necesar}: operatorii nu se introduc doar
+pentru simetrie grafică, ci numai când aduc un contrast real.
+
+\subsection{Surse și material}
+
+Articolul sintetizează trei componente canonice ale proiectului: specificația
+normativă, corpusul de bază și formalizarea gramaticală explicită. Specificația
+oferă regulile active, corpusul furnizează exemplele validate și loturile
+minimale de control, iar secțiunile analitice ale documentului motivează de ce
+această propunere de normalizare este necesară și cum încearcă ea să reducă
+costul flexiunii, al excepțiilor și al deducției contextuale fragile.
+
+\section{Arhitectura nucleului}
+
+\subsection{Ordinea propoziției și tratamentul timpului}
+
+Schema preferată a propoziției simple este \rs{subiect + timp + predicat +
+continuări scurte}. Fără marker temporal explicit, schema se reduce la
+\rs{subiect + predicat}. Propoziția fără subiect exprimat rămâne permisă în
+nucleul strict numai pentru impersonale reale, de tipul \rs{ploua.}
+
+Timpul se scrie înaintea verbului. În uzul curent sunt preferate formele parțiale
+sau relative, precum \rs{9}, \rs{20:30}, \rs{-1D} sau \rs{3H}. Forma completă
+calendaristică rămâne rezervată stratului tehnic. Această decizie mută sarcina
+temporală din flexiune într-un marker explicit și comparabil.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\rowcolor{RSGray}
+\textbf{Funcție} & \textbf{Exemplu validat} \\
+Timp punctual parțial & \rs{eu 9 mergea.} \\
+Timp punctual cu minute & \rs{tu 20:30 vedea @film?} \\
+Timp relativ trecut & \rs{eu -1D mergea la film.} \\
+Timp relativ viitor & \rs{ei 3H venea.} \\
+Impersonală fără subiect & \rs{ploua.} \\
+\bottomrule
+\end{tabularx}
+\caption{Exemple minimale pentru ordinea preferată și markerii temporali}
+\end{table}
+
+\subsection{Forma verbală canonică}
+
+Nucleul folosește o formă verbală stabilă, independentă de persoană și număr.
+Pentru majoritatea verbelor active, forma canonică este imperfectul de persoana
+a treia singular, tratat ca o convenție lexicală fixă. Copula reprezintă o
+excepție controlată: \rs{a fi -> e}. Motivația este pragmatică: \rs{e} este mai
+natural pentru cititorul român și mai ușor de procesat decât o copulă zero sau
+decât generalizarea formei \rs{era}.
+
+Această alegere nu rezolvă complet problema reziduului temporal al formei
+canonice. Tocmai de aceea, proiectul o tratează ca ipoteză de lucru controlată,
+nu ca adevăr teoretic închis. Timpul principal trebuie recuperat din markerul
+temporal sau din context, nu din flexiunea istorică a verbului.
+
+\subsection{Lexicul verbal și stratificarea sa}
+
+Pentru a evita extinderea necontrolată a sistemului, verbele sunt împărțite în
+trei straturi: \textit{nucleu obligatoriu}, \textit{permis, dar nerecomandat} și
+\textit{lexic extins}. Această separare reduce presiunea de a promova în nucleu
+orice verb lizibil, dar rar.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\rowcolor{RSGray}
+\textbf{Strat} & \textbf{Inventar reprezentativ} \\
+Nucleu obligatoriu & \rs{mergea}, \rs{vedea}, \rs{bea}, \rs{venea}, \rs{citea}, \rs{pleca}, \rs{rămânea}, \rs{intra}, \rs{vorbea}, \rs{ploua}, \rs{e} \\
+Permis, dar nerecomandat & \rs{dădea}, \rs{spunea}, \rs{ajungea}, \rs{întreba}, \rs{răspundea}, \rs{cerea} \\
+Lexic extins & \rs{făcea}, \rs{credea}, \rs{avea}, \rs{dormea}, \rs{stătea}, \rs{punea}, \rs{privea}, \rs{striga} \\
+\bottomrule
+\end{tabularx}
+\caption{Stratificarea curentă a lexicului verbal}
+\end{table}
+
+\subsection{Nucleul nominal: definitudine, posesie și cardinalitate}
+
+Forma de bază a substantivului este nearticulată. Definitudinea se marchează
+numai când este necesară, prin operatorul invariabil \rs{@}. Posesia se scrie
+analitic, cu operatorul \rs{\#}, în schema \rs{posesor\#obiect}. Numărul este
+preferențial explicit prin prefix numeric, iar aproximarea nominală prin
+\rs{\textasciitilde{}}.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\rowcolor{RSGray}
+\textbf{Fenomen} & \textbf{Exemplu validat} \\
+Nedefinit / generic & \rs{film} \\
+Definit & \rs{@film} \\
+Cardinalitate exactă & \rs{3cal} \\
+Aproximare & \rs{\textasciitilde10pasăre} \\
+Posesie simplă & \rs{Ana\#@carte e aici.} \\
+\bottomrule
+\end{tabularx}
+\caption{Marcajele nominale centrale ale nucleului}
+\end{table}
+
+\subsection{Pronume cuantificate}
+
+Una dintre cele mai distinctive decizii ale versiunii curente este introducerea
+pronumelor cuantificate în nucleul strict. Forme precum \rs{eu5}, \rs{tu3},
+\rs{ei10} sau \rs{eu*} sunt acceptate atunci când cardinalitatea
+participanților este parte centrală a mesajului. În această configurație,
+\rs{*} marchează plural neexact.
+
+Aceste forme sunt admise în două poziții: ca subiect și ca posesor compact.
+Astfel, \rs{eu3\#carte} înseamnă \textit{cartea noastră, a celor trei}, iar
+\rs{eu3\#5carte} comprimă în aceeași unitate posesia de grup și cardinalitatea
+obiectului posedat. Regula rămâne strictă: asemenea clustere sunt tolerate doar
+când comprimă o relație nominală centrală fără pierdere de informație.
+
+\subsection{Economia operatorială}
+
+Nucleul actual încearcă să rămână sub un prag de densitate vizuală. În loturile
+de test se preferă, de regulă, cel mult două marcaje vizibile, fără a număra
+markerul temporal și semnul final. Un cluster cuantificat, de tipul \rs{eu5} sau
+\rs{ei*}, este tratat ca un singur marcaj vizibil.
+
+Operatorii centrali ai nucleului sunt \rs{@}, \rs{\#}, \rs{\textasciitilde{}}, markerii
+temporali și semnele finale \rs{?} / \rs{!}, plus formele intensificate
+\rs{??}, \rs{!!}, \rs{<<} și \rs{>>} atunci când sursa cere explicit un efect
+mai puternic. În schimb, coordonarea și alternativa sunt lexicalizate
+preferențial prin \rs{și}, \rs{sau} și \rs{ori}; simbolurile \rs{\&}, \rs{\textbar{}}
+și \rs{\textasciicircum{}} rămân doar abrevieri opționale ale stratului extins.
+
+\section{Sistemul operatorial}
+
+\subsection{De ce operatorii sunt centrali în proiect}
+
+RomânăSimplă nu poate fi înțeleasă corect dacă operatorii sunt tratați doar ca
+detalii grafice. Ei sunt chiar mecanismul prin care proiectul mută informație
+din flexiune în marcaje explicite, scurte și repetabile. În româna standard,
+definitudinea, posesia, numărul, gradul și o parte din orientarea enunțului sunt
+împrăștiate între articol, sufixe, acord și intonație. În RomânăSimplă, o parte
+din această informație este concentrată în operatori puțini, dar stabili.
+
+Avantajul acestei soluții este controlul local al sensului. Cititorul nu mai
+trebuie să deducă din mai multe schimbări simultane dacă un substantiv este
+definit, dacă o relație este posesivă sau dacă o propoziție este interogativă.
+Costul este vizibilitatea operatorilor. Din acest motiv, proiectul nu urmărește
+maximizarea numărului de operatori, ci disciplinarea lor prin regula
+\textit{operator minim necesar}.
+
+\subsection{Inventarul operatorilor activi}
+
+În forma actuală, operatorii nu au toți același statut. Unii aparțin nucleului
+strict, alții rămân doar în stratul extins, iar câțiva sunt admiși numai ca
+intensificări controlate.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}l l Y@{}}
+\rowcolor{RSGray}
+\textbf{Operator} & \textbf{Statut} & \textbf{Funcție principală} \\
+\rs{@} & nucleu & marchează definitudinea numai când trebuie exprimată explicit \\
+\rs{\#} & nucleu & marchează posesia sau apartenența în schema \rs{posesor\#obiect} \\
+\rs{\textasciitilde{}} & nucleu & marchează aproximarea, mai ales în cardinalitate nominală \\
+\rs{<}, \rs{>} & nucleu & marchează grad explicit sub nivelul de bază sau peste nivelul de bază \\
+\rs{<<}, \rs{>>} & nucleu controlat & intensifică gradul fără a deschide operatori noi \\
+\rs{?}, \rs{!} & nucleu & marchează tipul final al enunțului \\
+\rs{??}, \rs{!!} & nucleu controlat & intensifică interogația sau exclamarea când sursa cere contrast \\
+markerii temporali & nucleu & mută timpul înaintea verbului, în formă parțială sau relativă \\
+\rs{și}, \rs{sau}, \rs{ori} & extins preferat & coordonare și alternativă explicită în formă lexicală \\
+\rs{\&}, \rs{\textbar{}}, \rs{\textasciicircum{}} & extins abreviat & prescurtări simbolice pentru stratul extins \\
+\rs{\{} \rs{\}} & extins & delimitare pentru conținut raportat \\
+\bottomrule
+\end{tabularx}
+\caption{Inventarul operatorial și statutul său curent}
+\end{table}
+
+Tabelul arată structura reală a proiectului: nucleul nu este construit pe o
+abundență de simboluri, ci pe un grup mic de operatori care rezolvă problemele
+cele mai costisitoare ale morfologiei standard. Extinsul păstrează explicit ceea
+ce este util, dar încă neesențial pentru nucleul obligatoriu.
+
+\subsection{Operatorii nominali: \rs{@}, \rs{\#}, număr și \rs{*}}
+
+În zona nominală, operatorii sunt coloana vertebrală a simplificării.
+\rs{@} separă forma lexicală a substantivului de definitudine. \rs{\#} scoate
+posesia din genitiv și o face liniară. Prefixul numeric face cardinalitatea
+imediat vizibilă, iar \rs{*} oferă o soluție economică pentru pluralul
+nenumărat sau nedeterminat.
+
+\begin{longtable}{@{}p{3.2cm}p{4.7cm}p{4.2cm}@{}}
+\rowcolor{RSGray}
+\textbf{Funcție} & \textbf{Formă RomânăSimplă} & \textbf{Lectură orientativă} \\
+definitudine minimă & \rs{@film} & filmul \\
+cardinalitate exactă & \rs{2cal} & doi cai \\
+plural nedefinit & \rs{*pasăre} & multe păsări / păsări în general \\
+definit plus număr & \rs{@2cal} & cei doi cai \\
+posesie simplă & \rs{Ana\#@casă} & casa Anei \\
+posesie cu obiect numerotat & \rs{eu\#2cal} & cei doi cai ai mei \\
+posesie de grup compactă & \rs{eu3\#carte} & cartea noastră, a celor trei \\
+posesie de grup plus cardinalitate & \rs{eu3\#5carte} & cele cinci cărți ale noastre, ale celor trei \\
+posesie cu plural neexact personal & \rs{ei*\#@sală} & sala lor, a grupului nespecificat \\
+\bottomrule
+\caption{Operatorii nominali în uzul canonic și în compactarea extinsă}
+\end{longtable}
+
+Aceste exemple arată și una dintre tensiunile proiectului. Operatorii nominali
+sunt foarte eficienți când exprimă exact o relație centrală. Devine însă riscant
+dacă se acumulează prea multe informații periferice în aceeași unitate. De aici
+vine diferența dintre o formă defensabilă ca \rs{eu3\#5carte} și o formă prea
+încărcată ca \rs{eu5 vedea @2cal >clar.}, care amestecă într-o propoziție scurtă
+mai multe tipuri de marcaj decât cere fenomenul dominant.
+
+\subsection{Operatorii de grad și de enunț}
+
+Operatorii \rs{<}, \rs{>}, \rs{\textasciitilde{}}, \rs{?} și \rs{!}
+controlează o altă zonă sensibilă: gradul, aproximația și tipul propoziției.
+Proiectul refuză să trateze gradul pozitiv simplu ca pe un caz marcat. Astfel,
+\rs{@casă e mare.} este forma de bază, iar \rs{@casă e >mare.} apare doar când
+surplusul de grad trebuie spus explicit.
+
+Formele duble \rs{<<}, \rs{>>}, \rs{??} și \rs{!!} sunt importante teoretic,
+pentru că ele arată cum proiectul încearcă să păstreze o familie operatorială
+mică. Dublarea nu înseamnă operator nou, ci doar intensificarea unuia deja
+admis. Această regulă menține sistemul compact și previne proliferarea de semne
+cu funcții aproape identice.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\rowcolor{RSGray}
+\textbf{Exemplu} & \textbf{Observație} \\
+\rs{@casă e mare.} & adjectiv pozitiv simplu, fără grad redundant \\
+\rs{@casă e >mare.} & grad explicit peste nivelul de bază \\
+\rs{@casă e >>mare.} & intensificare reală a gradului, nu categorie nouă \\
+\rs{eu vedea \textasciitilde10pasăre.} & aproximație numerică locală \\
+\rs{tu 3H bea vin?} & interogație simplă \\
+\rs{tu 3H bea vin??} & interogație intensificată \\
+\rs{Ana vorbea!} & exclamare simplă \\
+\rs{Ana vorbea!!} & exclamare intensificată \\
+\bottomrule
+\end{tabularx}
+\caption{Operatorii de grad și de enunț în exemple scurte}
+\end{table}
+
+\subsection{Coordonare, alternativă și simbolizare controlată}
+
+O decizie importantă a proiectului este că relațiile de coordonare și de alegere
+nu mai sunt împinse în nucleul strict prin simboluri. Formele principale sunt
+lexicale: \rs{și} pentru conjuncție, \rs{sau} pentru OR incluziv și \rs{ori}
+pentru alternativă exclusivă. Simbolurile \rs{\&}, \rs{\textbar{}} și
+\rs{\textasciicircum{}} rămân doar abrevieri opționale în stratul extins.
+
+Această alegere este importantă pentru publicare, fiindcă ea arată că proiectul
+nu urmărește tehnicizarea limbii cu orice preț. Acolo unde româna are deja forme
+lexicale scurte și stabile, acestea sunt preferate. Operatorii simbolici sunt
+rezervați pentru locurile unde scad clar costul structural.
+
+\begin{longtable}{@{}p{3.6cm}p{4.2cm}p{4.4cm}@{}}
+\rowcolor{RSGray}
+\textbf{Relație} & \textbf{Formă preferată} & \textbf{Formă abreviată, doar extinsă} \\
+Coordonare simplă & \rs{Ana citea și tu scria.} & \rs{Ana citea \& tu scria.} \\
+Alternativă incluzivă & \rs{tu bea apă sau tu bea lapte.} & \rs{tu bea apă \textbar{} tu bea lapte.} \\
+Alternativă exclusivă & \rs{tu bea apă ori tu bea lapte.} & \rs{tu bea apă \textasciicircum{} tu bea lapte.} \\
+\bottomrule
+\caption{Formele lexicale și simbolice pentru coordonare și alternativă}
+\end{longtable}
+
+\subsection{Buget operatorial și praguri de acceptare}
+
+Bugetul operatorial este una dintre cele mai originale, dar și cele mai severe
+reguli ale proiectului. El spune, în practică, că nu este suficient ca o formă
+să fie corectă local; ea trebuie să rămână și lizibilă global. În nucleul de
+test, propoziția preferă în mod normal cel mult două marcaje vizibile, fără a
+număra markerul temporal și semnul final. Un cluster cuantificat este numărat ca
+un singur marcaj.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}YlY@{}}
+\rowcolor{RSGray}
+\textbf{Exemplu} & \textbf{Verdict} & \textbf{Motiv} \\
+\rs{eu5 3H venea.} & acceptat & cluster cuantificat plus timp; încă lizibil și localizat \\
+\rs{eu5 vedea @2cal.} & acceptat & cardinalitatea subiectului și un singur marcaj nominal central \\
+\rs{eu3\#5carte.} & acceptat condiționat & dens, dar comprimă exact relația posesivă centrală \\
+\rs{eu5 vedea @2cal >clar.} & respins din nucleul de test & prea multe marcaje simultane pentru un singur enunț scurt \\
+\bottomrule
+\end{tabularx}
+\caption{Exemple canonice pentru controlul bugetului operatorial}
+\end{table}
+
+Această grilă este utilă și editorial: ea oferă un criteriu explicit prin care
+pot fi separate propozițiile bune pentru nucleul curent de propozițiile doar
+ingenioase. Într-un context de publicare, regula aceasta este importantă pentru
+că dă proiectului o disciplină verificabilă, nu doar un gust stilistic.
+
+\section{Exemple și studii de caz}
+
+\subsection{Secțiune extinsă de exemple comparative side by side}
+
+Pentru publicare, exemplele nu trebuie lăsate la nivel de inventar scurt sau de
+probă izolată.
+Secțiunea de mai jos adună într-un singur loc o serie extinsă de perechi
+comparative \textit{side by side}, construite astfel încât să arate nu doar
+fenomene izolate, ci și combinații controlate de timp, posesie, cardinalitate,
+copulă, relații prepoziționale, grad, aproximație, interogație, descompunere și
+strat extins. Scopul nu este spectaculozitatea expresivă, ci densitatea
+comparativă: cititorul trebuie să poată vedea repede cum se mută aceeași
+informație din româna standard într-o schemă mai regulată.
+
+\subsubsection{I. Nucleu temporal și propozițional}
+
+\RStablelayout
+\begin{longtable}{@{}p{0.6cm}p{5.4cm}p{5.5cm}@{}}
+\rowcolor{RSGray}
+\textbf{Nr.} & \textbf{Română standard} & \textbf{RomânăSimplă} \\
+1 & Eu merg la ora 9 spre magazin. & \rs{eu 9 mergea la magazin.} \\
+2 & Tu vezi filmul la 20:30? & \rs{tu 20:30 vedea @film?} \\
+3 & Ei vin peste trei ore din sat. & \rs{ei 3H venea din sat.} \\
+4 & Eu am văzut filmul ieri. & \rs{eu -1D vedea @film.} \\
+5 & Ana citește cartea la ora 8. & \rs{Ana 8 citea @carte.} \\
+6 & Tu vorbești clar cu Ana. & \rs{tu vorbea clar cu Ana.} \\
+7 & Ei beau apă târziu. & \rs{ei bea apă târziu.} \\
+8 & Tu bei vin peste trei ore? & \rs{tu 3H bea vin?} \\
+9 & Tu bei vin peste trei ore, chiar? & \rs{tu 3H bea vin??} \\
+10 & Ana vorbește foarte tare! & \rs{Ana vorbea!!} \\
+11 & Plouă târziu. Noi rămânem acasă. & \rs{ploua târziu. eu rămânea acasă.} \\
+12 & Ei vin târziu. Sala este închisă. & \rs{ei venea târziu. sală e închisă.} \\
+13 & Ana intră în sală la ora 7. & \rs{Ana 7 intra în sală.} \\
+14 & Ei pleacă peste două zile din sat. & \rs{ei 2D pleca din sat.} \\
+15 & Eu citesc la ora 6. & \rs{eu 6 citea.} \\
+16 & Tu intri peste treizeci de minute. & \rs{tu 30m intra.} \\
+17 & Ei vin mâine la magazin. & \rs{ei 1D venea la magazin.} \\
+18 & Ana vorbește repede după prânz. & \rs{Ana vorbea repede după.} \\
+\bottomrule
+\caption{Exemple comparative pentru nucleul temporal și propozițional}
+\end{longtable}
+
+\subsubsection{II. Relații nominale, cardinalitate și operatori}
+
+\RStablelayout
+\begin{longtable}{@{}p{0.6cm}p{5.4cm}p{5.5cm}@{}}
+\rowcolor{RSGray}
+\textbf{Nr.} & \textbf{Română standard} & \textbf{RomânăSimplă} \\
+19 & Cartea Anei este aici. & \rs{Ana\#@carte e aici.} \\
+20 & Casa Anei este mare. & \rs{Ana\#@casă e mare.} \\
+21 & Trei cai intră în sală. & \rs{3cal intra în sală.} \\
+22 & Eu văd aproximativ zece păsări. & \rs{eu vedea ~10pasăre.} \\
+23 & Noi trei venim peste două zile. & \rs{eu3 2D venea.} \\
+24 & Noi, mai mulți, rămânem acasă. & \rs{eu* rămânea acasă.} \\
+25 & Cei doi cai ai mei intră. & \rs{eu\#@2cal intra.} \\
+26 & Cele cinci cărți ale noastre sunt aici. & \rs{eu3\#5carte e aici.} \\
+27 & Sala lor este închisă. & \rs{ei*\#@sală e închisă.} \\
+28 & Fructul este copt. & \rs{@fruct e copt.} \\
+29 & Casa este foarte mare. & \rs{@casă e >>mare.} \\
+30 & Drumul este puțin închis. & \rs{@drum e <închis.} \\
+31 & Maria vede cei doi cai. & \rs{Maria vedea @2cal.} \\
+32 & Ion citește cartea mea. & \rs{eu\#@carte citea Ion.} \\
+33 & Ușa casei este aici. & \rs{@casă\#@ușă e aici.} \\
+34 & Noi trei vedem filmul. & \rs{eu3 vedea @film.} \\
+35 & Ei, mai mulți, văd păsările. & \rs{ei* vedea @*pasăre.} \\
+36 & Ana are cinci cărți. & \rs{Ana\#5carte.} \\
+\bottomrule
+\caption{Exemple comparative pentru relații nominale și operatori}
+\end{longtable}
+
+\subsubsection{III. Strat extins și cazuri de frontieră}
+
+\RStablelayout
+\begin{longtable}{@{}p{0.6cm}p{5.4cm}p{5.5cm}@{}}
+\rowcolor{RSGray}
+\textbf{Nr.} & \textbf{Română standard} & \textbf{RomânăSimplă} \\
+37 & Ana citește și tu vorbești. & \rs{Ana citea și tu vorbea.} \\
+38 & Tu bei apă sau lapte. & \rs{tu bea apă sau tu bea lapte.} \\
+39 & Tu bei apă ori lapte, nu ambele. & \rs{tu bea apă ori tu bea lapte.} \\
+40 & El spune: tu bei vin? & \rs{el spunea \{tu bea vin?\}} \\
+41 & Ea crede că ei ajung la sală peste o zi. & \rs{ea credea \{ei 1D ajungea la sală.\}} \\
+42 & Eu merg cu Ana la magazin peste trei ore. & \rs{eu 3H mergea cu Ana la magazin.} \\
+43 & Ei dau apă la cal. & \rs{ei dădea apă la cal.} \\
+44 & Ana spune că Maria vine. & \rs{Ana spunea \{Maria venea.\}} \\
+45 & Tu întrebi și eu răspund după. & \rs{tu întreba și eu răspundea după.} \\
+46 & Ei ajung la sală peste două ore. & \rs{ei 2H ajungea la sală.} \\
+47 & Eu cer apă pentru Ana. & \rs{eu cerea apă pentru Ana.} \\
+48 & El crede că filmul este bun. & \rs{el credea \{@film e mare.\}} \\
+49 & Ana face pâine acasă. & \rs{Ana făcea pâine acasă.} \\
+50 & Ion dormește în casă. & \rs{Ion dormea în casă.} \\
+\bottomrule
+\caption{Exemple comparative pentru stratul extins și pentru cazuri de frontieră}
+\end{longtable}
+
+\subsection{Micro-comparații de compactare}
+
+Nu toate exemplele devin spectaculos mai scurte. În cazul românei, câștigul nu
+vine întotdeauna din reducerea brută a numărului de caractere, ci din mutarea
+informației într-o schemă mai regulată. Exemplele de mai jos sunt utile tocmai
+pentru că arată unde proiectul câștigă mai ales în analizabilitate și unde
+câștigă și în compresie locală.
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}Y Y Y@{}}
+\rowcolor{RSGray}
+\textbf{Română standard} & \textbf{RomânăSimplă} & \textbf{Observație} \\
+Eu merg la ora 9. & \rs{eu 9 mergea.} & timp mai explicit și formă verbală stabilă \\
+Cartea Anei este aici. & \rs{Ana\#@carte e aici.} & posesie și definitudine liniarizate \\
+Tu vezi filmul? & \rs{tu vedea @film?} & interogație și definitudine marcate local \\
+Noi trei avem cinci cărți. & \rs{eu3\#5carte.} & compresie puternică, dar cu densitate mare \\
+\bottomrule
+\end{tabularx}
+\caption{Micro-comparații între textul standard și forma simplificată}
+\end{table}
+
+\subsection{Cazuri-limită și praguri editoriale}
+
+Pentru o versiune publicabilă, este important să nu fie ascunse exemplele în care
+proiectul devine tensionat. Cazurile-limită nu sunt accidente; ele arată unde se
+află marginea de siguranță a sistemului.
+
+Primul tip de caz-limită este propoziția prea densă operatorial. Al doilea este
+propoziția în care compactarea împinge cititorul să reconstruiască prea mult din
+context. Al treilea este propoziția în care o relație ar merita descompusă, dar
+este păstrată într-o singură unitate din dorință de compresie maximă. În toate
+aceste situații, proiectul actual preferă prudența și coboară forma din nucleu
+sau o rescrie.
+
+\section{Corpus și validare}
+
+\subsection{Perechi de control local}
+
+Corpusul de bază este organizat în loturi scurte, fiecare construit pentru a
+izola un fenomen dominant. Perechile comparative \textit{RO/SR} evită amestecul
+de reguli și permit verificarea locală a deciziilor de transcriere.
+
+\begin{longtable}{@{}p{0.75cm}p{5.35cm}p{6.1cm}@{}}
+\rowcolor{RSGray}
+\textbf{Nr.} & \textbf{Română standard} & \textbf{RomânăSimplă} \\
+1 & Eu merg la ora 9. & \rs{eu 9 mergea.} \\
+2 & Tu vezi filmul. & \rs{tu vedea @film.} \\
+3 & Ana intră în sală. & \rs{Ana intra în sală.} \\
+4 & Eu văd aproximativ zece păsări. & \rs{eu vedea ~10pasăre.} \\
+5 & Cartea Anei este aici. & \rs{Ana\#@carte e aici.} \\
+6 & Trei cai intră. & \rs{3cal intra.} \\
+7 & Casa este mare. & \rs{@casă e mare.} \\
+8 & Plouă. Noi rămânem acasă. & \rs{ploua. eu rămânea acasă.} \\
+9 & Tu vorbești clar. & \rs{tu vorbea clar.} \\
+10 & Ei pleacă. & \rs{ei pleca.} \\
+\bottomrule
+\caption{Eșantion de control din corpusul canonic de bază}
+\end{longtable}
+
+Această structură urmărește două obiective. Mai întâi, fiecare propoziție trebuie
+să rămână lizibilă la prima lectură. Apoi, fiecare regulă trebuie să poată fi
+testată repetabil fără a depinde de un exemplu izolat sau de o justificare
+intuitivă post hoc.
+
+\subsection{Loturi specifice de control}
+
+Pe lângă perechile comparative, proiectul publică loturi dedicate de control pentru timp,
+invarianță verbală, structură, număr, definitudine și plural uman. De pildă,
+lotul de plural uman fixează explicit atât subiectele cuantificate, cât și
+posesia compactă de grup: \rs{eu2 venea.}, \rs{eu* rămânea acasă.},
+\rs{eu3\#carte.}, \rs{eu3\#5carte.}, \rs{ei*\#@sală.}
+
+În paralel, controlul rapid verifică patru lucruri: ordinea preferată a
+propoziției, forma verbală stabilă, forma nemarcată păstrată unde este suficientă
+și aplicarea regulii \textit{operator minim necesar}. Din punct de vedere
+metodologic, aceasta este una dintre cele mai puternice părți ale proiectului:
+corpusul nu conține doar exemple acceptate, ci și exemple ambigue, dense sau
+respinse.
+
+\section{Motivație și justificare teoretică}
+
+\subsection{Ce justifică propunerea}
+
+Propunerea de normalizare devine defensabilă tocmai pentru că nucleul actual
+este mic, coerent și documentat prin loturi separate. Patru puncte sunt deja
+solide ca justificare de sistem.
+
+\begin{enumerate}[leftmargin=*]
+\item Mutarea timpului înaintea verbului scade povara paradigmelor verbale și
+permite reprezentări compacte și predictibile.
+\item Definitudinea prin \rs{@} și posesia prin \rs{\#} sunt scurte, stabile și
+ușor de segmentat.
+\item Descompunerea frazelor grele reduce nevoia de imbricare și crește
+lizibilitatea comparativă.
+\item Stratificarea lexicului verbal împiedică diluarea nucleului prin expansiune
+lexicală oportunistă.
+\end{enumerate}
+
+Punctele cele mai solide apar în zona de validare și reproductibilitate. Asta
+înseamnă că proiectul nu mai depinde exclusiv de impresii stilistice, ci oferă
+un aparat compact de control pe care un evaluator extern îl poate reface.
+
+\subsection{Limite teoretice majore}
+
+Două probleme rămân centrale. Prima este forma verbală canonică. Deși sistemul
+declară că timpul vine din marker și context, forma de imperfect păstrează un
+reziduu istoric care nu poate fi eliminat prin decret. Situația este gestionată
+onest prin loturi de invarianță verbală și prin comparație explicită cu alte
+forme candidate, dar nu este complet rezolvată.
+
+A doua problemă este presiunea viitoare de promovare lexicală. Orice limbă
+simplificată riscă să își piardă coerența exact atunci când începe să accepte,
+treptat, prea multe excepții sau prea multe verbe motivate local. De aceea,
+versiunea actuală insistă pe un nucleu verbal înghețat și pe o zonă \textit{permis,
+dar nerecomandat} clar separată.
+
+\subsection{Densitate operatorială și compactare}
+
+Introducerea pronumelor cuantificate și acceptarea unor forme dense, precum
+\rs{eu3\#5carte.}, aduc un câștig real de compactare. În același timp, ele arată
+limita exactă la care compactarea poate începe să concureze cu lizibilitatea.
+Soluția actuală este prudentă: clusterele dense rămân acceptabile doar când ele
+comprimă o relație centrală, nu când acumulează marcaje de dragul simetriei.
+
+În acest sens, proiectul evită o formulă maximalistă. Nu orice propoziție scurtă
+este și bună; bună este numai propoziția scurtă care rămâne imediat parsabilă.
+
+\subsection{De ce secțiunea despre operatori este decisivă pentru publicare}
+
+Pentru o lectură academică externă, cel mai vulnerabil punct al proiectului nu
+este neapărat forma verbală, ci riscul ca operatorii să pară o adunare
+eclectică de convenții. Tocmai de aceea, o prezentare publicabilă trebuie să
+arate coerent familia operatorială: ce intră în nucleu, ce rămâne extins, cum se
+numără densitatea și de ce formele duble nu reprezintă operatori noi.
+
+Dacă acest cadru lipsește, proiectul poate fi citit nedrept ca o simplă
+romanizare tehnicizată. Dacă însă operatorii sunt prezentați ca un sistem cu
+inventar limitat, cu praguri de acceptare și cu exemple validate, atunci nucleul
+devine mult mai ușor de apărat în fața unui evaluator extern.
+
+\section{Discuție}
+
+Forma actuală a RomânăSimplă este interesantă tocmai pentru că nu încearcă să
+fie o limbă complet nouă, ci o varietate controlată a românei, construită cu
+instrumente relativ puține. Sistemul reduce flexiunea, dar nu renunță la
+ortografia standard; introduce operatori, dar încearcă să îi țină puțini;
+admite compactarea, dar o limitează prin reguli explicite de densitate.
+
+Această combinație îl face mai defensabil academic decât multe proiecte de
+reformă totală. Totuși, aceeași alegere îl face și mai vulnerabil la obiecția
+„cât de departe poate merge fără să își piardă naturalețea?”. Răspunsul actual
+este unul deliberat modest: proiectul nu forțează încă un răspuns global, ci își
+consolidează nucleul prin loturi de control și prin refuzul de a promova prea
+repede reguli sau forme noi.
+
+\section{Concluzie}
+
+RomânăSimplă are, în starea actuală, un nucleu suficient de coerent pentru a
+susține o prezentare academică serioasă. Cele mai solide decizii sunt tratamentul
+timpului, economia nominală prin \rs{@} și \rs{\#}, separarea strictă a
+straturilor lexicale și metodologia de validare pe loturi mici. Cele mai mari
+rezerve rămân forma verbală canonică și disciplina necesară pentru a împiedica
+extinderea necontrolată a sistemului.
+
+Contribuția principală a proiectului nu este că oferă deja o gramatică totală,
+ci că propune un nucleu minim de normalizare, cu criterii explicite de acceptare,
+cu exemple verificabile și cu o formalizare suficient de clară pentru parsare,
+revizie și extindere controlată. În acest sens, RomânăSimplă este mai aproape de
+un protocol lingvistic de lucru și de o propunere de standardizare locală decât
+de o reformă complet închisă.
+
+\appendix
+
+\section{Inventar scurt de forme reprezentative}
+
+\begin{table}[h!]
+\centering
+\RStablelayout
+\begin{tabularx}{\linewidth}{@{}lY@{}}
+\rowcolor{RSGray}
+\textbf{Categorie} & \textbf{Exemple scurte} \\
+Timp & \rs{eu 9 mergea.}, \rs{ei -1D venea.}, \rs{Ana 3H citea.} \\
+Definitudine & \rs{film}, \rs{@film}, \rs{@2cal} \\
+Posesie & \rs{Ana\#@carte}, \rs{eu3\#carte}, \rs{ei*\#@sală} \\
+Cardinalitate & \rs{3cal}, \rs{\textasciitilde10pasăre}, \rs{eu5} \\
+Structură simplă & \rs{@casă e mare.}, \rs{tu vorbea clar.}, \rs{ploua.} \\
+\bottomrule
+\end{tabularx}
+\caption{Inventar scurt de exemple reprezentative}
+\end{table}
+
+\section{Rezumat al deciziilor normative}
+
+\begin{enumerate}[leftmargin=*]
+\item Timpul se scrie înaintea verbului.
+\item Forma verbală este stabilă și nu depinde de persoană sau număr.
+\item Copula preferată în nucleu este \rs{e}.
+\item Definitudinea se marchează prin \rs{@} numai când este necesară.
+\item Posesia se marchează prin \rs{\#}.
+\item Coordonările preferă formele lexicale \rs{și}, \rs{sau}, \rs{ori}; simbolurile rămân extinse.
+\item Pronumele cuantificate sunt admise în nucleu ca subiect și ca posesor compact.
+\item Se aplică regula \textit{operator minim necesar}.
+\end{enumerate}
+
+\section{EBNF Core}
+
+Anexa aceasta reproduce gramatica de nucleu într-o formă compactă, tocmai pentru
+ca cititorul tehnic să poată verifica direct relația dintre argumentul teoretic,
+corpusul validat și formalizarea publicată.
+
+\small
+\begin{verbatim}
+core-text             = core-sentence, { ws, core-sentence };
+
+core-sentence         = simple-sentence, end-mark;
+
+simple-sentence       = explicit-subject-sentence
+                                            | nominal-sentence
+                                            | reduced-sentence;
+
+nominal-sentence      = nominal-group;
+
+explicit-subject-sentence
+                                            = subject, ws, [ time-marker, ws ], predicate;
+
+reduced-sentence      = impersonal-predicate;
+
+impersonal-predicate  = impersonal-verb, { ws, adverb };
+
+predicate             = verbal-predicate
+                                            | copular-predicate;
+
+verbal-predicate      = canonical-verb, { ws, continuation };
+
+copular-predicate     = copula, ws, nonverbal-predicate;
+
+nonverbal-predicate   = nominal-group
+                                            | prepositional-group
+                                            | adverb
+                                            | adjective-tail
+                                            | approximation-group;
+
+continuation          = nominal-group
+                                            | demonstrative-atom
+                                            | prepositional-group
+                                            | adverb
+                                            | graded-adjective
+                                            | approximation-group;
+
+subject               = pronoun
+                                            | quantified-pronoun
+                                            | proper-name
+                                            | nominal-group;
+
+nominal-group         = [ possessor, "#" ], nominal-core, [ ws, adjective-tail ];
+possessor             = pronoun | quantified-pronoun | proper-name | noun;
+nominal-core          = [ "@" ], [ integer | "*" ], noun;
+adjective-tail        = adjective | graded-adjective;
+graded-adjective      = grade-operator, adjective;
+approximation-group   = "~", integer, noun;
+
+prepositional-group   = preposition, ws, nominal-group;
+demonstrative-atom    = "asta";
+
+time-marker           = clock-time | relative-time;
+clock-time            = hour | hour, ":", minute;
+relative-time         = [ "+" | "-" ], integer, time-unit;
+
+grade-operator        = "<" | ">" | "<<" | ">>";
+end-mark              = "." | "?" | "!" | "??" | "!!";
+
+preposition           = "la" | "din" | "cu" | "pentru" | "pe" | "în";
+time-unit             = "m" | "H" | "D";
+canonical-verb        = lexical-verb;
+copula                = "e";
+impersonal-verb       = lexical-impersonal-verb;
+
+pronoun               = "eu" | "tu" | "el" | "ea" | "ei";
+quantified-pronoun    = pronoun, ( integer | "*" );
+
+ws                    = " ", { " " };
+integer               = digit, { digit };
+digit                 = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+hour                  = digit, [ digit ];
+minute                = digit, digit;
+second                = digit, digit;
+day                   = digit, digit;
+month                 = digit, digit;
+year                  = digit, digit, digit, digit;
+
+proper-name           = lexical-proper-name;
+noun                  = lexical-noun;
+adjective             = lexical-adjective;
+adverb                = lexical-adverb;
+lexical-verb          = lexical-core-verb;
+\end{verbatim}
+\normalsize
+
+\section{EBNF Extended și lexic minim}
+
+\small
+\begin{verbatim}
+extended-sentence       = xor-sentence
+                                                | lexical-and-sentence
+                                                | lexical-or-sentence
+                                                | lexical-xor-sentence
+                                                | and-sentence
+                                                | or-sentence
+                                                | reported-sentence
+                                                | technical-time-sentence
+                                                | negated-verbal-sentence
+                                                | negated-copular-sentence
+                                                | negated-impersonal-sentence;
+
+lexical-and-sentence    = simple-sentence, ws, "și", ws, simple-sentence, end-mark;
+lexical-or-sentence     = simple-sentence, ws, "sau", ws, simple-sentence, end-mark;
+lexical-xor-sentence    = simple-sentence, ws, "ori", ws, simple-sentence, end-mark;
+
+and-sentence            = simple-sentence, ws, "&", ws, simple-sentence, end-mark;
+or-sentence             = simple-sentence, ws, "|", ws, simple-sentence, end-mark;
+xor-sentence            = simple-sentence, ws, "^", ws, simple-sentence, end-mark;
+
+reported-sentence       = reporting-clause, ws, "{", embedded-sentence, "}";
+reporting-clause        = [ subject, ws ], [ time-marker, ws ], reporting-verb;
+embedded-sentence       = simple-sentence, end-mark;
+
+technical-time-sentence = [ subject, ws ], technical-time, ws, predicate, end-mark;
+technical-time          = year, "-", month, "-", day, ws, hour, ":", minute, ":", second;
+
+negated-verbal-sentence = subject, ws, [ time-marker, ws ], "!", canonical-verb,
+                                                    { ws, continuation }, end-mark;
+negated-copular-sentence
+                                                = subject, ws, [ time-marker, ws ], copula, ws,
+                                                    "!", ( nominal-group
+                                                    | prepositional-group
+                                                    | adverb
+                                                    | adjective-tail
+                                                    | approximation-group ), end-mark;
+negated-impersonal-sentence
+                                                = "!", impersonal-verb, { ws, adverb }, end-mark;
+
+reporting-verb          = "spunea" | "întreba" | "credea";
+
+lexical-core-verb       = "mergea" | "vedea" | "bea" | "venea"
+                                                | "citea" | "pleca" | "rămânea"
+                                                | "intra" | "vorbea" | "ploua" | "e";
+
+lexical-permitted-verb  = "dădea" | "spunea" | "ajungea"
+                                                | "întreba" | "răspundea" | "cerea";
+
+lexical-extended-verb   = "făcea" | "credea" | "avea" | "dormea"
+                                                | "stătea" | "punea" | "privea" | "striga";
+
+lexical-impersonal-verb = "ploua";
+lexical-adverb          = "clar" | "repede" | "aici" | "acasă"
+                                                | "afară" | "târziu" | "după";
+lexical-adjective       = "mare" | "copt" | "închis" | "gol" | "liniștit";
+lexical-proper-name     = "Ana" | "Maria" | "Ion";
+lexical-noun            = "film" | "carte" | "pasăre" | "casă" | "cal"
+                                                | "sală" | "magazin" | "vin" | "apă" | "lapte"
+                                                | "sat" | "ușă" | "pâine" | "fruct" | "frig"
+                                                | "drum" | "om";
+\end{verbatim}
+\normalsize
+
+\section{Luceafărul: anexă ilustrativă}
+
+Materialul de mai jos nu are statut normativ. El este păstrat în anexă tocmai
+pentru a arăta cum se comportă sistemul atunci când este scos din zona de propoziții
+scurte de control și este pus la lucru pe un text literar cu densitate imagistică și
+ritm propriu. Această anexă este utilă editorial: ea arată ce poate face proiectul,
+dar și unde începe să plătească prețul pentru compactare sau parafrază.
+
+\small
+
+\subsection*{Strofa 1}
+\noindent
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+\rowcolor{RSGray}
+\textbf{Original} & \textbf{Adaptare SR} \\
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+A fost odată ca-n povești,\\
+A fost ca niciodată,\\
+Din rude mari împărătești,\\
+O prea frumoasă fată.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\rs{a fost odată ca în *poveste.}\\
+\rs{a fost ca niciodată.}\\
+\rs{din *rudă >împărătesc,}\\
+\rs{e o fată >frumoasă.}
+\end{minipage}
+\\
+\end{tabularx}
+
+\subsection*{Strofa 2}
+\noindent
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+\rowcolor{RSGray}
+\textbf{Original} & \textbf{Adaptare SR} \\
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+Și era una la părinți\\
+Și mândră-n toate cele,\\
+Cum e Fecioara între sfinți\\
+Și luna între stele.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\rs{și e una la *părinte.}\\
+\rs{și mândră în toate cele,}\\
+\rs{ea e ca Fecioara între *sfânt.}\\
+\rs{și luna între *stea.}
+\end{minipage}
+\\
+\end{tabularx}
+
+\subsection*{Strofa 3}
+\noindent
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+\rowcolor{RSGray}
+\textbf{Original} & \textbf{Adaptare SR} \\
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+Din umbra falnicelor bolți\\
+Ea pasul și-l îndreaptă\\
+Lângă fereastră, unde-n colț\\
+Luceafărul așteaptă.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\rs{din umbra de sub *boltă înaltă,}\\
+\rs{ea își ducea pasul.}\\
+\rs{la fereastră, unde în colț,}\\
+\rs{Luceafărul așteaptă.}
+\end{minipage}
+\\
+\end{tabularx}
+
+\subsection*{Strofa 4}
+\noindent
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+\rowcolor{RSGray}
+\textbf{Original} & \textbf{Adaptare SR} \\
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+Privea în zare cum pe mări\\
+Răsare și străluce,\\
+Pe mișcătoarele cărări\\
+Corăbii negre duce.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\rs{ea privea în zare, pe *mare,}\\
+\rs{cum el răsare și străluce.}\\
+\rs{pe *cărare mișcătoare,}\\
+\rs{el ducea *corabie neagră.}
+\end{minipage}
+\\
+\end{tabularx}
+
+\subsection*{Strofa 5}
+\noindent
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+\rowcolor{RSGray}
+\textbf{Original} & \textbf{Adaptare SR} \\
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+Îl vede azi, îl vede mâni,\\
+Astfel dorința-i gata;\\
+El iar, privind de săptămâni,\\
+Îi cade dragă fata.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\rs{ea vedea pe el. ea 1D vedea pe el.}\\
+\rs{astfel, ea\#dorință e gata.}\\
+\rs{iar el o privea de *săptămână.}\\
+\rs{fata îi cade dragă.}
+\end{minipage}
+\\
+\end{tabularx}
+
+\subsection*{Strofa 6}
+\noindent
+\begin{tabularx}{\linewidth}{@{}Y Y@{}}
+\rowcolor{RSGray}
+\textbf{Original} & \textbf{Adaptare SR} \\
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+Cum ea pe coate-și răzima\\
+Visând ale ei tâmple,\\
+De dorul lui și inima\\
+Și sufletu-i se împle.
+\end{minipage}
+&
+\begin{minipage}[t]{\linewidth}\vspace{0pt}
+\rs{cum ea stătea pe *cot,}\\
+\rs{visând, cu ea\#tâmplă,}\\
+\rs{de el\#dor, ea\#inimă,}\\
+\rs{și ea\#suflet se umple.}
+\end{minipage}
+\\
+\end{tabularx}
+
+\normalsize
+
+\begin{center}
+\small\textbf{Tabel.} Primele șase strofe din \textit{Luceafărul}, în format side by side, cu vers întreg pe linie.
+\end{center}
+
+\section{Observații asupra anexei literare}
+
+Exemplul din \textit{Luceafărul} este util tocmai pentru că nu confirmă doar
+punctele tari ale sistemului. El arată și dificultățile reale: poezia cere ritm,
+ambiguitate controlată, densitate semantică și o negociere continuă între
+literalitate și parafrază. Într-un asemenea context, RomânăSimplă poate produce
+forme interesante, dar nu întotdeauna naturale sau economic superioare. Din
+acest motiv, anexa literară trebuie citită ca probă exploratorie, nu ca dovadă
+normativă pentru nucleul canonic.
+
+\end{document}
