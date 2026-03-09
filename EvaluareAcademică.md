@@ -42,6 +42,7 @@ La nivel de proiectare, RomânăSimplă reușește deja patru lucruri importante
 - sistemul de operatori riscă să devină dens vizual
 - delimitarea dintre „traducere exactă” și „normalizare activă” trebuie păstrată strict
 - propozițiile nested trebuie folosite mai rar decât permit exemplele actuale
+- delimitarea dintre `nucleu obligatoriu`, `permis, dar nerecomandat` și `margine experimentală` trebuie ținută mai strict
 
 Verdictul provizoriu pentru forma actuală este: **reușit și deja defensabil în sens tare pentru nucleul curent, dar cu două rezerve teoretice majore: forma verbală canonică și presiunea viitoare de promovare lexicală**.
 
@@ -61,7 +62,7 @@ Scorurile de mai jos sunt provizorii și folosesc scala `0.0` la `10.0`, unde
 | Stabilitate lexicală | 8.6 | Separarea dintre lexic obligatoriu și lexic extins este acum mai severă: lexicul extins activ a fost redus, iar fiecare verb obligatoriu are acoperire minimală și comparativă explicită în corpus. |
 | Economie operatorială | 8.1 | Regula `operator minim necesar` este acum întărită și de eliminarea marcajului redundant de grad din predicatele adjectivale simple. |
 | Claritate sintactică | 8.3 | Schema preferată a propoziției simple este acum susținută nu doar comparativ, ci și prin predicate adjectivale mai curate și mai puțin încărcate. |
-| Acoperire formală | 9.4 | Separarea `EBNF Core` / `EBNF Extended` este mai curată după mutarea coordonării explicite, a negării prefixate și a lui `XOR` în stratul extins, iar `EBNF Core` acoperă acum explicit și propozițiile nominale scurte validate în corpus, plus un inventar lexical public minim pentru clasele controlate. |
+| Acoperire formală | 9.4 | Separarea `EBNF Core` / `EBNF Extended` este mai curată după mutarea coordonării explicite, a alternativei exclusive și a negării prefixate în stratul extins, iar `EBNF Core` acoperă acum explicit și propozițiile nominale scurte validate în corpus, plus un inventar lexical public minim pentru clasele controlate. |
 | Rigoare metodologică | 9.4 | Corpusul conține acum verdicte explicite pe loturi, exemple ambigue și exemple respinse, iar fiecare verb obligatoriu și fiecare marcaj nominal central trec prin control minimal și comparativ explicit, inclusiv printr-un lot separat de invarianță verbală și prin comparația internă a formei canonice cu alternative plauzibile. |
 | Validare pe corpus | 9.5 | Loturile comparative și corpusurile minimale pentru verb, timp, copulă, ordine, structură, relații prepoziționale, grad/aproximare, număr și definitudine oferă acum o acoperire foarte aproape de completă pentru nucleul curent, iar invarianța verbală este testată separat; comparația cu forme alternative reduce arbitrarul deciziei canonice. |
 | Reproductibilitate | 9.3 | Verdictul pe exemple și separarea dintre acceptat, ambiguu, experimental și respins fac revizia mai repetabilă, iar matricea verbală minimă, loturile nominale comparative și inventarul lexical public minim reduc dependența de exemple izolate sau improvizate. |
@@ -161,14 +162,17 @@ rămân doar în marginea extinsă. Scorul final este orientativ și rămâne pr
 | `?` final | nucleu | 9.0 | 9.4 | 9.0 | 8.1 | 8.9 | Aproape gratuit cognitiv și deja complet familiar. |
 | `!` final | nucleu | 8.9 | 8.8 | 9.0 | 7.2 | 8.6 | Ca semn final rămâne foarte ieftin cognitiv după ce nu mai concurează cu un rol prefixal în nucleu. |
 | markerii temporali | nucleu | 8.4 | 8.6 | 7.3 | 8.7 | 8.3 | Sunt operatorii cei mai utili ai sistemului și rămân justificați chiar când apar frecvent. |
-| `&` | extins | 7.0 | 8.1 | 7.3 | 4.8 | 6.8 | Util doar în stratul extins, când descompunerea chiar pierde o relație importantă. |
-| `\|` | extins | 7.2 | 8.3 | 7.2 | 4.9 | 6.9 | Util doar în stratul extins, când alternativa trebuie păstrată într-o singură unitate. |
+| `și` | extins | 8.5 | 8.8 | 8.9 | 6.1 | 8.1 | Este forma cea mai naturală pentru coordonare explicită atunci când descompunerea nu e suficientă. |
+| `sau` | extins | 8.1 | 7.5 | 8.9 | 6.0 | 7.7 | Rămâne lizibil și familiar, dar trebuie fixat explicit ca OR incluziv pentru a evita ambiguitatea pragmatică. |
+| `ori` | extins | 8.6 | 8.7 | 8.8 | 5.8 | 8.1 | Potrivește mai bine reflexul românesc de alegere exclusivă decât un simbol dedicat de tip `^`. |
+| `&` / `\|` / `^` | extins | 6.9 | 8.3 | 7.1 | 4.4 | 6.7 | Rămân utile doar ca abrevieri opționale pentru stratul extins, nu ca miez semantic al sistemului. |
 
 Lectură rapidă:
 
 - operatorii cei mai solizi în nucleu rămân `@`, `?`, `!` final, markerii temporali, `~`, `<`, `>` și `#`
-- `^`, `{}` și negarea prefixată cu `!` trebuie ținute în marginea extinsă până la validare mai puternică
-- `&` și `|` apar acum explicit ca operatori extinși, nu ca pseudo-operatori de nucleu evaluați în aceeași categorie
+- `ori`, `{}` și negarea prefixată cu `!` trebuie ținute în marginea extinsă până la validare mai puternică
+- `și`, `sau` și `ori` sunt mai bune ca forme semantice principale decât simbolurile `&`, `|` și `^`
+- `&`, `|` și `^` rămân doar abrevieri opționale ale stratului extins
 - bugetul operatorial întărește regula că nucleul bun nu este cel care marchează tot, ci cel care marchează minimul necesar
 - adjectivul pozitiv simplu nu mai poartă grad redundant; `>` și `<` rămân doar pentru grad explicit, ceea ce crește naturalețea și precizia
 - loturile cu verdict explicit și exemplele respinse fac evaluarea actuală mai greu de cosmetizat și deci mai credibilă
@@ -235,6 +239,18 @@ Beneficii reale:
 - scade costul sintactic
 - reduce nevoia de acolade și imbricare
 - crește lizibilitatea pentru oameni și pentru analizori
+
+### 2.5 Lexicalizarea coordonării și a alternativei este mai naturală decât simbolizarea ei
+
+Pentru română, `și`, `sau` și mai ales `ori` oferă o ancoră cognitivă mai bună
+decât `&`, `|` și `^`. Simbolurile pot rămâne utile ca prescurtări de lucru,
+dar nu merită împinse în miezul semantic al sistemului.
+
+Beneficii reale:
+
+- scade presiunea de a învăța operatori noi pentru o relație deja familiară
+- separă mai clar `sau` ca OR incluziv de `ori` ca alegere exclusivă
+- face tratamentul alternativei exclusive mai natural pentru reflexele reale ale limbii române
 
 ---
 
@@ -343,7 +359,7 @@ operatori clari. Are nevoie și de o linie sintactică implicită, ușor de recu
 ### 3.7 EBNF-ul încă amestecă prea mult nucleul cu extensiile
 
 O gramatică formală bună nu trebuie doar să accepte propoziții, ci să arate clar
-ce aparține nucleului și ce aparține periferiei. În forma anterioară, `XOR`,
+ce aparține nucleului și ce aparține periferiei. În forma anterioară, alternativa exclusivă,
 `nested` și timpul tehnic erau puse prea sus în aceeași ierarhie formală.
 
 Aceasta slăbea exact distincția pe care proiectul o cere în proză: nucleu mic,
@@ -423,7 +439,8 @@ cu forme verbale noi.
 
 Stare:
 
-- aplicat prin separarea explicită dintre lexicul verbal obligatoriu și lexicul verbal extins
+- aplicat prin separarea explicită dintre lexicul verbal obligatoriu, stratul `permis, dar nerecomandat` și lexicul verbal extins
+- nucleul verbal obligatoriu a fost tăiat la un miez dur; verbele de frontieră au coborât din nucleu fără a fi împinse direct în experimental
 - în starea actuală, nucleul verbal rămâne înghețat până la un lot de promovare și o motivare explicită a deciziei
 - lexicul verbal extins activ a fost redus la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază
 
@@ -602,13 +619,13 @@ Avantaj:
 
 Propunere:
 
-- `&` și `|` să iasă din nucleul strict și să rămână disponibile doar în stratul extins
-- `^` să fie păstrat strict pentru `XOR`, numai când exclusivitatea contează efectiv
+- `și`, `sau` și `ori` să fie formele semantice principale pentru coordonare și alternativă în stratul extins
+- `&`, `|` și `^` să rămână doar abrevieri opționale pentru aceste forme
 - dacă aceeași relație poate fi redată mai clar prin două propoziții, descompunerea rămâne preferată
 
 Avantaj:
 
-- limitează proliferarea conectorilor
+- limitează proliferarea conectorilor simbolici
 - păstrează coerent stratul structural
 - face mai ușoară revizia operatorilor noi
 
@@ -640,6 +657,7 @@ Propunere:
 - forma nemarcată trebuie să rămână lectura implicită ori de câte ori sensul nu cere contrast
 - `@`, `#`, prefixul numeric, `*`, timpul explicit și conectorii structurali se adaugă numai când schimbă efectiv informația transmisă
 - exemplul bun nu este cel care marchează tot, ci cel care marchează exact minimul necesar
+- forma marcată fără contrast justificabil nu rămâne în nucleul dur; ea este rescrisă sau coboară cel puțin în stratul `permis, dar nerecomandat`
 
 Avantaj:
 
@@ -649,13 +667,18 @@ Avantaj:
 
 Aceasta este, practic, forma operațională a regulii `operator minim necesar`.
 
+Stare:
+
+- întărită: forma nemarcată nu mai este doar preferință stilistică, ci filtru de acceptare pentru nucleul strict
+
 ### 4.11 Separarea strictă dintre nucleul obligatoriu și marginea experimentală
 
 Propunere:
 
-- corpusul să fie împărțit clar în `nucleu obligatoriu` și `margine experimentală`
+- corpusul să fie împărțit clar în `nucleu obligatoriu`, `permis, dar nerecomandat` și `margine experimentală`
 - nucleul obligatoriu să conțină doar formele deja validate prin protocolul compact de revizie
-- orice regulă nouă, ordonare alternativă sau combinație mai densă să intre mai întâi în marginea experimentală
+- stratul `permis, dar nerecomandat` să conțină forme acceptabile, dar nepreferate ca reflex principal
+- orice regulă nouă, ordonare alternativă sau combinație mai densă să intre mai întâi în stratul intermediar sau în marginea experimentală, nu direct în nucleu
 
 Avantaj:
 
@@ -663,12 +686,16 @@ Avantaj:
 - permite experiment fără a dilua standardul de bază
 - face evaluarea academică mai onestă și mai reproductibilă
 
+Stare:
+
+- aplicat prin introducerea explicită a stratului `permis, dar nerecomandat` în corpusul canonic și în documentele de orientare
+
 ### 4.12 Separarea EBNF-ului în nucleu și extensii
 
 Propunere:
 
 - gramatica formală trebuie să păstreze un `EBNF Core` și un `EBNF Extended`
-- `XOR`, `nested` și timpul tehnic complet trebuie să rămână în afara regulii de top a nucleului
+- alternativa exclusivă, `nested` și timpul tehnic complet trebuie să rămână în afara regulii de top a nucleului
 - regulile de bază trebuie să poată fi citite și validate separat de periferie
 
 Avantaj:
@@ -727,9 +754,10 @@ De făcut:
 
 - definiție exactă a formei verbale canonice: imperfect 3 singular folosit ca formă convențională fixă, nu ca formă semantic neutră
 - lexic verbal obligatoriu mic și închis pentru corpusul de bază
+- menținerea unui strat `permis, dar nerecomandat` pentru verbele utile, dar neesențiale
 - publicarea mapării explicite `infinitiv -> formă canonică`
 - verificarea nucleului astfel încât fiecare verb folosit să apară în lexicul verbal obligatoriu
-- păstrarea verbelor suplimentare numai în lexicul verbal extins până la promovare explicită
+- păstrarea verbelor suplimentare mai întâi în stratul `permis, dar nerecomandat` sau în lexicul verbal extins până la promovare explicită
 - testarea unei parafraze mai simple înainte de orice promovare lexicală
 - notarea explicită a verbelor extinse care par să reziste parafrazei simple, fără a transforma prematur observația în verdict
 - definirea unui lot minim obligatoriu pentru promovarea din extins în nucleu
@@ -758,7 +786,7 @@ De făcut:
 De făcut:
 
 - aplicarea regulii „operator minim necesar”
-- menținerea clară a lui `&`, `|` și `^` în marginea extinsă, fără recul în nucleul activ
+- menținerea clară a lui `și`, `sau` și `ori` în marginea extinsă și a lui `&`, `|`, `^` doar ca abrevieri, fără recul în nucleul activ
 - limitarea nested la cazuri strict justificate
 - descompunerea preferențială a frazelor complexe
 
@@ -774,7 +802,7 @@ De făcut:
 
 De făcut:
 
-- delimitarea clară a nucleului obligatoriu față de marginea experimentală
+- delimitarea clară a nucleului obligatoriu față de stratul `permis, dar nerecomandat` și de marginea experimentală
 - trecerea tuturor exemplelor noi prin protocolul compact înainte de a intra în nucleu
 - păstrarea combinațiilor dense numai în zona experimentală până la validare
 - păstrarea unui mini-lot de exemple ambigue și respinse pentru fiecare familie sensibilă de reguli
@@ -826,7 +854,7 @@ recomandă măsurarea explicită a următoarelor:
 - timpul de citire comparativ pentru cititori noi
 - timpul de învățare pentru fiecare operator nou
 - rata de propoziții de nucleu care respectă bugetul operatorial
-- rata de propoziții mutate corect din nucleu în marginea experimentală după controlul de lizibilitate
+- rata de propoziții mutate corect din nucleu în stratul `permis, dar nerecomandat` sau în marginea experimentală după controlul de lizibilitate
 
 Pragul util pentru nucleul actual ar trebui să fie nu doar „mai regulat”, ci și „mai ușor
 de citit la prima vedere”.
@@ -907,7 +935,7 @@ Control rapid pentru structură:
 1. Operatorul structural este necesar pentru sens și nu doar decorativ?
 2. Propoziția respectă bugetul operatorial de nucleu?
 3. `?` și `!` sunt suficiente fără dublare inutilă?
-4. `<`, `>`, `~`, `?` și `!` sunt folosite economic în nucleu, iar `&` și `|` rămân în extins?
+4. `<`, `>`, `~`, `?` și `!` sunt folosite economic în nucleu, iar `și`, `sau`, `ori` rămân în extins când chiar sunt necesare?
 5. `{}` apare doar în conținut raportat?
 6. O propoziție complexă ar fi mai clară dacă ar fi descompusă sau dacă ar folosi copula `e`?
 
@@ -915,7 +943,7 @@ Control rapid pentru ordine și economie:
 
 1. Propoziția urmează schema preferată a nucleului, dacă nu există motiv clar pentru abatere?
 2. Forma nemarcată a fost păstrată acolo unde sensul nu cere marcaj?
-3. Exemplul aparține nucleului obligatoriu sau marginii experimentale?
+3. Exemplul aparține nucleului obligatoriu, stratului `permis, dar nerecomandat` sau marginii experimentale?
 4. Combinația de reguli rămâne citibilă la prima vedere?
 5. Exemplul ar fi mai bun dacă ar fi redus cu un marcaj sau cu un segment?
 
@@ -938,11 +966,11 @@ Control rapid pentru comparație RO versus SR:
 Protocol compact de revizie pentru orice exemplu nou:
 
 1. Se fixează sursa și fenomenul dominant; exemplul nu trebuie să amestece gratuit mai multe noutăți.
-2. Se verifică fidelitatea: nu se adaugă timp, număr, definitudine, posesie, `sau` sau `XOR` absente din sursă.
+2. Se verifică fidelitatea: nu se adaugă timp, număr, definitudine, posesie, alternativă incluzivă sau alternativă exclusivă absente din sursă.
 3. Se verifică forma minimă: verb din lexicul verbal obligatoriu pentru nucleu, timp suficient, formă nemarcată păstrată unde este posibil, operator minim necesar.
-4. Se verifică structura: nominalul rămâne economic, ordinea executabilă rămâne recognoscibilă, copula `e` apare doar în predicate nominale, adjectivale și locative, iar `&`, `|`, `^` și `{}` apar doar când valorile `și`, `sau`, `XOR` sau conținutul raportat sunt justificate.
+4. Se verifică structura: nominalul rămâne economic, ordinea executabilă rămâne recognoscibilă, copula `e` apare doar în predicate nominale, adjectivale și locative, iar `și`, `sau`, `ori` și `{}` apar doar când coordonarea, alternativa sau conținutul raportat sunt justificate; `&`, `|` și `^` rămân doar abrevieri opționale.
 5. Dacă propoziția este redusă, se verifică separat că este impersonală reală.
-6. Se dă verdictul final: `acceptat`, `rescris` sau `respins`.
+6. Se dă verdictul final: `acceptat în nucleu`, `permis, dar nerecomandat`, `păstrat experimental`, `rescris` sau `respins`.
 
 ---
 
@@ -962,17 +990,19 @@ toate condițiile de mai jos:
 - propoziția redusă din nucleu este limitată la impersonale reale
 - forma temporală uzuală este mai scurtă decât forma standard completă în majoritatea cazurilor
 - corpusul de test separă clar fenomenele simple de fenomenele combinate
+- corpusul de test separă clar `nucleu obligatoriu`, `permis, dar nerecomandat` și `margine experimentală`
 - regulile de fidelitate nu permit inventarea de informație în translația exactă
 - nested este rar și justificat
-- `&`, `|` și `^` rămân în marginea extinsă, sunt folosite coerent și nu revin tacit în nucleul strict
+- `și`, `sau` și `ori` rămân în marginea extinsă, iar `&`, `|` și `^` sunt folosite coerent doar ca abrevieri și nu revin tacit în nucleul strict
 - copula `e` este forma preferată în predicatele nominale, adjectivale și locative de nucleu
 - propoziția simplă are o ordine executabilă și stabilă în corpusul de bază
 - forma nemarcată rămâne soluția implicită acolo unde contrastul nu cere marcaj
+- forma marcată fără contrast justificabil nu rămâne în nucleul strict
 - forma verbală canonică este descrisă onest ca convenție fixă, nu ca neutralitate semantică fictivă
 - densitatea de operatori pe propoziție scade față de corpusul actual
 - lizibilitatea pentru un cititor nou nu se prăbușește
 - corpusul minimal verbal, nominal, temporal și structural este complet și coerent
-- nucleul obligatoriu este separat clar de marginea experimentală
+- nucleul obligatoriu este separat clar de stratul `permis, dar nerecomandat` și de marginea experimentală
 - `EBNF Core` este separat clar de `EBNF Extended`
 - clasele lexicale minime și derivările canonice sunt publicate
 

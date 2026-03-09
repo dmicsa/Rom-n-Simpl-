@@ -41,6 +41,7 @@ nu deteriorează sever celelalte două.
 Regulă de lucru:
 
 - dacă o decizie este controversată, motivul ei trebuie notat clar lângă regula pe care o schimbă
+- forma nemarcată este soluția implicită; orice formă marcată trebuie să poată justifica explicit contrastul sau informația suplimentară pe care o aduce
 
 ---
 
@@ -108,7 +109,7 @@ Reguli de bază:
 - Aceeași formă se folosește pentru `eu`, `tu`, `el`, `ea` și `ei` în nucleul strict.
 - Formele cu număr explicit, de tipul `eu5` sau `ei10`, rămân experimentale până la o validare separată.
 - Nucleul activ folosește un lexic verbal controlat,
-  împărțit în nucleu obligatoriu și lexic extins.
+  împărțit în nucleu obligatoriu, strat permis dar nerecomandat și lexic extins.
 - În forma actuală, forma canonică nu se deduce automat din infinitiv;
   fiecare verb activ intră explicit în lexic.
 - În nucleul de bază, predicația nominală, adjectivală și locativă preferă
@@ -134,18 +135,21 @@ Lexic verbal obligatoriu pentru nucleul actual:
 - `a vedea -> vedea`
 - `a bea -> bea`
 - `a veni -> venea`
-- `a da -> dădea`
 - `a citi -> citea`
 - `a pleca -> pleca`
-- `a spune -> spunea`
 - `a rămâne -> rămânea`
 - `a intra -> intra`
 - `a vorbi -> vorbea`
+- `a ploua -> ploua`
+- `a fi -> e`
+
+Lexic verbal permis, dar nerecomandat:
+
+- `a da -> dădea`
+- `a spune -> spunea`
 - `a ajunge -> ajungea`
 - `a întreba -> întreba`
 - `a răspunde -> răspundea`
-- `a ploua -> ploua`
-- `a fi -> e`
 - `a cere -> cerea`
 
 Lexic verbal extins:
@@ -162,8 +166,10 @@ Lexic verbal extins:
 Regulă de utilizare:
 
 - Nucleul obligatoriu folosește numai verbe din lista obligatorie.
+- Stratul `permis, dar nerecomandat` admite forme utile și lizibile, dar care nu mai definesc reflexul principal al nucleului.
+- O formă intră în `permis, dar nerecomandat` când este acceptabilă, dar parafraza de nucleu rămâne preferată sau când verbul nu mai merită costul de memorare al nucleului dur.
 - Lexicul extins poate susține doar exemple secundare, comparative sau exploratorii.
-- Dacă apare un verb nou, el intră mai întâi în lexicul extins și abia apoi poate fi promovat în nucleul obligatoriu.
+- Dacă apare un verb nou, el intră mai întâi în lexicul extins și abia apoi poate fi promovat în `permis, dar nerecomandat` sau în nucleul obligatoriu.
 - Dacă există două forme candidate, una singură este admisă în nucleu.
 
 Criterii de promovare din lexicul extins în nucleul obligatoriu:
@@ -185,6 +191,8 @@ Criterii de păstrare a formei canonice curente:
 Stare actuală:
 
 - lista verbală obligatorie de mai sus este înghețată în starea curentă
+- lista verbală obligatorie a fost tăiată la un nucleu dur de uz frecvent și de cost cognitiv mic
+- verbele `dădea`, `spunea`, `ajungea`, `întreba`, `răspundea` și `cerea` au coborât în stratul `permis, dar nerecomandat`
 - niciun verb din lexicul extins nu urcă în nucleu fără lot de promovare și fără motivare explicită a deciziei
 - lista verbală extinsă a fost redusă la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază; restul nu mai intră în starea activă a documentului
 - `a privi` și `a striga` au fost coborâte în lexicul extins: `a privi` dubla prea ușor funcția lui `a vedea`, iar `a striga` nu mai era necesar pentru testarea marcajului final `!`
@@ -204,6 +212,12 @@ Exemple de nucleu:
 Exemplu tehnic:
 
 - `eu 2026-03-08 9:00:00 mergea la magazin.`
+
+Regulă tare a formei nemarcate:
+
+- dacă două formulări păstrează aceeași informație de bază, nucleul preferă forma cu mai puține marcaje vizibile
+- forma marcată fără contrast justificabil nu intră în nucleul obligatoriu
+- dacă o formă rămâne totuși utilă și lizibilă, ea coboară cel puțin în stratul `permis, dar nerecomandat`
 
 ### 2.4 Pronume și număr
 
@@ -301,7 +315,7 @@ Exemple:
 - `frate#@carte = cartea fratelui`
 - `eu#2cal = cei doi cai ai mei`
 - `ei#@sală = sala lor`
-- `eu dădea @carte la Ana`
+- `eu mergea la Ana`
 - `ei venea din sat`
 
 ### 2.8 Operatori structurali
@@ -314,15 +328,15 @@ Reguli de bază:
 - Operatorul `*` înaintea substantivului funcționează ca marcaj de plural nenumărat.
 - Operatorul `@` înaintea substantivului funcționează ca marcaj de definitudine.
 - Operatorul `#` între doi termeni funcționează ca marcaj de posesie sau apartenență.
-- Operatorul `&` marchează legătura `și`, dar rămâne în stratul extins.
-- Operatorul `|` marchează legătura `sau`, dar rămâne în stratul extins.
-- Operatorul `^` marchează exclusiv `XOR`, dar rămâne în stratul extins.
+- Legăturile de coordonare și alternativă se exprimă preferabil lexical: `și` pentru conjuncție, `sau` pentru OR incluziv și `ori` pentru alternativă exclusivă.
+- Simbolurile `&`, `|` și `^` pot fi folosite doar ca abrevieri opționale pentru `și`, `sau` și `ori`, în stratul extins.
 - Semnul `=` este folosit pentru echivalențe, definiții și parafraze de regulă.
 - Markerul temporal plasat înaintea verbului funcționează ca operator principal de timp.
 - Cratima `-` nu este folosită ca operator gramatical de legare, dar poate apărea
   în operatorii temporali relativi, de tipul `-1D`.
 - Lipsa semnului plus înseamnă valoare pozitivă implicită pentru operatorii relativi.
 - Principiul de bază este `operator minim necesar`: dacă sensul rămâne clar fără un operator, operatorul nu se adaugă.
+- Forma marcată fără contrast justificabil nu intră în nucleul obligatoriu; ea este rescrisă sau coboară cel puțin în stratul `permis, dar nerecomandat`.
 - În nucleul strict, propoziția de test preferă cel mult două marcaje vizibile dintre `@`, `#`, prefixul numeric, `*`, `<`, `>` și `~`; markerul temporal și semnul final nu intră în acest buget.
 
 Exemplu de nucleu:
@@ -331,6 +345,9 @@ Exemplu de nucleu:
 
 Exemple experimentale:
 
+- `Ana citea și tu scria.`
+- `tu bea apă sau tu bea lapte.`
+- `tu bea apă ori tu bea lapte.`
 - `Ana citea & tu scria.`
 - `tu bea apă | tu bea lapte.`
 - `tu bea apă ^ tu bea lapte.`
@@ -380,7 +397,9 @@ Exemple:
 Reguli de bază:
 
 - Acoladele `{}` se folosesc doar pentru conținut raportat: spus, întrebat, crezut, citat.
-- `&`, `|` și `^` sunt admise doar în stratul extins, când legătura logică trebuie păstrată explicit într-o singură unitate.
+- `și`, `sau` și `ori` sunt formele preferate când coordonarea sau alternativa trebuie păstrată explicit într-o singură unitate.
+- `sau` se interpretează ca OR incluziv, iar `ori` ca alternativă exclusivă.
+- `&`, `|` și `^` sunt admise doar ca abrevieri opționale în stratul extins.
 - Dacă legătura nu trebuie păstrată într-o singură unitate, fraza se descompune în propoziții mai simple.
 - Descompunerea este preferată în nucleul compact.
 - În corpusul de bază, nested trebuie să fie rar.
@@ -489,9 +508,10 @@ Observații de lucru:
 - `core-sentence` descrie numai nucleul obligatoriu.
 - `explicit-subject-sentence` fixează ordinea preferată a nucleului pentru propozițiile cu subiect exprimat.
 - `reduced-sentence` rămâne rezervată numai pentru impersonale reale din nucleul strict.
-- coordonarea explicită cu `&` și `|` iese din nucleul strict; în nucleu se preferă descompunerea în propoziții separate.
+- coordonarea explicită iese din nucleul strict; în nucleu se preferă descompunerea în propoziții separate, iar când legătura trebuie totuși păstrată, formele lexicale preferate sunt `și`, `sau` și `ori` în stratul extins.
 - Copula invariabilă `e` este forma preferată în nucleu pentru predicate nominale, adjectivale și locative.
-- Nucleul nu include aici `XOR`, negarea prefixată, `nested` și timpul tehnic complet.
+- Nucleul nu include aici coordonarea explicită, alternativa exclusivă, negarea prefixată, `nested` și timpul tehnic complet.
+- Stratul `permis, dar nerecomandat` este editorial, nu gramatical: el marchează forme acceptabile, dar nepreferate ca reflex principal al nucleului.
 - `demonstrative-atom` nu intră în clasa `nominal-group`; el rămâne atom lexical separat pentru complemente foarte frecvente, de tipul `asta`.
 - Simbolurile `lexical-noun`, `lexical-adjective`, `lexical-adverb`, `lexical-proper-name`, `lexical-core-verb` și `lexical-impersonal-verb` trimit la lexicul controlat al proiectului, nu la o clasă deschisă nelimitată.
 
@@ -502,6 +522,9 @@ obligatoriu.
 
 ```ebnf
 extended-sentence       = xor-sentence
+                | lexical-and-sentence
+                | lexical-or-sentence
+                | lexical-xor-sentence
                 | and-sentence
                 | or-sentence
                 | reported-sentence
@@ -510,6 +533,10 @@ extended-sentence       = xor-sentence
                 | negated-copular-sentence
                 | negated-impersonal-sentence
                 | numbered-subject-sentence;
+
+lexical-and-sentence    = simple-sentence, ws, "și", ws, simple-sentence, end-mark;
+lexical-or-sentence     = simple-sentence, ws, "sau", ws, simple-sentence, end-mark;
+lexical-xor-sentence    = simple-sentence, ws, "ori", ws, simple-sentence, end-mark;
 
 and-sentence            = simple-sentence, ws, "&", ws, simple-sentence, end-mark;
 or-sentence             = simple-sentence, ws, "|", ws, simple-sentence, end-mark;
@@ -544,8 +571,9 @@ reporting-verb          = "spunea" | "întreba" | "credea";
 
 Observații de lucru:
 
-- `and-sentence` și `or-sentence` rămân în stratul extins pentru că descompunerea este mai ieftină și mai lizibilă în nucleul curent.
-- `xor-sentence` rămâne în stratul extins pentru că exclusivitatea nu este necesară în majoritatea propozițiilor de bază.
+- `lexical-and-sentence` și `lexical-or-sentence` sunt formele preferate ale stratului extins când coordonarea trebuie păstrată explicit.
+- `lexical-xor-sentence` rămâne în stratul extins pentru că exclusivitatea nu este necesară în majoritatea propozițiilor de bază.
+- `and-sentence`, `or-sentence` și `xor-sentence` rămân doar abrevieri simbolice ale aceluiași strat extins.
 - `reported-sentence` rămâne în stratul extins pentru că nested este rar și costisitor vizual.
 - `technical-time-sentence` rămâne în stratul tehnic pentru că formatul complet nu trebuie să domine uzul curent.
 - propozițiile cu negare prefixată rămân în stratul extins până când un lot separat arată că `!` prefix este citit sigur fără cost excesiv.
@@ -557,10 +585,12 @@ Acest apendice nu înlocuiește corpusul, dar fixează un minim de clase lexical
 controlate pentru testare și parsare.
 
 ```ebnf
-lexical-core-verb     = "mergea" | "vedea" | "bea" | "venea" | "dădea"
-                      | "citea" | "pleca" | "spunea" | "rămânea"
-                      | "intra" | "vorbea" | "ajungea" | "întreba"
-                      | "răspundea" | "ploua" | "e" | "cerea";
+lexical-core-verb     = "mergea" | "vedea" | "bea" | "venea"
+                      | "citea" | "pleca" | "rămânea"
+                      | "intra" | "vorbea" | "ploua" | "e";
+
+lexical-permitted-verb = "dădea" | "spunea" | "ajungea"
+                      | "întreba" | "răspundea" | "cerea";
 
 lexical-extended-verb = "făcea" | "credea" | "avea" | "dormea"
                       | "stătea" | "punea" | "privea" | "striga";
@@ -624,7 +654,7 @@ Exemplele de mai jos arată cum se leagă propozițiile de regulile formale.
 8. `eu vedea ~10pasăre.`
   `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
 
-9. `eu dădea @carte la Ana.`
+9. `eu mergea la Ana.`
   `core-sentence -> simple-sentence end-mark -> explicit-subject-sentence end-mark`
 
 10. `@2cal.`
@@ -650,7 +680,7 @@ Caracteristici centrale:
 - numărul se exprimă doar când contează
 - pronumele numerotate rămân experimentale
 - `@` și `#` rămân operatorii nominali centrali
-- `&`, `|` și `^` rămân în stratul extins până la validare mai puternică
+- `și`, `sau` și `ori` rămân în stratul extins când coordonarea trebuie păstrată explicit, iar `&`, `|` și `^` rămân doar abrevieri opționale ale lor
 - propoziția cu subiect exprimat urmează ordinea fixă `subiect + timp + predicat` sau `subiect + predicat`
 - relațiile indirecte uzuale rămân prepoziționale, nu operatoriale
 - corpusul evită propozițiile care activează prea multe inovații simultan
@@ -672,7 +702,7 @@ Setul minim de reguli pentru nucleul actual:
 3. Timpul se scrie înaintea verbului.
 4. Forma temporală implicită este parțială sau relativă; forma completă este tehnică.
 5. Verbul folosește o formă stabilă din lexicul verbal obligatoriu.
-6. Lexicul verbal este împărțit în nucleu obligatoriu și lexic extins.
+6. Lexicul verbal este împărțit în nucleu obligatoriu, `permis, dar nerecomandat` și lexic extins.
 7. Predicația nominală, adjectivală și locativă preferă copula invariabilă `e` în nucleu.
 8. Pronumele numerotate rămân în stratul experimental.
 9. Substantivul folosește singularul ca bază; prefixul numeric marchează cardinalitatea.
@@ -683,10 +713,12 @@ Setul minim de reguli pentru nucleul actual:
 14. Adjectivul stă după substantiv și nu se acordă.
 15. Adverbul scurt stă după verb; fraza grea se descompune.
 16. Operatorii de bază ai nucleului sunt `@`, `#`, `~`, `<`, `>`, `?`, `!` și markerii temporali.
-17. `&`, `|`, `^`, `{}` și negarea prefixată cu `!` rămân în stratul extins.
+17. `și`, `sau`, `ori`, `{}` și negarea prefixată cu `!` rămân în stratul extins; `&`, `|` și `^` sunt doar abrevieri opționale ale coordonării și alternativei.
 18. Nested este rezervat pentru conținut raportat.
-19. Se aplică regula `operator minim necesar`.
-20. Nucleul preferă un buget operatorial redus în propoziția de test.
+19. Nucleul verbal este împărțit în `obligatoriu`, `permis, dar nerecomandat` și `extins`.
+20. Se aplică regula tare a formei nemarcate: dacă marcajul nu aduce contrast necesar, forma marcată cade din nucleul strict.
+21. Se aplică regula `operator minim necesar`.
+22. Nucleul preferă un buget operatorial redus în propoziția de test.
 
 ---
 
@@ -704,7 +736,7 @@ Corpusul de bază trebuie să includă în primul rând propoziții scurte, cu u
 - copula `e` în predicate simple
 - ordine explicită a propoziției cu subiect exprimat
 - relații prepoziționale simple
-- coordonare, alternativă și exclusivitate logică doar în marginea experimentală
+- coordonare, alternativă incluzivă și alternativă exclusivă doar în marginea experimentală sau, când sunt acceptabile dar nepreferate, în stratul `permis, dar nerecomandat`
 - adjectiv după substantiv
 - adverb scurt după verb
 - grad prin `<` și `>`
@@ -742,6 +774,10 @@ Se recomandă și un corpus minimal structural pentru grad, aproximare, enunț,
 nested și descompunere, astfel încât operatorii să poată fi validați separat de
 lexic și de relațiile nominale.
 
+Se recomandă și un lot separat pentru formele `permise, dar nerecomandate`,
+astfel încât proiectul să poată arăta clar ce acceptă fără a confunda acceptarea
+cu recomandarea de nucleu.
+
 Dimensiuni de evaluare:
 
 - compactitate în caractere
@@ -759,11 +795,11 @@ Dimensiuni de evaluare:
 Pentru orice exemplu nou, revizia urmează aceeași secvență scurtă:
 
 1. Se fixează sursa și fenomenul dominant. Exemplul trebuie să testeze un singur lucru nou sau o singură combinație justificată.
-2. Se verifică fidelitatea. Nu se adaugă timp, număr, definitudine, posesie, coordonare, alternativă sau `XOR` care nu sunt susținute de sursă.
-3. Se verifică forma minimă. Verbul trebuie să apară în lexicul verbal obligatoriu dacă propoziția pretinde statut de nucleu, timpul trebuie să fie doar atât cât cere sensul, ordinea preferată trebuie să rămână recognoscibilă, iar operatorii trebuie reduși la minimul necesar.
-4. Se verifică structura. `&`, `|`, `^` și `{}` rămân doar dacă păstrează o relație obligatorie; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, fraza se descompune.
-5. Dacă verbul nu este încă în nucleul obligatoriu, se decide separat: `rămâne extins` sau `propus pentru promovare cu motivare`.
-6. Se decide explicit: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
+2. Se verifică fidelitatea. Nu se adaugă timp, număr, definitudine, posesie, coordonare, alternativă incluzivă sau alternativă exclusivă care nu sunt susținute de sursă.
+3. Se verifică forma minimă. Verbul trebuie să apară în lexicul verbal obligatoriu dacă propoziția pretinde statut de nucleu, timpul trebuie să fie doar atât cât cere sensul, ordinea preferată trebuie să rămână recognoscibilă, forma nemarcată trebuie păstrată ori de câte ori este suficientă, iar operatorii trebuie reduși la minimul necesar.
+4. Se verifică structura. `și`, `sau`, `ori` și `{}` rămân doar dacă păstrează o relație obligatorie; `&`, `|` și `^` rămân doar ca abrevieri opționale; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, fraza se descompune.
+5. Dacă verbul nu este încă în nucleul obligatoriu, se decide separat: `permis, dar nerecomandat`, `rămâne extins` sau `propus pentru promovare cu motivare`.
+6. Se decide explicit: `acceptat în nucleu`, `permis, dar nerecomandat`, `păstrat experimental`, `rescris` sau `respins`.
 
 Pentru orice decizie controversată se adaugă și o scurtă motivare locală: de ce a fost preferată față de alternativa respinsă.
 

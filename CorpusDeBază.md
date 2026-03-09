@@ -7,10 +7,11 @@ Acest corpus este aliniat la filtrul `Compact, Precis, Simplu, Uniform`.
 Exemplele de bază evită supraîncărcarea și preferă un singur fenomen dominant pe
 propoziție.
 
-Corpusul este împărțit în două straturi:
+Corpusul este împărțit în trei straturi:
 
 - `nucleu obligatoriu`: exemple validate, scurte și stabile
-- `margine experimentală`: exemple utile pentru extindere, dar încă secundare față de nucleu
+- `permis, dar nerecomandat`: exemple acceptabile, dar secundare față de reflexul principal al nucleului
+- `margine experimentală`: exemple utile pentru extindere, dar încă prea instabile pentru a fi recomandate
 
 ## Ordinea preferată a propoziției simple
 
@@ -90,8 +91,8 @@ RO: `Tu vorbești clar.`
 SR: `tu vorbea clar.`
 
 **11**
-RO: `Ei ajung.`
-SR: `ei ajungea.`
+RO: `Ei pleacă.`
+SR: `ei pleca.`
 
 ## Fenomen dominant pentru perechile RO și SR validate
 
@@ -122,12 +123,13 @@ SR: `ei ajungea.`
 - singularul este baza pentru substantiv
 - `@` se adaugă doar când definitudinea trebuie exprimată clar
 - `#` marchează posesia
-- `&`, `|` și `^` rămân experimentale; în nucleu se preferă descompunerea
+- `și`, `sau` și `ori` sunt formele semantice preferate pentru coordonare și alternativă; `&`, `|` și `^` rămân doar abrevieri experimentale, iar în nucleu se preferă descompunerea
 - relațiile indirecte simple rămân prepoziționale: `la`, `din`, `cu`, `pentru`, `pe`
 - adjectivele stau după substantiv
 - adverbele scurte stau după verb
 - `{}` este rezervat pentru conținut raportat
 - fraza complicată se descompune când această formă este mai clară
+- forma nemarcată este implicită; marcajul fără contrast justificabil se rescrie sau coboară din nucleul dur
 - se aplică regula `operator minim necesar`
 - în nucleul de test se preferă cel mult două marcaje vizibile, fără a număra markerul temporal și semnul final
 
@@ -145,8 +147,8 @@ SR: `ei ajungea.`
 2. `tu 20:30 vedea.`
 3. `ei -1D venea.`
 4. `Ana 3H citea.`
-5. `eu 15m răspundea.`
-6. `tu -30m ajungea.`
+5. `eu 15m vorbea.`
+6. `tu -30m intra.`
 7. `ei 2D pleca.`
 8. `Ana 7 intra.`
 9. `ei 21 bea apă.`
@@ -174,9 +176,9 @@ Verdict:
 5. `tu vedea @film.`
 6. `tu 20:30 vedea @film.`
 7. `tu -30m vedea @film.`
-8. `ei cerea pâine.`
-9. `ei 3H cerea pâine.`
-10. `ei -2D cerea pâine.`
+8. `ei bea apă.`
+9. `ei 3H bea apă.`
+10. `ei -2D bea apă.`
 
 Verdict:
 
@@ -220,9 +222,48 @@ testare, dar nu definesc forma de bază a limbii în starea curentă.
 
 1. `eu !vedea @film.`
 2. `@casă e !mare.`
-3. `Ana citea & tu vorbea.`
-4. `tu bea apă | tu bea lapte.`
-5. `tu bea apă ^ tu bea lapte.`
+3. `Ana citea și tu vorbea.`
+4. `tu bea apă sau tu bea lapte.`
+5. `tu bea apă ori tu bea lapte.`
+
+## Lot Comparativ Minimal pentru `și`, `sau`, `ori`
+
+**1**
+RO: `Ana citește și tu vorbești.`
+SR: `Ana citea și tu vorbea.`
+verdict: `păstrat experimental`
+motiv: coordonarea explicită este lizibilă, dar nucleul preferă încă descompunerea când relația nu trebuie ținută într-o singură unitate.
+
+**2**
+RO: `Tu bei apă sau lapte, poate și ambele.`
+SR: `tu bea apă sau tu bea lapte.`
+verdict: `păstrat experimental`
+motiv: `sau` rămâne forma potrivită pentru alternativa incluzivă, dar tipul de propoziție nu este suficient de frecvent pentru nucleul strict.
+
+**3**
+RO: `Tu bei apă ori lapte, nu ambele.`
+SR: `tu bea apă ori tu bea lapte.`
+verdict: `păstrat experimental`
+motiv: `ori` fixează bine alternativa exclusivă în reflex românesc natural, dar exclusivitatea explicită rămâne fenomen de margine, nu de nucleu.
+
+Verdict:
+
+- `validare minimală pentru stratul extins`
+- motiv: lotul separă explicit coordonarea de alternativa incluzivă și de alternativa exclusivă și susține alegerea lexicală `și` / `sau` / `ori`.
+
+## Strat permis, dar nerecomandat
+
+Exemplele de mai jos sunt acceptabile și pot rămâne în proiect, dar nu mai
+definesc reflexul principal al nucleului. Ele se folosesc doar când parafraza de
+nucleu ar forța prea mult sensul sau când fenomenul dominant urmărit nu este
+lexicul verbal de bază.
+
+1. `Ana întreba asta.`
+2. `eu răspundea după.`
+3. `ei ajungea târziu.`
+4. `Ana cerea pâine pentru eu.`
+5. `eu dădea @carte la Ana.`
+6. `el spunea asta.`
 
 ## Control Rapid pentru operatori experimentali
 
@@ -246,19 +287,22 @@ testare, dar nu definesc forma de bază a limbii în starea curentă.
 2. `a vedea -> vedea`
 3. `a bea -> bea`
 4. `a veni -> venea`
-5. `a da -> dădea`
-6. `a citi -> citea`
-7. `a pleca -> pleca`
-8. `a spune -> spunea`
-9. `a rămâne -> rămânea`
-10. `a intra -> intra`
-11. `a vorbi -> vorbea`
-12. `a ajunge -> ajungea`
-13. `a întreba -> întreba`
-14. `a răspunde -> răspundea`
-15. `a ploua -> ploua`
-16. `a fi -> e`
-17. `a cere -> cerea`
+5. `a citi -> citea`
+6. `a pleca -> pleca`
+7. `a rămâne -> rămânea`
+8. `a intra -> intra`
+9. `a vorbi -> vorbea`
+10. `a ploua -> ploua`
+11. `a fi -> e`
+
+## Lexic verbal permis, dar nerecomandat
+
+1. `a da -> dădea`
+2. `a spune -> spunea`
+3. `a ajunge -> ajungea`
+4. `a întreba -> întreba`
+5. `a răspunde -> răspundea`
+6. `a cere -> cerea`
 
 ## Lexic verbal extins
 
@@ -274,6 +318,7 @@ testare, dar nu definesc forma de bază a limbii în starea curentă.
 Regulă:
 
 - Nucleul obligatoriu folosește numai verbe din acest lexic verbal obligatoriu.
+- Stratul `permis, dar nerecomandat` poate folosi verbele din lista intermediară atunci când fenomenul dominant nu este lexical sau când parafraza de nucleu ar deveni prea forțată.
 - Lexicul verbal extins este rezervat exemplelor secundare și nu definește standardul de bază.
 - În starea curentă, lexicul verbal extins a fost redus la verbele care au deja presiune explicită de corpus sau probe provizorii de parafrază.
 
@@ -290,24 +335,18 @@ Regulă de promovare:
 2. `tu vedea.`
 3. `ei bea apă.`
 4. `Ana venea.`
-5. `eu dădea @carte.`
-6. `tu citea.`
-7. `ei pleca.`
-8. `el spunea asta.`
-9. `eu rămânea aici.`
-10. `Ana intra în sală.`
-11. `tu vorbea clar.`
-12. `ei ajungea târziu.`
-13. `tu întreba asta?`
-14. `eu răspundea după.`
-15. `ploua.`
-16. `Ana cerea pâine.`
-17. `Ana vorbea!`
+5. `tu citea.`
+6. `ei pleca.`
+7. `eu rămânea aici.`
+8. `Ana intra în sală.`
+9. `tu vorbea clar.`
+10. `ploua.`
+11. `Ana vorbea!`
 
 Verdict:
 
 - `complet pentru nucleul curent`
-- motiv: toate verbele obligatorii apar cel puțin o dată într-o propoziție minimală scurtă de nucleu, fără verbe redundante față de `vedea` sau față de marcajul final `!`
+- motiv: toate verbele obligatorii apar cel puțin o dată într-o propoziție minimală scurtă de nucleu, iar verbele utile, dar mai costisitoare, au fost coborâte în stratul `permis, dar nerecomandat`
 
 ## Corpus Comparativ Verbal de Nucleu
 
@@ -319,37 +358,25 @@ Verdict:
    SR: `ei bea apă.`
 4. RO: `Ana vine.`
    SR: `Ana venea.`
-5. RO: `Eu dau cartea.`
-   SR: `eu dădea @carte.`
-6. RO: `Tu citești.`
+5. RO: `Tu citești.`
    SR: `tu citea.`
-7. RO: `Ei pleacă.`
+6. RO: `Ei pleacă.`
    SR: `ei pleca.`
-8. RO: `El spune asta.`
-   SR: `el spunea asta.`
-9. RO: `Eu rămân aici.`
+7. RO: `Eu rămân aici.`
    SR: `eu rămânea aici.`
-10. RO: `Ana intră în sală.`
+8. RO: `Ana intră în sală.`
    SR: `Ana intra în sală.`
-11. RO: `Tu vorbești clar.`
+9. RO: `Tu vorbești clar.`
    SR: `tu vorbea clar.`
-12. RO: `Ei ajung târziu.`
-   SR: `ei ajungea târziu.`
-13. RO: `Tu întrebi asta?`
-   SR: `tu întreba asta?`
-14. RO: `Eu răspund după.`
-   SR: `eu răspundea după.`
-15. RO: `Plouă.`
+10. RO: `Plouă.`
    SR: `ploua.`
-16. RO: `Ana cere pâine.`
-   SR: `Ana cerea pâine.`
-17. RO: `Ana vorbește!`
+11. RO: `Ana vorbește!`
    SR: `Ana vorbea!`
 
 Verdict:
 
 - `acceptat în nucleu`
-- motiv: fiecare verb obligatoriu are acum cel puțin o pereche comparativă `RO/SR` scurtă și lizibilă, iar verbele redundante au fost mutate în extins
+- motiv: fiecare verb obligatoriu are acum cel puțin o pereche comparativă `RO/SR` scurtă și lizibilă, iar verbele de frontieră au fost coborâte în stratul `permis, dar nerecomandat`
 
 ## Matrice Minimă de Acoperire Verbală
 
@@ -359,24 +386,18 @@ Verdict:
 | `vedea` | da | da | da | `acoperit` |
 | `bea` | da | da | da | `acoperit` |
 | `venea` | da | da | da | `acoperit` |
-| `dădea` | da | da | da | `acoperit` |
 | `citea` | da | da | da | `acoperit` |
 | `pleca` | da | da | da | `acoperit` |
-| `spunea` | da | da | da | `acoperit` |
 | `rămânea` | da | da | da | `acoperit` |
 | `intra` | da | da | da | `acoperit` |
 | `vorbea` | da | da | da | `acoperit` |
-| `ajungea` | da | da | da | `acoperit` |
-| `întreba` | da | da | da | `acoperit` |
-| `răspundea` | da | da | da | `acoperit` |
 | `ploua` | da | da | da | `acoperit` |
 | `e` | da | da | da | `acoperit` |
-| `cerea` | da | da | da | `acoperit` |
 
 Verdict:
 
 - `acoperire verbală minimă închisă`
-- motiv: fiecare verb din nucleul obligatoriu trece acum pragul minim declarat de validare internă și comparativă, iar verbele `privea` și `striga` au fost coborâte în extins din motive de economie lexicală
+- motiv: fiecare verb din nucleul obligatoriu trece acum pragul minim declarat de validare internă și comparativă, iar verbele de frontieră au fost coborâte în stratul `permis, dar nerecomandat` sau în extins din motive de economie lexicală
 
 ## Corpus Verbal Extins
 
@@ -555,8 +576,8 @@ Regulă de interpretare:
 5. `ploua.`
 6. `ploua târziu.`
 7. `Ana 8 citea @carte.`
-8. `ei ajungea târziu.`
-9. `eu răspundea după.`
+8. `ei pleca târziu.`
+9. `eu vorbea după.`
 10. `Ana vedea @film.`
 
 ## Verdict rapid pentru corpusurile minimale
@@ -600,14 +621,14 @@ Regulă de interpretare:
    SR: `ploua.`
 5. RO: `Ana citește cartea la ora 8.`
    SR: `Ana 8 citea @carte.`
-6. RO: `Ei ajung târziu.`
-   SR: `ei ajungea târziu.`
+6. RO: `Ei pleacă târziu.`
+   SR: `ei pleca târziu.`
 7. RO: `Eu văd pasărea.`
    SR: `eu vedea @pasăre.`
-8. RO: `Tu întrebi asta?`
-   SR: `tu întreba asta?`
-9. RO: `Eu răspund după.`
-   SR: `eu răspundea după.`
+8. RO: `Tu vezi asta?`
+   SR: `tu vedea asta?`
+9. RO: `Eu vorbesc după.`
+   SR: `eu vorbea după.`
 10. RO: `Ana vede filmul.`
    SR: `Ana vedea @film.`
 
@@ -621,12 +642,12 @@ Regulă de interpretare:
    SR: `ei 3H venea.`
 4. RO: `Eu merg peste 2 zile.`
    SR: `eu 2D mergea.`
-5. RO: `Tu ajungi peste 30 de minute.`
-   SR: `tu 30m ajungea.`
+5. RO: `Tu intri peste 30 de minute.`
+   SR: `tu 30m intra.`
 6. RO: `Ana citește cartea la ora 8.`
    SR: `Ana 8 citea @carte.`
-7. RO: `Eu răspund după 15 minute.`
-   SR: `eu 15m răspundea.`
+7. RO: `Eu vorbesc după 15 minute.`
+   SR: `eu 15m vorbea.`
 8. RO: `Ei pleacă peste 2 zile.`
    SR: `ei 2D pleca.`
 9. RO: `Ana intră la ora 7.`
@@ -635,6 +656,10 @@ Regulă de interpretare:
    SR: `eu 6 vedea @pasăre.`
 
 ## Corpus Comparativ Relații Prepoziționale
+
+Lotul de mai jos urmărește relațiile prepoziționale, nu nucleul verbal dur.
+Din acest motiv, el poate folosi și verbe din stratul `permis, dar nerecomandat`
+fără a le reactiva ca verbe obligatorii de nucleu.
 
 1. RO: `Eu dau cartea la Ana.`
    SR: `eu dădea @carte la Ana.`
@@ -659,13 +684,13 @@ Regulă de interpretare:
 
 ## Verdict rapid pentru loturile comparative
 
-- lotul verbal: `acceptat în nucleu`; cele 17 perechi susțin direct fiecare verb obligatoriu din nucleul curent
+- lotul verbal: `acceptat în nucleu`; perechile scurte susțin direct fiecare verb obligatoriu din nucleul dur
 - lotul copulativ: `acceptat în nucleu`; cele zece perechi de mai sus susțin folosirea lui `e` ca regulă de bază pentru predicate locative, adjectivale și posesive simple
 - lotul de ordine: `acceptat în nucleu`; cele zece perechi susțin schema `subiect + timp + predicat` sau `subiect + predicat`
 - lotul temporal: `acceptat în nucleu`; cele zece perechi susțin folosirea timpului parțial și relativ ca strat uzual de bază
 - lotul de număr: `acceptat în nucleu`; cele zece perechi susțin prefixul numeric ca soluție stabilă pentru cardinalitate
 - lotul de definitudine: `acceptat în nucleu`; cele zece perechi susțin operatorul `@` ca marcaj controlat al opoziției marcat versus nemarcat
-- lotul prepozițional: `acceptat în nucleu`; cele zece perechi susțin păstrarea relațiilor indirecte prin prepoziții scurte
+- lotul prepozițional: `acceptat metodologic`; cele zece perechi susțin păstrarea relațiilor indirecte prin prepoziții scurte, chiar dacă unele exemple folosesc verbe din stratul `permis, dar nerecomandat`
 
 ## Exemple ambigue de urmărit
 
@@ -688,9 +713,9 @@ ca argument unic pentru o regulă nouă.
    verdict: `respins din nucleu; păstrat experimental`
    motiv: negarea prefixată cu `!` rămâne prea ambiguă pentru forma de bază
 2. RO: `Tu bei apă sau lapte, dar nu ambele.`
-   SR respins: `tu bea apă ^ tu bea lapte.`
+   SR respins: `tu bea apă ori tu bea lapte.`
    verdict: `respins din nucleu; păstrat experimental`
-   motiv: `XOR` nu este suficient de frecvent pentru a justifica intrarea în nucleul strict
+   motiv: alternativa exclusivă nu este suficient de frecventă pentru a justifica intrarea în nucleul strict
 3. RO: `Eu merg la magazin la ora 9.`
    SR respins: `mergea eu 9 la magazin.`
    verdict: `respins`
@@ -779,6 +804,10 @@ Verdict:
 - motiv: aduc compactitate reală, dar încă pierd prea mult la naturalețe pentru nucleul strict
 
 ## Corpus Minimal Nominal
+
+Loturile nominale și prepoziționale urmăresc în primul rând relațiile nominale,
+nu nucleul verbal dur. Din acest motiv, ele pot folosi punctual și verbe din
+stratul `permis, dar nerecomandat` fără a le reactiva ca verbe obligatorii.
 
 1. `carte.`
 2. `@carte.`
@@ -877,7 +906,7 @@ Verdict:
 Verdict:
 
 - `complet pentru nucleul curent`
-- motiv: cele 10 exemple acoperă posesia și setul scurt de relații prepoziționale active fără operatori noi
+- motiv: cele 10 exemple acoperă posesia și setul scurt de relații prepoziționale active fără operatori noi; acolo unde apare un verb din stratul `permis, dar nerecomandat`, fenomenul dominant rămâne relația nominală sau prepozițională
 
 ## Adjective, adverbe și grad
 
@@ -918,7 +947,7 @@ Verdict:
 ## Margine experimentală
 
 Exemplele de mai jos nu ies din proiect, dar nu mai definesc reflexul principal de citire.
-În mod implicit, nested, timpul tehnic complet și `XOR` intră mai întâi aici, nu în nucleul obligatoriu.
+În mod implicit, nested, timpul tehnic complet și alternativa exclusivă marcată explicit intră mai întâi aici, nu în nucleul obligatoriu.
 
 ### Perechi RO și SR experimentale
 
@@ -939,18 +968,18 @@ SR: `eu5 pleca.`
 
 1. `el spunea {tu bea vin?}`
 2. `ea credea {ei venea.}`
-3. `tu bea apă ^ tu bea lapte.`
+3. `tu bea apă ori tu bea lapte.`
 4. `ea credea {ei -1D ajungea la sală.}`
 
 ## Protocol compact de revizie pentru exemple noi
 
 1. Se notează sursa și fenomenul dominant.
 2. Se verifică fidelitatea: nu se adaugă informație absentă în sursă.
-3. Se verifică forma minimă: verb din lexicul verbal obligatoriu pentru nucleu, timp suficient, ordine preferată recognoscibilă, operator minim necesar.
+3. Se verifică forma minimă: verb din lexicul verbal obligatoriu pentru nucleu, timp suficient, ordine preferată recognoscibilă, formă nemarcată păstrată unde este suficientă, operator minim necesar.
 4. Dacă propoziția este cu subiect exprimat, ordinea preferată este respectată explicit.
-5. Se verifică structura: `&`, `|`, `^` și `{}` rămân doar dacă păstrează explicit `și`, `sau`, `XOR` sau conținut raportat; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, exemplul se descompune.
+5. Se verifică structura: `și`, `sau`, `ori` și `{}` rămân doar dacă păstrează explicit coordonarea, alternativa incluzivă, alternativa exclusivă sau conținutul raportat; simbolurile `&`, `|` și `^` rămân doar ca abrevieri opționale; copula `e` este preferată în propozițiile nominale, adjectivale și locative; altfel, exemplul se descompune.
 6. Dacă propoziția este fără subiect explicit, se verifică separat că este impersonală reală.
-7. Se marchează verdictul și stratul: `acceptat în nucleu`, `păstrat experimental`, `rescris` sau `respins`.
+7. Se marchează verdictul și stratul: `acceptat în nucleu`, `permis, dar nerecomandat`, `păstrat experimental`, `rescris` sau `respins`.
 
 ## Ținte pentru extindere
 
@@ -970,7 +999,7 @@ SR: `eu5 pleca.`
 - menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale ordinii
 - menținere și revalidare periodică pentru cele 10 perechi comparative RO/SR ale relațiilor prepoziționale
 - 10 propoziții minimale pentru grad și aproximare
-- menținere și revalidare periodică pentru exemplele experimentale cu `&`, `|` și `^`
+- menținere și revalidare periodică pentru exemplele experimentale cu `și`, `sau`, `ori` și cu abrevierile simbolice `&`, `|`, `^`
 - 10 propoziții minimale pentru nested
 - 10 exemple unde descompunerea este mai clară decât fraza unică
 - 10 propoziții noi folosind doar verbe din lexicul verbal activ
