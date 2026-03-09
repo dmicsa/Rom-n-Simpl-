@@ -121,3 +121,37 @@ Observație editorială:
 
 - PDF-ul final este artefactul de referință pentru distribuție și evaluare
 - recompilarea sursei pe alt sistem poate depinde de disponibilitatea fonturilor locale folosite de `fontspec`
+
+## Distribuție publică
+
+Pentru distribuție, citare și arhivare, versiunea publică curentă este disponibilă în trei locuri complementare:
+
+- GitHub Releases: https://github.com/dmicsa/Rom-n-Simpl-/releases/tag/v1.0.1
+- Zenodo DOI canonic: https://doi.org/10.5281/zenodo.18930028
+- OSF mirror public: https://osf.io/7erbh/
+
+Acces direct la artefactele publice:
+
+- Manuscris academic, download direct din Zenodo: https://zenodo.org/records/18930028/files/RomanaSimplaAcademic.pdf?download=1
+- Cheat sheet, download direct din Zenodo: https://zenodo.org/records/18930028/files/Rom%C3%A2n%C4%83Simpl%C4%83CheatSheet.pdf?download=1
+- Pagină de release GitHub cu artefactele versiunii: https://github.com/dmicsa/Rom-n-Simpl-/releases/tag/v1.0.1
+- Mirror OSF al proiectului: https://osf.io/7erbh/files/osfstorage
+
+Artefactele publice curente sunt:
+
+- `RomanaSimplaAcademic.pdf` ca PDF academic canonic
+- `RomânăSimplăCheatSheet.pdf` ca rezumat operațional scurt pentru lucru și distribuție rapidă
+
+Rolul acestor canale este separat:
+
+- GitHub păstrează distribuția pe versiuni și legătura directă cu sursele
+- Zenodo oferă DOI-ul canonic pentru citare și arhivare academică
+- OSF oferă un mirror public suplimentar pentru vizibilitate și redundanță
+
+## Citare
+
+Pentru citare academică, referința canonică este recordul Zenodo al versiunii publice curente:
+
+- Micșa, Dan. *RomânăSimplă: propunere de normalizare și formalizare a limbii române*. v1.0.1. Zenodo. https://doi.org/10.5281/zenodo.18930028
+
+În GitHub, metadatele de citare sunt publicate și prin fișierul `CITATION.cff`, pentru acces rapid din interfața repo-ului.

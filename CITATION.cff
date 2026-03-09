@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this project, please cite the Zenodo record for the current public version."
+title: "RomânăSimplă"
+authors:
+  - family-names: "Micșa"
+    given-names: "Dan"
+repository-code: "https://github.com/dmicsa/Rom-n-Simpl-/"
+url: "https://github.com/dmicsa/Rom-n-Simpl-/"
+preferred-citation:
+  type: article
+  title: "RomânăSimplă: propunere de normalizare și formalizare a limbii române"
+  authors:
+    - family-names: "Micșa"
+      given-names: "Dan"
+  year: 2026
+  version: "v1.0.1"
+  doi: "10.5281/zenodo.18930028"
+  url: "https://doi.org/10.5281/zenodo.18930028"
