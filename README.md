@@ -99,3 +99,23 @@ arăta evoluția proiectului, dar nu trebuie confundate cu starea canonică actu
 6. Se compară direct `RO` și `SR` pentru fidelitate și citibilitate.
 7. Abia apoi exemplul sau regula intră în corpusul extins sau urcă în nucleul obligatoriu.
 8. Dacă o decizie este controversată, motivul ei se notează direct lângă regula schimbată.
+
+## Build
+
+PDF-ul canonic al articolului este `RomanaSimplaAcademic.pdf` din rădăcina repo-ului.
+
+Reconstrucția recomandată se face prin scriptul:
+
+- `Extra/RebuildPdfs.ps1`
+
+Acest flux:
+
+- compilează cu `xelatex`
+- lasă artefactele auxiliare numai în `Extra/Build/`
+- copiază PDF-ul final în rădăcina repo-ului
+- păstrează rădăcina curată, fără `*.aux`, `*.log`, `*.out`, `*.toc`
+
+Observație editorială:
+
+- PDF-ul final este artefactul de referință pentru distribuție și evaluare
+- recompilarea sursei pe alt sistem poate depinde de disponibilitatea fonturilor locale folosite de `fontspec`
