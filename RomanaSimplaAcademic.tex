@@ -44,6 +44,7 @@
 \titlespacing*{\subsection}{0pt}{1.1em}{0.45em}
 \titlespacing*{\subsubsection}{0pt}{0.9em}{0.35em}
 \pretocmd{\section}{\clearpage}{}{}
+\renewcommand{\refname}{Referințe}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -165,7 +166,11 @@ normativă, corpusul de bază și formalizarea gramaticală explicită. Specific
 oferă regulile active, corpusul furnizează exemplele validate și loturile
 minimale de control, iar secțiunile analitice ale documentului motivează de ce
 această propunere de normalizare este necesară și cum încearcă ea să reducă
-costul flexiunii, al excepțiilor și al deducției contextuale fragile.
+costul flexiunii, al excepțiilor și al deducției contextuale fragile. În forma
+publicată aici, aceste componente sunt tratate drept surse primare explicite ale
+articolului, împreună cu repository-ul public al proiectului și cu versiunea în
+engleză folosită ca punct comparativ de prezentare externă
+\cite{rs-spec,rs-corpus,rs-eval,rs-prez,rs-readme,rs-repo,minenglish}.
 
 \section{Arhitectura nucleului}
 
@@ -918,7 +923,9 @@ Materialul de mai jos nu are statut normativ. El este păstrat în anexă tocmai
 pentru a arăta cum se comportă sistemul atunci când este scos din zona de propoziții
 scurte de control și este pus la lucru pe un text literar cu densitate imagistică și
 ritm propriu. Această anexă este utilă editorial: ea arată ce poate face proiectul,
-dar și unde începe să plătească prețul pentru compactare sau parafrază.
+dar și unde începe să plătească prețul pentru compactare sau parafrază. Textul
+poetic de referință folosit aici este \textit{Luceafărul} de Mihai Eminescu
+\cite{eminescu-luceafarul}.
 
 \small
 
@@ -1063,5 +1070,60 @@ literalitate și parafrază. Într-un asemenea context, RomânăSimplă poate pr
 forme interesante, dar nu întotdeauna naturale sau economic superioare. Din
 acest motiv, anexa literară trebuie citită ca probă exploratorie, nu ca dovadă
 normativă pentru nucleul canonic.
+
+\section{Disponibilitate și reproducibilitate}
+
+Lucrarea este reproductibilă la nivel documentar. Regulile normative, corpusul
+de bază, exemplele comparative și sursa \LaTeX\ sunt păstrate în repository-ul
+public al proiectului \cite{rs-repo}. Pentru o evaluare externă sau pentru o
+depunere pe platforme academice precum arXiv, acest lucru este esențial: cititorul
+poate confrunta direct afirmațiile articolului cu documentele canonice, fără să
+depindă de o reconstrucție informală a istoriei proiectului.
+
+\begin{thebibliography}{9}
+
+\bibitem{rs-spec}
+Dan Micșa.
+\textit{Specificația Limbii RomânăSimplă}.
+Document canonic de lucru, martie 2026.
+
+\bibitem{rs-corpus}
+Dan Micșa.
+\textit{Corpusul de Bază RomânăSimplă}.
+Corpus canonic validat pentru nucleul curent, martie 2026.
+
+\bibitem{rs-eval}
+Dan Micșa.
+\textit{Evaluare Academică}.
+Document intern al proiectului RomânăSimplă, martie 2026.
+
+\bibitem{rs-prez}
+Dan Micșa.
+\textit{Prezentare}.
+Document intern de sinteză pentru proiectul RomânăSimplă, martie 2026.
+
+\bibitem{rs-readme}
+Dan Micșa.
+\textit{README}.
+Document de orientare al proiectului RomânăSimplă, martie 2026.
+
+\bibitem{rs-repo}
+Dan Micșa.
+\textit{RomânăSimplă}.
+Repository public GitHub: \url{https://github.com/dmicsa/Rom-n-Simpl-.git}.
+Accesat în martie 2026.
+
+\bibitem{minenglish}
+Dan Micșa.
+\textit{MinEnglish}.
+Versiune în engleză în format PDF: \url{https://github.com/dmicsa/MinEnglish/blob/master/MinEnglish.pdf}.
+Accesat în martie 2026.
+
+\bibitem{eminescu-luceafarul}
+Mihai Eminescu.
+\textit{Luceafărul}.
+Text poetic folosit în anexă exclusiv ca material ilustrativ comparativ.
+
+\end{thebibliography}
 
 \end{document}

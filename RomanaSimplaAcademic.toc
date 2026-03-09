@@ -1,0 +1,42 @@
+\contentsline {section}{\numberline {1}Introducere}{5}{section.1}%
+\contentsline {section}{\numberline {2}Cadru metodologic}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Filtrul CPSU}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Surse și material}{6}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Arhitectura nucleului}{7}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Ordinea propoziției și tratamentul timpului}{7}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Forma verbală canonică}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Lexicul verbal și stratificarea sa}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Nucleul nominal: definitudine, posesie și cardinalitate}{7}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Pronume cuantificate}{8}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Economia operatorială}{8}{subsection.3.6}%
+\contentsline {section}{\numberline {4}Sistemul operatorial}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}De ce operatorii sunt centrali în proiect}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Inventarul operatorilor activi}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Operatorii nominali: \texttt {@}, \texttt {\#}, număr și \texttt {*}}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Operatorii de grad și de enunț}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Coordonare, alternativă și simbolizare controlată}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Buget operatorial și praguri de acceptare}{11}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Exemple și studii de caz}{12}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Secțiune extinsă de exemple comparative side by side}{12}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}I. Nucleu temporal și propozițional}{12}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}II. Relații nominale, cardinalitate și operatori}{12}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}III. Strat extins și cazuri de frontieră}{13}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}Micro-comparații de compactare}{13}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Cazuri-limită și praguri editoriale}{14}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Corpus și validare}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Perechi de control local}{15}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Loturi specifice de control}{15}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Motivație și justificare teoretică}{16}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Ce justifică propunerea}{16}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Limite teoretice majore}{16}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Densitate operatorială și compactare}{16}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}De ce secțiunea despre operatori este decisivă pentru publicare}{16}{subsection.7.4}%
+\contentsline {section}{\numberline {8}Discuție}{17}{section.8}%
+\contentsline {section}{\numberline {9}Concluzie}{18}{section.9}%
+\contentsline {section}{\numberline {A}Inventar scurt de forme reprezentative}{19}{appendix.A}%
+\contentsline {section}{\numberline {B}Rezumat al deciziilor normative}{20}{appendix.B}%
+\contentsline {section}{\numberline {C}EBNF Core}{21}{appendix.C}%
+\contentsline {section}{\numberline {D}EBNF Extended și lexic minim}{23}{appendix.D}%
+\contentsline {section}{\numberline {E}Luceafărul: anexă ilustrativă}{25}{appendix.E}%
+\contentsline {section}{\numberline {F}Observații asupra anexei literare}{27}{appendix.F}%
+\contentsline {section}{\numberline {G}Disponibilitate și reproducibilitate}{28}{appendix.G}%
