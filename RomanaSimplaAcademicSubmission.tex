@@ -1,7 +1,7 @@
 \documentclass[12pt,onecolumn,letterpaper]{article}
 
 \usepackage{geometry}
-\geometry{letterpaper, left=0.8in, right=0.8in, top=0.95in, bottom=0.8in}
+\geometry{letterpaper, margin=1in}
 
 \usepackage{fontspec}
 \usepackage{microtype}
@@ -43,21 +43,13 @@
 \titlespacing*{\section}{0pt}{1.5em}{0.7em}
 \titlespacing*{\subsection}{0pt}{1.1em}{0.45em}
 \titlespacing*{\subsubsection}{0pt}{0.9em}{0.35em}
-\pretocmd{\section}{\clearpage}{}{}
 \renewcommand{\refname}{Referințe}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\small\itshape RomânăSimplă: propunere de normalizare și formalizare a limbii române}
-\fancyhead[R]{\small\thepage}
-\renewcommand{\headrulewidth}{0.35pt}
+\pagestyle{plain}
 
 \urlstyle{same}
 \hypersetup{
-    colorlinks=true,
-    linkcolor=RSBlue,
-    filecolor=RSBlue,
-    urlcolor=RSBlue,
+    colorlinks=false,
     pdftitle={RomânăSimplă: propunere de normalizare și formalizare a limbii române},
     pdfauthor={Dan Micșa, PhD},
     pdfsubject={Propunere de normalizare și formalizare pentru nucleul RomânăSimplă}
@@ -83,9 +75,7 @@
 }
 \newcommand{\RSEBNFLayout}{\footnotesize}
 
-\title{\Huge\textbf{RomânăSimplă}\\[0.2em]
-\LARGE O propunere de normalizare și formalizare a limbii române\\[0.35em]
-\large cu nucleu curent restrâns, corpus controlat, operatori și formalizare gramaticală}
+\title{\Large\textbf{RomânăSimplă: O propunere de normalizare și formalizare a limbii române}}
 
 \author{\textbf{Dan Micșa, PhD}\\
 \small \href{mailto:dmicsa@gmail.com}{dmicsa@gmail.com}\\

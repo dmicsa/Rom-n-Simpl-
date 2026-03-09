@@ -2,8 +2,8 @@ This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**./RomanaSimplaAcademic.tex
-(RomanaSimplaAcademic.tex
+**./RomanaSimplaAcademicSubmission.tex
+(RomanaSimplaAcademicSubmission.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -572,37 +572,37 @@ Space,Scale=MatchLowercase].
 (fontspec)             4\font \fontdimen 7\font =0\fontdimen 2\font
 (fontspec)             \tex_hyphenchar:D \font =-1\scan_stop: 
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 64.
+Package hyperref Info: Option `colorlinks' set `false' on input line 56.
 
-(RomanaSimplaAcademic.aux)
-\openout1 = `RomanaSimplaAcademic.aux'.
+(RomanaSimplaAcademicSubmission.aux)
+\openout1 = `RomanaSimplaAcademicSubmission.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 9
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
 5.
 
 (C:\Users\Dan\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -612,15 +612,15 @@ LaTeX Font Info:    ... okay on input line 95.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(57.81621pt, 498.66258pt, 57.81621pt)
-* v-part:(T,H,B)=(68.65627pt, 668.49751pt, 57.81621pt)
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=498.66258pt
-* \textheight=668.49751pt
-* \oddsidemargin=-14.45378pt
-* \evensidemargin=-14.45378pt
-* \topmargin=-40.61372pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
 * \headheight=15.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -644,66 +644,66 @@ Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
 
 \symlegacymaths=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 95.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 95.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 95.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 95.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 95.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 95.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 95.
-LaTeX Font Info:    Redeclaring math accent \check on input line 95.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 95.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 95.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 95.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 95.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 95.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 85.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 85.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 85.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 85.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 85.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 85.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 85.
+LaTeX Font Info:    Redeclaring math accent \check on input line 85.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 85.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 85.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 85.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 85.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 95.
+(Font)              `operators' in the math version `normal' on input line 85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/Cambria(0)/m/n on input line 95.
+(Font)                  OT1/cmr/m/n --> TU/Cambria(0)/m/n on input line 85.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 95.
+(Font)              `operators' in the math version `bold' on input line 85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/m/n on input line 95.
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/m/n on input line 85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/m/n on input line 9
+(Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/m/n on input line 8
 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/Cambria(0)/m/it on input line 95.
+(Font)                  OT1/cmr/m/it --> TU/Cambria(0)/m/it on input line 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/b/n on input line 95.
+(Font)                  OT1/cmr/bx/n --> TU/Cambria(0)/b/n on input line 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 95.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/LiberationMono(0)/m/n on input line
- 95.
+ 85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/b/n on input line 9
+(Font)                  TU/Cambria(0)/m/n --> TU/Cambria(0)/b/n on input line 8
 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/Cambria(0)/b/it on input line 95.
+(Font)                  OT1/cmr/bx/it --> TU/Cambria(0)/b/it on input line 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 95.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/LiberationMono(0)/b/n on input line
- 95.
-LaTeX Info: Redefining \microtypecontext on input line 95.
-Package microtype Info: Applying patch `item' on input line 95.
-Package microtype Info: Applying patch `toc' on input line 95.
-Package microtype Info: Applying patch `eqnum' on input line 95.
-Package microtype Info: Applying patch `footnote' on input line 95.
-Package microtype Info: Applying patch `verbatim' on input line 95.
+ 85.
+LaTeX Info: Redefining \microtypecontext on input line 85.
+Package microtype Info: Applying patch `item' on input line 85.
+Package microtype Info: Applying patch `toc' on input line 85.
+Package microtype Info: Applying patch `eqnum' on input line 85.
+Package microtype Info: Applying patch `footnote' on input line 85.
+Package microtype Info: Applying patch `verbatim' on input line 85.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
@@ -713,10 +713,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Cambria' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package hyperref Info: Link coloring ON on input line 95.
-(RomanaSimplaAcademic.out) (RomanaSimplaAcademic.out)
+Package hyperref Info: Link coloring OFF on input line 85.
+(RomanaSimplaAcademicSubmission.out) (RomanaSimplaAcademicSubmission.out)
 \@outlinefile=\write3
-\openout3 = `RomanaSimplaAcademic.out'.
+\openout3 = `RomanaSimplaAcademicSubmission.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
@@ -729,190 +729,139 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 
 ]
 LaTeX Font Info:    Font shape `TU/LiberationMono(0)/m/n' will be
-(Font)              scaled to size 9.6748pt on input line 112.
+(Font)              scaled to size 9.6748pt on input line 102.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `LiberationMono' (encoding: TU).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [2
-
-] (RomanaSimplaAcademic.toc
+ (RomanaSimplaAcademicSubmission.toc
 LaTeX Font Info:    Font shape `TU/LiberationMono(0)/m/n' will be
 (Font)              scaled to size 10.60254pt on input line 15.
- [3
+ [2
 
 ])
 \tf@toc=\write4
-\openout4 = `RomanaSimplaAcademic.toc'.
+\openout4 = `RomanaSimplaAcademicSubmission.toc'.
 
- [4] [5
+ [3] [4] [5] [6]
 
-] [6
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-] [7
-
-] [8]
 LaTeX Font Info:    Font shape `TU/LiberationMono(0)/b/n' will be
-(Font)              scaled to size 12.72304pt on input line 352.
+(Font)              scaled to size 12.72304pt on input line 342.
 
-Underfull \hbox (badness 2126) in paragraph at lines 363--363
+Underfull \hbox (badness 2126) in paragraph at lines 353--353
 []|\TU/Cambria(0)/m/n/12 definitudine min-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--364
+Underfull \hbox (badness 10000) in paragraph at lines 354--354
 []|\TU/Cambria(0)/m/n/12 cardinalitate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--366
+Underfull \hbox (badness 10000) in paragraph at lines 356--356
 []|\TU/Cambria(0)/m/n/12 definit plus
  []
 
 
-Underfull \hbox (badness 6559) in paragraph at lines 369--369
+Underfull \hbox (badness 6559) in paragraph at lines 359--359
 []|\TU/Cambria(0)/m/n/12 posesie de grup
  []
 
 
-Underfull \hbox (badness 6559) in paragraph at lines 370--370
+Underfull \hbox (badness 6559) in paragraph at lines 360--360
 []|\TU/Cambria(0)/m/n/12 posesie de grup
  []
 
-[9
-
-]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[10]
-Underfull \hbox (badness 10000) in paragraph at lines 432--432
+[7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 422--422
 []|\TU/LiberationMono(0)/m/n/12 Ana citea și tu
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 []|\TU/LiberationMono(0)/m/n/12 Ana citea & tu
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--433
+Underfull \hbox (badness 10000) in paragraph at lines 423--423
 []|\TU/Cambria(0)/m/n/12 Alternativă in-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--433
+Underfull \hbox (badness 10000) in paragraph at lines 423--423
 []|\TU/LiberationMono(0)/m/n/12 tu bea apă sau tu
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 []|\TU/LiberationMono(0)/m/n/12 tu bea apă | tu bea
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--434
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []|\TU/Cambria(0)/m/n/12 Alternativă exclu-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--434
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []|\TU/LiberationMono(0)/m/n/12 tu bea apă ori tu
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
 []|\TU/LiberationMono(0)/m/n/12 tu bea apă ^ tu bea
  []
 
-
-Overfull \vbox (119.18799pt too high) has occurred while \output is active []
-
-
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 488--489
 []|\TU/LiberationMono(0)/m/n/10 ploua târziu. eu rămânea
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 []|\TU/LiberationMono(0)/m/n/10 ei venea târziu. sală e
  []
 
-[12
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 548--549
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 538--539
 []|\TU/LiberationMono(0)/m/n/10 ea credea {ei 1D ajungea la
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 549--550
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 []|\TU/LiberationMono(0)/m/n/10 eu 3H mergea cu Ana la
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
+Underfull \hbox (badness 10000) in paragraph at lines 542--543
 []|\TU/LiberationMono(0)/m/n/10 tu întreba și eu răspundea
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13] [14] [15
-
-] [16
-
-] [17
-
-] [18
-
-] [19
-
-] [20
-
-] [21
-
-] [22] [23
-
-] [24] [25
-
-] [26] [27
-
-]
-[28
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1123--1127
+[11] [12] [13] [14] [15] [16] [17] [18] [19] [20]
+Underfull \hbox (badness 2941) in paragraph at lines 1113--1117
 []\TU/Cambria(0)/m/n/12 Dan Micșa. \TU/Cambria(0)/m/it/12 RomânăSimplă\TU/Cambr
-ia(0)/m/n/12 . Repository public GitHub: [][]$[][][][][] [] [] [] [][][][][][] 
-[] [][][] [] [][][][][][] []
+ia(0)/m/n/12 . Repository public GitHub: []$[][][][][] [] [] [] [][][][][][] []
+ [][][] [] [][][][][][] []
  []
 
-
-Underfull \hbox (badness 2495) in paragraph at lines 1129--1133
-[]\TU/Cambria(0)/m/n/12 Dan Micșa. \TU/Cambria(0)/m/it/12 MinEnglish\TU/Cambria
-(0)/m/n/12 . Versiune în engleză în format PDF: [][]$[][][][][] [] [] [] [][][]
-[][][] [] [][][] [] [][][][][][] []
- []
-
-[29
-
-] (RomanaSimplaAcademic.aux)
+[21] (RomanaSimplaAcademicSubmission.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
-Package rerunfilecheck Info: File `RomanaSimplaAcademic.out' has not changed.
+Package rerunfilecheck Info: File `RomanaSimplaAcademicSubmission.out' has not 
+changed.
 (rerunfilecheck)             Checksum: FC8AD49ED1384153240696D96B621553;9029.
  ) 
 Here is how much of TeX's memory you used:
- 16375 strings out of 409615
- 311572 string characters out of 5774373
- 1947191 words of memory out of 5000000
- 38270 multiletter control sequences out of 15000+600000
- 564962 words of font info for 108 fonts, out of 8000000 for 9000
+ 16369 strings out of 409615
+ 311599 string characters out of 5774373
+ 1953191 words of memory out of 5000000
+ 38266 multiletter control sequences out of 15000+600000
+ 564946 words of font info for 106 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 79i,12n,119p,1019b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,12n,119p,1029b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on RomanaSimplaAcademic.pdf (29 pages).
+Output written on RomanaSimplaAcademicSubmission.pdf (21 pages).
