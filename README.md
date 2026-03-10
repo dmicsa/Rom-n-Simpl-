@@ -155,3 +155,11 @@ Pentru citare academică, referința canonică este recordul Zenodo al versiunii
 - Micșa, Dan. *RomânăSimplă: propunere de normalizare și formalizare a limbii române*. v1.0.1. Zenodo. https://doi.org/10.5281/zenodo.18930028
 
 În GitHub, metadatele de citare sunt publicate și prin fișierul `CITATION.cff`, pentru acces rapid din interfața repo-ului.
+
+## Licență
+
+Repo-ul este aliniat la licența publicată în Zenodo:
+
+- `CC BY 4.0` pentru conținutul public al proiectului
+- fișierul local de referință este `LICENSE`
+- URL canonic al licenței: https://creativecommons.org/licenses/by/4.0/
